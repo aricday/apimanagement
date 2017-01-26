@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CA Sans-Regular.ttf">
+            <string>CASans</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="140" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="140" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="140" id="iN0-l3-epB" customClass="QRPopover" customModule="CA_Presales_Pro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zij-8o-wAF">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="570"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Me to Join a MAS Group!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-MB-kBm">
+                    <rect key="frame" x="202" y="574" width="196" height="19"/>
+                    <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.08235294118" green="0.16862745100000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="aLz-MB-kBm" firstAttribute="top" secondItem="zij-8o-wAF" secondAttribute="bottom" constant="4" id="7hC-Pz-eY0"/>
+                <constraint firstAttribute="bottom" secondItem="zij-8o-wAF" secondAttribute="bottom" constant="30" id="KGA-Om-8PT"/>
+                <constraint firstAttribute="trailing" secondItem="zij-8o-wAF" secondAttribute="trailing" id="dea-CF-JEn"/>
+                <constraint firstItem="zij-8o-wAF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gCm-lX-yLA"/>
+                <constraint firstItem="aLz-MB-kBm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l4j-49-Y6j"/>
+                <constraint firstItem="zij-8o-wAF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wBh-ah-Ru3"/>
+            </constraints>
+            <connections>
+                <outlet property="QRImage" destination="zij-8o-wAF" id="l4F-qE-nmg"/>
+            </connections>
+        </view>
+    </objects>
+</document>

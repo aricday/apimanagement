@@ -1,0 +1,9 @@
+host=centos.apim.ca
+username=admin
+password=A_Q79oQVSE4.Hdoh5s6L5B8KiWGCYDzRzQ
+port=8443
+results=results.xml
+encryptionPassphrase=A_Q79oQVSE4.Hdoh5s6L5B8KiWGCYDzRzQ
+hideProgress
+trustCertificate
+trustHostname

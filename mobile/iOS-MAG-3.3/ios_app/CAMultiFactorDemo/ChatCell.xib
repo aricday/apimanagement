@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CA Sans-Bold.ttf">
+            <string>CASans-Bold</string>
+        </mutableArray>
+        <mutableArray key="CA Sans-Regular.ttf">
+            <string>CASans</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="ChatCell" rowHeight="89" id="8Em-ar-BCM" customClass="ChatCell" customModule="CA_Presales_Pro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="80" preservesSuperviewLayoutMargins="YES" tableViewCell="8Em-ar-BCM" id="ClK-l7-Xhd">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-C9-Pxn">
+                        <rect key="frame" x="28" y="10" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="15w-Dq-P7q"/>
+                            <constraint firstAttribute="height" constant="32" id="7Cm-NN-QCv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Of User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cul-eI-7qa">
+                        <rect key="frame" x="80" y="10" width="91" height="18"/>
+                        <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNz-Dz-TPW">
+                        <rect key="frame" x="80" y="28" width="56" height="18"/>
+                        <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hNz-Dz-TPW" firstAttribute="leading" secondItem="oBa-C9-Pxn" secondAttribute="trailing" constant="20" id="ABV-KY-5nN"/>
+                    <constraint firstItem="oBa-C9-Pxn" firstAttribute="top" secondItem="ClK-l7-Xhd" secondAttribute="topMargin" constant="5" id="HfP-Rg-5EQ"/>
+                    <constraint firstItem="oBa-C9-Pxn" firstAttribute="leading" secondItem="ClK-l7-Xhd" secondAttribute="leadingMargin" constant="20" id="KYi-yA-UyB"/>
+                    <constraint firstItem="Cul-eI-7qa" firstAttribute="leading" secondItem="oBa-C9-Pxn" secondAttribute="trailing" constant="20" id="OI4-W2-LwI"/>
+                    <constraint firstItem="hNz-Dz-TPW" firstAttribute="top" secondItem="Cul-eI-7qa" secondAttribute="bottom" id="b6E-Iz-5JW"/>
+                    <constraint firstItem="Cul-eI-7qa" firstAttribute="top" secondItem="oBa-C9-Pxn" secondAttribute="top" id="hVB-O0-vfi"/>
+                    <constraint firstItem="oBa-C9-Pxn" firstAttribute="leading" secondItem="ClK-l7-Xhd" secondAttribute="leadingMargin" constant="20" id="tch-El-FDX"/>
+                    <constraint firstItem="oBa-C9-Pxn" firstAttribute="top" secondItem="ClK-l7-Xhd" secondAttribute="topMargin" id="yqc-wZ-9JE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="HfP-Rg-5EQ"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.12549019610000001" green="0.25882352939999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="memberImage" destination="oBa-C9-Pxn" id="LLj-9z-88r"/>
+                <outlet property="memberMessageLabel" destination="hNz-Dz-TPW" id="RaN-w6-2vb"/>
+                <outlet property="memberNameLabel" destination="Cul-eI-7qa" id="ZYn-Y8-bXe"/>
+            </connections>
+            <point key="canvasLocation" x="643" y="314.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="user" width="128" height="128"/>
+    </resources>
+</document>

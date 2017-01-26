@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fwt-0e-V5c">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CA Sans-Bold.ttf">
+            <string>CASans-Bold</string>
+            <string>CASans-Bold</string>
+            <string>CASans-Bold</string>
+            <string>CASans-Bold</string>
+            <string>CASans-Bold</string>
+            <string>CASans-Bold</string>
+        </mutableArray>
+        <mutableArray key="CA Sans-Regular.ttf">
+            <string>CASans</string>
+            <string>CASans</string>
+            <string>CASans</string>
+            <string>CASans</string>
+            <string>CASans</string>
+            <string>CASans</string>
+            <string>CASans</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="roR-Cd-Ftt">
+            <objects>
+                <navigationController storyboardIdentifier="InitialController" id="Fwt-0e-V5c" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ul0-Hv-eDR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nWk-Ll-zuL" kind="relationship" relationship="rootViewController" id="saq-7w-yxb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUm-kz-7bB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419" y="-5"/>
+        </scene>
+        <!--SSO Login-->
+        <scene sceneID="BDS-Gt-v7M">
+            <objects>
+                <viewController title="SSO Login" id="nWk-Ll-zuL" customClass="SSOLogin" customModule="Presales_Pro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pjw-35-oP3"/>
+                        <viewControllerLayoutGuide type="bottom" id="3gM-qU-5XW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcY-t4-tMS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="tw4-jM-U8s">
+                                <rect key="frame" x="290" y="94" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71M-Kc-uaJ">
+                                <rect key="frame" x="281" y="134" width="38" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user.name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9J-sl-dbW">
+                                <rect key="frame" x="264" y="154" width="72" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-ff-Z5R">
+                                <rect key="frame" x="283" y="184" width="34" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8D-Me-ay8">
+                                <rect key="frame" x="287" y="204" width="25" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAG ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7N-9o-1fs">
+                                <rect key="frame" x="269" y="234" width="62" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000-000-000-000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd5-13-mOl">
+                                <rect key="frame" x="236" y="254" width="129" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="access_token:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-E8-47L">
+                                <rect key="frame" x="248" y="284" width="104" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000000-000000-000000-0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAS-Ho-ApM">
+                                <rect key="frame" x="184" y="304" width="232" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0K-jU-MUt">
+                                <rect key="frame" x="266" y="334" width="68" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 , 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHz-Xa-Fxa">
+                                <rect key="frame" x="262" y="354" width="76" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdO-fQ-2QW">
+                                <rect key="frame" x="269" y="404" width="62" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipb-IO-Wxj">
+                                <rect key="frame" x="276" y="444" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="73g-jo-avq"/>
+                                    <constraint firstAttribute="width" constant="48" id="Dgm-Ju-cvw"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="getData" destination="nWk-Ll-zuL" eventType="touchUpInside" id="L0r-fo-Xr1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure Message:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dD-wn-5rx">
+                                <rect key="frame" x="239" y="384" width="123" height="20"/>
+                                <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.25882352939999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rHz-Xa-Fxa" firstAttribute="top" secondItem="O0K-jU-MUt" secondAttribute="bottom" id="1kq-Qo-j9i"/>
+                            <constraint firstItem="2dD-wn-5rx" firstAttribute="top" secondItem="rHz-Xa-Fxa" secondAttribute="bottom" constant="10" id="3mc-o4-5uV"/>
+                            <constraint firstItem="SAS-Ho-ApM" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="4aM-vb-j5z"/>
+                            <constraint firstItem="tw4-jM-U8s" firstAttribute="top" secondItem="Pjw-35-oP3" secondAttribute="bottom" constant="30" id="4hT-yt-gF4"/>
+                            <constraint firstItem="Ipb-IO-Wxj" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="6Sb-n5-Ug8"/>
+                            <constraint firstItem="71M-Kc-uaJ" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="6r8-pH-J9e"/>
+                            <constraint firstItem="rHz-Xa-Fxa" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="9ZC-Pe-QNl"/>
+                            <constraint firstItem="YdO-fQ-2QW" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="AQm-dF-2ct"/>
+                            <constraint firstItem="B8D-Me-ay8" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="BIC-p3-e37"/>
+                            <constraint firstItem="Ipb-IO-Wxj" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="DLb-0o-NZY"/>
+                            <constraint firstItem="bkW-E8-47L" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="K7x-8I-Vcf"/>
+                            <constraint firstItem="l9J-sl-dbW" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="KaR-aO-B1j"/>
+                            <constraint firstItem="O0K-jU-MUt" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="KyK-Vi-5j1"/>
+                            <constraint firstItem="tw4-jM-U8s" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="Ly1-P9-Uze"/>
+                            <constraint firstItem="O0K-jU-MUt" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="OwG-d9-dzo"/>
+                            <constraint firstItem="PdY-ff-Z5R" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="Qdc-Ic-QAG"/>
+                            <constraint firstItem="rHz-Xa-Fxa" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="Rgx-tW-cTT"/>
+                            <constraint firstItem="pd5-13-mOl" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="TPD-GZ-5H0"/>
+                            <constraint firstItem="pd5-13-mOl" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="UAt-BR-YeJ"/>
+                            <constraint firstItem="71M-Kc-uaJ" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="VeX-UP-xvF"/>
+                            <constraint firstItem="l9J-sl-dbW" firstAttribute="top" secondItem="71M-Kc-uaJ" secondAttribute="bottom" id="XLS-tL-fJ6"/>
+                            <constraint firstItem="M7N-9o-1fs" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="ZQK-LV-grf"/>
+                            <constraint firstItem="PdY-ff-Z5R" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="Zb7-om-Z40"/>
+                            <constraint firstItem="Ipb-IO-Wxj" firstAttribute="top" secondItem="YdO-fQ-2QW" secondAttribute="bottom" constant="20" id="aBS-pF-5e4"/>
+                            <constraint firstItem="SAS-Ho-ApM" firstAttribute="top" secondItem="bkW-E8-47L" secondAttribute="bottom" id="goD-l6-hIh"/>
+                            <constraint firstItem="PdY-ff-Z5R" firstAttribute="top" secondItem="l9J-sl-dbW" secondAttribute="bottom" constant="10" id="ioY-CN-2KY"/>
+                            <constraint firstItem="YdO-fQ-2QW" firstAttribute="top" secondItem="2dD-wn-5rx" secondAttribute="bottom" id="mai-Dc-K56"/>
+                            <constraint firstItem="M7N-9o-1fs" firstAttribute="top" secondItem="B8D-Me-ay8" secondAttribute="bottom" constant="10" id="nAu-xn-JTk"/>
+                            <constraint firstItem="M7N-9o-1fs" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="nCd-f6-XnN"/>
+                            <constraint firstItem="bkW-E8-47L" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="nRk-VX-4Vs"/>
+                            <constraint firstItem="O0K-jU-MUt" firstAttribute="top" secondItem="SAS-Ho-ApM" secondAttribute="bottom" constant="10" id="o0p-mA-IaH"/>
+                            <constraint firstItem="B8D-Me-ay8" firstAttribute="top" secondItem="PdY-ff-Z5R" secondAttribute="bottom" id="pJJ-LJ-TVv"/>
+                            <constraint firstItem="bkW-E8-47L" firstAttribute="top" secondItem="pd5-13-mOl" secondAttribute="bottom" constant="10" id="qOr-zz-nZi"/>
+                            <constraint firstItem="B8D-Me-ay8" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="r7A-5n-gfw"/>
+                            <constraint firstItem="71M-Kc-uaJ" firstAttribute="top" secondItem="tw4-jM-U8s" secondAttribute="bottom" constant="20" id="sQG-ZD-Tzu"/>
+                            <constraint firstItem="pd5-13-mOl" firstAttribute="top" secondItem="M7N-9o-1fs" secondAttribute="bottom" id="t12-y4-VHz"/>
+                            <constraint firstItem="2dD-wn-5rx" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="u6T-Mb-Oju"/>
+                            <constraint firstItem="YdO-fQ-2QW" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="wFE-8i-PGN"/>
+                            <constraint firstItem="SAS-Ho-ApM" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="wJk-hi-pu8"/>
+                            <constraint firstItem="2dD-wn-5rx" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="wMa-hy-sjE"/>
+                            <constraint firstItem="l9J-sl-dbW" firstAttribute="centerX" secondItem="bcY-t4-tMS" secondAttribute="centerX" id="xei-Xl-hjO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Secure API Access" id="xh6-Rw-R6H">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="M7C-kG-4Lw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6mI-8X-UHD">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="15"/>
+                                <state key="normal" title="&lt; Demos"/>
+                                <connections>
+                                    <action selector="backToMain:" destination="nWk-Ll-zuL" eventType="primaryActionTriggered" id="E7y-Xw-U8x"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="accessTokenLabel" destination="SAS-Ho-ApM" id="3NF-3g-rBw"/>
+                        <outlet property="locationLabel" destination="rHz-Xa-Fxa" id="he8-9M-TxW"/>
+                        <outlet property="progressIndicator" destination="tw4-jM-U8s" id="a6p-pS-htk"/>
+                        <outlet property="secureMessageLabel" destination="YdO-fQ-2QW" id="t8c-w2-Qu9"/>
+                        <outlet property="urlLabel" destination="B8D-Me-ay8" id="5CM-Dx-n70"/>
+                        <outlet property="userLabel" destination="l9J-sl-dbW" id="Jss-Kb-7wx"/>
+                        <outlet property="uuidLabel" destination="pd5-13-mOl" id="Ads-v3-Z40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dB7-0q-rcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="-5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="refresh" width="128" height="128"/>
+    </resources>
+</document>

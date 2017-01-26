@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CA Sans-Bold.ttf">
+            <string>CASans-Bold</string>
+        </mutableArray>
+        <mutableArray key="CA Sans-Regular.ttf">
+            <string>CASans</string>
+            <string>CASans</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="GroupTableCell" id="vX9-Bt-DN0" customClass="GroupTableCell" customModule="CA_Presales_Pro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="80" preservesSuperviewLayoutMargins="YES" tableViewCell="vX9-Bt-DN0" id="Gxn-t0-MRD">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groups" translatesAutoresizingMaskIntoConstraints="NO" id="m8O-rp-epu">
+                        <rect key="frame" x="28" y="14" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="8wP-Oi-Hyx"/>
+                            <constraint firstAttribute="height" constant="32" id="gqv-lz-nKB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-U8-XM7">
+                        <rect key="frame" x="80" y="23" width="48" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="s7Q-iB-UST"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="16"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="s7Q-iB-UST"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user.name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWq-Rr-2ka">
+                        <rect key="frame" x="128" y="23" width="64" height="32"/>
+                        <fontDescription key="fontDescription" name="CASans" family="CA Sans" pointSize="16"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proceedArrow" translatesAutoresizingMaskIntoConstraints="NO" id="dbJ-se-1IA">
+                        <rect key="frame" x="282" y="20" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="H0Q-nX-q7m"/>
+                            <constraint firstAttribute="width" constant="20" id="W63-nv-ssw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Of Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-TH-OYs">
+                        <rect key="frame" x="80" y="4" width="130" height="36"/>
+                        <fontDescription key="fontDescription" name="CASans-Bold" family="CA Sans" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DLU-TH-OYs" firstAttribute="leading" secondItem="m8O-rp-epu" secondAttribute="trailing" constant="20" id="6NN-7i-e8l"/>
+                    <constraint firstItem="dbJ-se-1IA" firstAttribute="leading" secondItem="DLU-TH-OYs" secondAttribute="trailing" constant="72" id="9JZ-aA-uhV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dbJ-se-1IA" secondAttribute="trailing" constant="10" id="9lz-6L-BWs"/>
+                    <constraint firstItem="m8O-rp-epu" firstAttribute="centerY" secondItem="Gxn-t0-MRD" secondAttribute="centerY" id="CdD-R7-6Gn"/>
+                    <constraint firstItem="v5w-U8-XM7" firstAttribute="baseline" secondItem="tWq-Rr-2ka" secondAttribute="baseline" id="Eu7-Cs-Odd"/>
+                    <constraint firstItem="DLU-TH-OYs" firstAttribute="leading" secondItem="v5w-U8-XM7" secondAttribute="leading" id="IPt-ib-nHH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v5w-U8-XM7" secondAttribute="bottom" constant="5" id="KOY-ws-o2G"/>
+                    <constraint firstItem="tWq-Rr-2ka" firstAttribute="leading" secondItem="v5w-U8-XM7" secondAttribute="trailing" id="X42-bg-yAU"/>
+                    <constraint firstItem="v5w-U8-XM7" firstAttribute="top" secondItem="DLU-TH-OYs" secondAttribute="bottom" constant="2" id="aeF-Bf-EG0"/>
+                    <constraint firstItem="m8O-rp-epu" firstAttribute="top" secondItem="Gxn-t0-MRD" secondAttribute="topMargin" constant="5" id="dcm-vb-FWF"/>
+                    <constraint firstItem="dbJ-se-1IA" firstAttribute="centerY" secondItem="Gxn-t0-MRD" secondAttribute="centerY" id="eXv-75-9nf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="DLU-TH-OYs" secondAttribute="bottom" constant="10" id="lxa-bG-Y5h"/>
+                    <constraint firstItem="DLU-TH-OYs" firstAttribute="top" secondItem="Gxn-t0-MRD" secondAttribute="topMargin" constant="-6" id="mu8-oh-fBq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v5w-U8-XM7" secondAttribute="bottom" constant="-5" id="neR-db-WwP"/>
+                    <constraint firstItem="m8O-rp-epu" firstAttribute="leading" secondItem="Gxn-t0-MRD" secondAttribute="leadingMargin" constant="20" id="pSM-Q9-XO7"/>
+                    <constraint firstItem="v5w-U8-XM7" firstAttribute="top" secondItem="Gxn-t0-MRD" secondAttribute="topMargin" constant="13" id="uou-8i-5bZ"/>
+                    <constraint firstItem="v5w-U8-XM7" firstAttribute="firstBaseline" secondItem="tWq-Rr-2ka" secondAttribute="firstBaseline" id="vXc-DG-ojr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="v5w-U8-XM7" secondAttribute="bottom" constant="6" id="z6m-6k-7An"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="dcm-vb-FWF"/>
+                        <exclude reference="KOY-ws-o2G"/>
+                        <exclude reference="aeF-Bf-EG0"/>
+                        <exclude reference="z6m-6k-7An"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.12549019610000001" green="0.25882352939999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="groupNameLabel" destination="DLU-TH-OYs" id="yaW-iX-yLl"/>
+                <outlet property="ownerLabel" destination="tWq-Rr-2ka" id="o9u-Bc-CC5"/>
+            </connections>
+            <point key="canvasLocation" x="643" y="300"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="groups" width="128" height="128"/>
+        <image name="proceedArrow" width="256" height="256"/>
+    </resources>
+</document>
