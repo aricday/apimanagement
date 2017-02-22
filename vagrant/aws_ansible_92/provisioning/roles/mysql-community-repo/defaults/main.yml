@@ -1,0 +1,3 @@
+---
+mysql_repo_url: "http://repo.mysql.com/mysql57-community-release-{% if ansible_distribution == 'Fedora' %}fc{% else %}el{% endif %}{% if ansible_distribution_major_version == 'NA' %}6{% else %}{{ ansible_distribution_major_version }}{% endif %}.rpm"
+mysql_repo_gpg_key_url: "/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql"

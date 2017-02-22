@@ -1,0 +1,38 @@
+---
+## jdbc_connection.yml
+- set_fact:
+    msso_config_service_command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ msso_config_service.ssl_port }}{{ msso_config_service.api_url }}?name={{ msso_config_service.name }} | grep '{{ msso_config_service.id_xml_tag }}' | sed -e '{{ msso_config_service.id_regex }}'"
+
+- name: Check if the "{{ msso_config_service.name }}" exists
+  shell: "{{ msso_config_service_command }}"
+  register: msso_config_service_cmd
+
+- set_fact: msso_config_service_id="{{ msso_config_service_cmd.stdout }}"
+  when: msso_config_service_cmd.changed
+- debug: msg="{{ msso_config_service_id }}"
+
+- name: copy the {{ msso_config_service.file.src }} to the appropriate destination
+  template: src={{ msso_config_service.file.src }} dest={{ msso_config_service.file.dest }} mode=644
+  when: msso_config_service_id == ""
+
+- name: create the "{{ msso_config_service.name }}" service
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ msso_config_service.file.dest }} -s -D - https://localhost:{{ msso_config_service.ssl_port }}{{ msso_config_service.api_url }} -o {{ msso_config_service.curl_log }}"
+  when: msso_config_service_id == ""
+
+- name: Capture the "{{ msso_config_service.name }}" service
+  shell: "{{ msso_config_service_command }}"
+  register: msso_config_service_cmd
+  when: msso_config_service_id == ""
+
+- set_fact: msso_config_service_id="{{ msso_config_service_cmd.stdout }}"
+  when: msso_config_service_cmd.changed
+- debug: msg="{{ msso_config_service_id }}"
+
+- name: get the msso_config.json from "{{ msso_config_service.name }}" service
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/json' -s https://localhost:{{ msso_config_service.ssl_port }}{{ msso_config_service.url }}?{{ msso_config_service.args }}"
+  register:  msso_config_json_output
+  when: msso_config_service_id != ""
+
+- set_fact:
+    msso_config_json: "{{ msso_config_json_output.stdout|from_json }}"
+- debug: msg="{{ msso_config_json }}"

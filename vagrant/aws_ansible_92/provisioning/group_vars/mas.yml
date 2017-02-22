@@ -1,0 +1,10 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+mas_license:
+  owner: "layer7"
+  group: "root"
+  file:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/SSG_MAS_9.xml"
+    dest: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/SSG_MAS_9.xml"
+

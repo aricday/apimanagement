@@ -1,0 +1,4 @@
+---
+dependencies:
+  - { role: cassandra-datastax-repo }
+  - { role: java_jre }

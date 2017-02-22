@@ -1,0 +1,31 @@
+---
+## database.yml
+- name: create the Portal database - This is custom install and not fully supported by CA yet...
+  mysql_db: name={{ database.portal.schema }}
+          state=present
+          login_host={{ database.host }}
+          login_port={{ database.port }}
+          login_user={{ database.admin.user }}
+          login_password={{ database.admin.pass }}
+
+- name: create the Portal data database - This is custom install and not fully supported by CA yet...
+  mysql_db: name={{ database.portal.data_schema }}
+          state=present
+          login_host={{ database.host }}
+          login_port={{ database.port }}
+          login_user={{ database.admin.user }}
+          login_password={{ database.admin.pass }}
+
+- name: create the Portal and portal data user - This is custom install and not fully supported by CA yet...
+  mysql_user: name={{ database.portal.user }}
+            host={{ item }}
+            priv={{ database.portal.schema }}.*:ALL/{{ database.portal.data_schema }}.*:ALL
+            password={{ database.portal.pass }}
+            login_host={{ database.host }}
+            login_port={{ database.port }}
+            login_user={{ database.admin.user }}
+            login_password={{ database.admin.pass }}
+  with_items:
+    - "%"
+    - 127.0.0.1
+    - ::1

@@ -1,0 +1,6 @@
+---
+- hosts: cassandra_databases
+  vars_files:
+    - group_vars/cassandra.yml
+  roles:
+    - cassandra

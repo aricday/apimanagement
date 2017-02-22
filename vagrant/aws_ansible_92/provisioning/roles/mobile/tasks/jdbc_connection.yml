@@ -1,0 +1,37 @@
+---
+## jdbc_connection.yml
+- name:
+  set_fact:
+    jdbc_connection_command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ jdbc_connection.ssl_port }}{{ jdbc_connection.api_url }}?name={{ jdbc_connection.name }} | grep '{{ jdbc_connection.id_xml_tag }}' | sed -e '{{ jdbc_connection.id_regex }}'"
+
+- name: Check if the MAG JDBC Connection exists
+  shell: "{{jdbc_connection_command}}"
+  register: jdbc_connection_id
+- debug: msg="{{jdbc_connection_id.stdout}}"
+
+- name: copy the {{ jdbc_connection.file.src }} to the appropriate destination
+  template: src={{ jdbc_connection.file.src }} dest={{ jdbc_connection.file.dest }} mode=644
+  when: jdbc_connection_id != ""
+
+- name: create the MAG JDBC connection
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ jdbc_connection.file.dest }} -s -D - https://localhost:{{ jdbc_connection.ssl_port }}{{ jdbc_connection.api_url }} -o {{ jdbc_connection.curl_log }}"
+  when: jdbc_connection_id != ""
+
+- name: capture the MAG JDBC connection ID
+  shell: "{{jdbc_connection_command}}"
+  register: jdbc_connection_id
+  when: jdbc_connection_id != ""
+
+- debug: msg="{{jdbc_connection_id.stdout}}"
+
+  #uri:
+    #url: https://{{ cluster.host }}:8443/restman/1.0/jdbcConnections
+    #method: POST
+    ##user: "{{ admin.user }}"
+    ##password: "{{ admin.pass }}"
+    #HEADER_Content-Type: "application/xml"
+    #HEADER_Authorization: "Basic YWRtaW46Q0FkZW1vMTIz"
+    ##body: "roles/mag/files/mag_jdbc_connection.j2"
+    ##body: "roles/mag/files/mag_jdbc_connection.xml"
+    ##force_basic_auth: yes
+    ##return_content: yes

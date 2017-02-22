@@ -1,0 +1,16 @@
+---
+## packages.yml
+- name: unzip the {{ mag_sk.file.src }} for MAG solution kit RESTman installation
+  unarchive: src={{ mag_sk.file.src }} dest={{ mag_sk.file.dest }} mode=644
+  environment:
+    LANG: C
+    LC_ALL: C
+    LC_MESSAGES: C
+
+- name: Replace the "<?YOUR_SSG>?" regex with the "https://{{ cluster.host }}:{{ cluster.ssl_port }}"
+  replace: 'dest={{ item.dest }} regexp="<?YOUR_SSG>?" replace="https://{{ cluster.host }}:{{ cluster.ssl_port }}" backup=yes'
+  with_items:
+    - "{{ mag_database_files.sql.mag_otk_db_data }}"
+    - "{{ mag_database_files.sql.mag_otk_db_testdata }}"
+    - "{{ mag_database_files.cql.mag_otk_db_data }}"
+    - "{{ mag_database_files.cql.mag_otk_db_testdata }}"

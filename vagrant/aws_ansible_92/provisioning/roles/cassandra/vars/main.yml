@@ -1,0 +1,8 @@
+---
+cassandra_version: "2.1.7"
+cassandra_service:
+  log_file_regex: "Starting listening for CQL clients on"
+  log_file: "/var/log/cassandra/system.log"
+cassandra_resources:
+  MAX_HEAP_SIZE: "512M"
+  HEAP_NEWSIZE: "128M"

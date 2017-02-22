@@ -1,0 +1,20 @@
+---
+## ca_msso_private_key
+- set_fact:
+    ca_msso_private_key_command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ ca_msso_private_key.ssl_port }}{{ ca_msso_private_key.api_url }}?alias={{ ca_msso_private_key.name }} | grep '{{ ca_msso_private_key.id_xml_tag }}' | sed -e '{{ ca_msso_private_key.id_regex }}'"
+
+- name: Check if the "{{ ca_msso_private_key.name }}" exists
+  shell: "{{ ca_msso_private_key_command }}"
+  register: ca_msso_private_key_cmd
+
+- set_fact: ca_msso_private_key_id="{{ ca_msso_private_key_cmd.stdout }}"
+  when: ca_msso_private_key_cmd.changed
+- debug: msg="{{ ca_msso_private_key_id }}"
+
+- name: copy the {{ ca_msso_private_key.file.src }} to the appropriate destination
+  template: src={{ ca_msso_private_key.file.src }} dest={{ ca_msso_private_key.file.dest }} mode=644
+  when: ca_msso_private_key_id == ""
+
+- name: create the "{{ ca_msso_private_key.name }}" ca_msso_private_key
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ ca_msso_private_key.file.dest }} -s -D - https://localhost:{{ ca_msso_private_key.ssl_port }}{{ ca_msso_private_key.api_url }}/00000000000000000000000000000002:{{ ca_msso_private_key.name }} -o {{ ca_msso_private_key.curl_log }}"
+  when: ca_msso_private_key_id == ""

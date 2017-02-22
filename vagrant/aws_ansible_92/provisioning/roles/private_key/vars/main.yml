@@ -1,0 +1,19 @@
+---
+ca_msso_private_key:
+  name: "ca_msso"
+  dn: "CN=ca_msso"
+  signatureHashAlgorithm: "SHA384"
+  rsaKeySize: 2048
+  ecName: "secp521r1"
+  daysUntilExpiry: 365
+  caCapable: "true"
+  owner: "layer7"
+  group: "layer7"
+  ssl_port: 9443
+  file:
+    src: "roles/private_key/files/ca_msso_private_key.j2"
+    dest: '/var/tmp/ca_msso_private_key.xml'
+  api_url: '/restman/1.0/privateKeys'
+  id_xml_tag: 'l7:Id'
+  id_regex: 's,.*<l7:Id>\([^<]*\)</l7:Id>.*,\1,g'
+  curl_log: '/var/tmp/restman_private_keys.log'

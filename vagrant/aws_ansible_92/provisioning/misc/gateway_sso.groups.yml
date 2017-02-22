@@ -1,0 +1,15 @@
+---
+- hosts: mysql_databases
+  vars_files:
+    - group_vars/mysql.yml
+  roles:
+    - mysql
+- hosts: gateways
+  vars_files:
+    - group_vars/mysql.yml
+    - group_vars/gateway.yml
+    - group_vars/sso.yml
+  roles:
+    - common
+    - gateway
+    - sso

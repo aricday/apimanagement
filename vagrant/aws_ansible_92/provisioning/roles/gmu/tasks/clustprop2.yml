@@ -1,0 +1,25 @@
+---
+## set io.xmlPartMaxBytes cluster property
+- name:
+  set_fact:
+    cluster_property_command_2: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ cluster_property2.ssl_port }}{{ cluster_property2.api_url }}?name={{ cluster_property2.name2 }} | grep '{{ cluster_property2.id_xml_tag }}' | sed -e '{{ cluster_property2.id_regex }}'"
+
+- name: check if the restman cluster property exists
+  shell: "{{cluster_property_command_2}}"
+  register: cluster_property_id_2
+- debug: msg="{{cluster_property_id_2.stdout}}"
+
+- name: copy the {{ cluster_property2.file.src }} to the appropriate destination
+  template: src={{ cluster_property2.file.src }} dest={{ cluster_property2.file.dest }} mode=644
+  when: cluster_property_id_2 != ""
+
+- name: post a new property
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ cluster_property2.file.dest }} -s -D - https://localhost:{{ cluster_property2.ssl_port }}{{ cluster_property2.api_url }} -o {{ cluster_property2.curl_log }}"
+  when: cluster_property_id_2 != ""
+
+- name: capture the restman maxsize property ID
+  shell: "{{cluster_property_command_2}}"
+  register: cluster_property_id_2
+  when: cluster_property_id_2 != ""
+
+- debug: msg="{{cluster_property_id_2.stdout}}"

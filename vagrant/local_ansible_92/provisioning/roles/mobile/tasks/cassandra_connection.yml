@@ -1,0 +1,26 @@
+---
+## cassandra_connection.yml
+- name:
+  set_fact:
+    cassandra_connection_command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ cassandra_connection.ssl_port }}{{ cassandra_connection.api_url }}?name={{ cassandra_connection.name }} | grep '{{ cassandra_connection.id_xml_tag }}' | sed -e '{{ cassandra_connection.id_regex }}'"
+
+- name: Check if the MAG Cassandra Connection exists
+  shell: "{{cassandra_connection_command}}"
+  register: cassandra_connection_id
+- debug: msg="{{cassandra_connection_id.stdout}}"
+
+- name: copy the {{ cassandra_connection.file.src }} to the appropriate destination
+  template: src={{ cassandra_connection.file.src }} dest={{ cassandra_connection.file.dest }} mode=644
+  when: cassandra_connection_id != ""
+
+- name: create the MAG Cassandra connection
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ cassandra_connection.file.dest }} -s -D - https://localhost:{{ cassandra_connection.ssl_port }}{{ cassandra_connection.api_url }} -o {{ cassandra_connection.curl_log }}"
+  when: cassandra_connection_id != ""
+
+- name: Capture the MAG Cassandra connection ID
+  shell: "{{cassandra_connection_command}}"
+  register: cassandra_connection_id
+  when: cassandra_connection_id != ""
+
+- debug: msg="{{cassandra_connection_id.stdout}}"
+

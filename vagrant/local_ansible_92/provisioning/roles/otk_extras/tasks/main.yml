@@ -1,0 +1,4 @@
+---
+## the main.yml includes all the components for the role
+- include: otk_variable_configuration_policy.yml
+- include: otk_authorization_server_configuration_policy.yml

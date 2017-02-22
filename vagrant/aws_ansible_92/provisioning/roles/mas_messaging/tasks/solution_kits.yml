@@ -1,0 +1,16 @@
+---
+## solution_kits.yml
+## Install all of the MAS Messaging solution kits for now. We need an internal messaging provider, cassandra connection, and a jdbc connection
+## 3fdf42538190460396f3e703d31b22d9 - ID_PROVIDER_CONFIG - MAS Messaging IDP IIP
+## 7a3b078427ed19baaac98cf92fef120b - CASSANDRA_CONFIG - MAS Messaging IDP MAS
+## 3772b9a8f897e0a2e0b5bae228f70a6e - ID_PROVIDER_CONFIG - MAS Messaging IDP MSAD
+## a6adb5912420041ef353d70fd39cdab0 - JDBC_CONNECTION - MAS Messaging IDP IIP (not sure why JDBC connection is required here)
+## MasConfigurationBrokerHost - not documented MQTT broker hostname
+## MasConfigurationBrokerPort - not documented MQTT broker port
+## MasMessagingSecuritySelection - not documented Security Secection: TCPNoAuth', 'TLSNoAuth', 'TLSOAuthToken', 'TLSOTKFIP'
+
+## 0000000000000000fffffffffffffffe (default internal idp)
+- name: Install the MAS Messaging Solution Kit
+  #command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=3fdf42538190460396f3e703d31b22d9::0000000000000000fffffffffffffffe --form entityIdReplace=7a3b078427ed19baaac98cf92fef120b::{{ cassandra_connection_id.stdout }} --form entityIdReplace=3772b9a8f897e0a2e0b5bae228f70a6e::0000000000000000fffffffffffffffe --form entityIdReplace=a6adb5912420041ef353d70fd39cdab0::{{ jdbc_connection_id.stdout }} --form MasConfigurationBrokerHost={{ mas_messaging_broker.host }} --form MasConfigurationBrokerPort={{ mas_messaging_broker.port }} --form 'file=@{{ mas_messaging_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_messaging_sk.ssl_port }}{{ mas_messaging_sk.api_url }}"
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=a6adb5912420041ef353d70fd39cdab0::{{ jdbc_connection_id.stdout }} --form MasConfigurationBrokerHost={{ mas_messaging_broker.host }} --form MasConfigurationBrokerPort={{ mas_messaging_broker.port }} --form MasMessagingSecuritySelection={{ mas_messaging_broker.security }} --form 'file=@{{ mas_messaging_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_messaging_sk.ssl_port }}{{ mas_messaging_sk.api_url }}"
+- debug: msg="Restart is required for SK installations"

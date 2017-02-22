@@ -1,0 +1,13 @@
+---
+## sdk.yml
+- name: unzip the {{ sso_sdk.src }} for SSO SDK
+  unarchive: src={{ sso_sdk.src }} dest={{ sso_sdk.dest }} owner={{ sso_sdk.owner }} group={{ sso_sdk.group }}
+
+- name: unzip the {{ sso_sdk_library.src }} for SSO SDK library
+  unarchive: src={{ sso_sdk_library.src }} dest={{ sso_sdk_library.dest }} owner={{ sso_sdk_library.owner }} group={{ sso_sdk_library.group }}
+
+- name: Execute the SSO SDK library install script
+  shell: "/bin/sh {{ sso_sdk_library.dest }}sm_sdk_install.sh >> /var/tmp/sm_sdk_install.log 2>&1"
+  args:
+    chdir: "{{ sso_sdk_library.dest }}"
+- debug: msg="Restart is required for custom assertion installations"

@@ -1,0 +1,9 @@
+---
+## solution_kits.yml
+## Install all of the MAG solution kits for now. We need an JDBC connection for both MySQL and Cassandra
+## https://docops.ca.com/ca-mobile-api-gateway/3-1/installation-and-upgrade-workflow/install-mag-solution-kit/manage-data-sources
+## cbeedf1e2650e80f4d660a7fdb8fea13 - JDBC_CONNECTION - MAG
+## 020d2de3d0ee651635de40e179c9e838 - JDBC_CONNECTION - AUTH OTP
+- name: Install the MAG Solution Kit
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=cbeedf1e2650e80f4d660a7fdb8fea13::{{ jdbc_connection_id.stdout }} --form entityIdReplace=020d2de3d0ee651635de40e179c9e838::{{ jdbc_connection_id.stdout }} --form 'file=@{{ mag_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mag_sk.ssl_port }}{{ mag_sk.api_url }}"
+- debug: msg="Restart is required for SK installations"

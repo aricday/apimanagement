@@ -1,0 +1,6 @@
+---
+- hosts: openldap_servers
+  vars_files:
+    - group_vars/openldap.yml
+  roles:
+    - openldap

@@ -1,0 +1,30 @@
+---
+## packages.yml
+- name: install the Cassandra, Cassandra-tools, Datastax packages
+  yum: name={{item}} state=installed
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "cassandra21-{{ cassandra_version }}*.noarch"
+  - "cassandra21-tools-{{ cassandra_version }}*.noarch"
+  - "dsc21-{{ cassandra_version }}*.noarch"
+
+#cassandra_resources:
+  #MAX_HEAP_SIZE: "256M"
+  #HEAP_NEWSIZE: "64M"
+- name: Set the MAX_HEAP_SIZE to "{{ cassandra_resources.MAX_HEAP_SIZE }}" in '/etc/cassandra/conf/cassandra-env.sh'
+  replace: 'dest=/etc/cassandra/conf/cassandra-env.sh regexp="#MAX_HEAP_SIZE=.*" replace="MAX_HEAP_SIZE={{ cassandra_resources.MAX_HEAP_SIZE }}" backup=yes'
+
+- name: Set the HEAP_NEWSIZE to "{{ cassandra_resources.HEAP_NEWSIZE }}" in '/etc/cassandra/conf/cassandra-env.sh'
+  replace: 'dest=/etc/cassandra/conf/cassandra-env.sh regexp="#HEAP_NEWSIZE=.*" replace="HEAP_NEWSIZE={{ cassandra_resources.HEAP_NEWSIZE }}" backup=yes'
+
+- name: Replace the rpc_address to "0.0.0.0"
+  replace: 'dest=/etc/cassandra/conf/cassandra.yaml regexp="rpc_address: localhost" replace="rpc_address: 0.0.0.0" backup=yes'
+
+- name: Uncomment the broadcast_rpc_address
+  replace: 'dest=/etc/cassandra/conf/cassandra.yaml regexp="#\s+broadcast_rpc_address:" replace="broadcast_rpc_address:" backup=yes'
+
+- name: ensure cassandra is running and starts on boot
+  service: name=cassandra state=started enabled=true
+
+- name: Verify Cassandra starts by waiting for "{{ cassandra_service.log_file_regex }}" to appear in "{{ cassandra_service.log_file }}"
+  wait_for: path={{ cassandra_service.log_file }} search_regex="{{ cassandra_service.log_file_regex }}"

@@ -1,0 +1,18 @@
+---
+## database.yml
+- name: set the fact
+  set_fact:
+    create_statement: "CREATE KEYSPACE IF NOT EXISTS {{ mag_database.schema }} WITH replication = {'class' : 'SimpleStrategy', 'replication_factor' : 1};"
+
+- name: create the MAG Cassandra database and seed test data
+  command: "/usr/bin/cqlsh -u {{ mag_database.admin.user }} -p {{ mag_database.admin.pass }} --cqlversion='3.2.1' {{ mag_database.host }} {{ mag_database.port }} -e \"{{ create_statement }}\" >> /var/tmp/install_mag_mag_database.sql.log 2>&1"
+  when: mag_database.technology is defined and mag_database.technology == "cassandra"
+
+- name: create the MAG Cassandra database and seed test data
+  command: "/usr/bin/cqlsh -u {{ mag_database.admin.user }} -p {{ mag_database.admin.pass }} --cqlversion='3.2.1' {{ mag_database.host }} {{ mag_database.port }} -k {{ mag_database.schema }} -f {{ item.dest }} >> /var/tmp/install_mag_mag_database.sql.log 2>&1"
+  with_items:
+    - "{{ mag_database_files.cql.mag_db_schema }}"
+    - "{{ mag_database_files.cql.mag_db_testdata }}"
+    - "{{ mag_database_files.cql.mag_otk_db_data }}"
+    - "{{ mag_database_files.cql.mag_otk_db_testdata }}"
+  when: mag_database.technology is defined and mag_database.technology == "cassandra"

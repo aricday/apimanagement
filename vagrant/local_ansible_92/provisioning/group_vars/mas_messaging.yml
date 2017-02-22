@@ -1,0 +1,17 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+mas_messaging_sk:
+  owner: "layer7"
+  group: "root"
+  ssl_port: 9443
+  sskar_file:
+    src: "/Users/pagch04/API/apim_vagrant_ansible_files/MAS-Messaging-1.2.00-b311.sskar"
+    dir: "/var/tmp"
+    dest: "/var/tmp/MAS-Messaging-1.2.00-b311.sskar"
+  api_url: '/restman/1.0/solutionKitManagers'
+mas_messaging_broker:
+  host: "mqtt.vagrant.local"
+  port: 1883
+  # 'TCPNoAuth', 'TLSNoAuth', 'TLSOAuthToken', 'TLSOTKFIP'
+  security: "TCPNoAuth"

@@ -1,0 +1,11 @@
+---
+- hosts: all
+  roles:
+    - common
+    - mysql
+    - gateway
+    - otk
+    - otk_schema_data
+    - mobile
+    - mobile_schema_data
+    - portal

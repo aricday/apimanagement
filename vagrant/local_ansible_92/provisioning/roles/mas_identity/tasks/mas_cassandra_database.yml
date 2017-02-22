@@ -1,0 +1,9 @@
+---
+## database.yml
+- name: set the fact
+  set_fact:
+    create_statement: "CREATE KEYSPACE IF NOT EXISTS {{ mas_identity_mas_database.schema }} WITH replication = {'class' : 'SimpleStrategy', 'replication_factor' : 1};"
+
+- name: create the MAS User and Group Management database schema
+  command: "/usr/bin/cqlsh -u {{ mas_identity_mas_database.admin.user }} -p {{ mas_identity_mas_database.admin.pass }} {{ mas_identity_mas_database.host }} {{ mas_identity_mas_database.port }} -e \"{{ create_statement }}\" >> /var/tmp/install_mas_identity_mas_database.sql.log 2>&1"
+  when: mas_identity_mas_database.technology == "cassandra"

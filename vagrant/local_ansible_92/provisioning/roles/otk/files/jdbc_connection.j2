@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <l7:JDBCConnection xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+        <l7:Name>{{ jdbc_connection.name }}</l7:Name>
+        <l7:Enabled>true</l7:Enabled>
+        <l7:Properties>
+            <l7:Property key="maximumPoolSize">
+                <l7:IntegerValue>15</l7:IntegerValue>
+            </l7:Property>
+            <l7:Property key="minimumPoolSize">
+                <l7:IntegerValue>3</l7:IntegerValue>
+            </l7:Property>
+        </l7:Properties>
+        <l7:Extension>
+            <l7:DriverClass>com.mysql.jdbc.Driver</l7:DriverClass>
+            <l7:JdbcUrl>jdbc:mysql://{{ login_host }}:{{ otk_database.port }}/{{ otk_database.schema }}</l7:JdbcUrl>
+            <l7:ConnectionProperties>
+                <l7:Property key="EnableCancelTimeout">
+                    <l7:StringValue>true</l7:StringValue>
+                </l7:Property>
+                <l7:Property key="user">
+                    <l7:StringValue>{{ otk_database.user }}</l7:StringValue>
+                </l7:Property>
+                <l7:Property key="password">
+                    <l7:StringValue>{{ otk_database.pass }}</l7:StringValue>
+                </l7:Property>
+            </l7:ConnectionProperties>
+        </l7:Extension>
+    </l7:JDBCConnection>

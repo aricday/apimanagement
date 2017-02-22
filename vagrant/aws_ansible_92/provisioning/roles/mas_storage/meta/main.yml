@@ -1,0 +1,4 @@
+---
+dependencies:
+  #- { role: cassandra_client, when: mas_storage_database.technology is defined and mas_storage_database.technology == "cassandra" }
+  - { role: cassandra_client }

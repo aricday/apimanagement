@@ -1,0 +1,7 @@
+---
+## packages.yml
+- name: install the Cassandra client package
+  yum: name={{ item }} state=installed
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "cassandra21-{{ cassandra_version }}*.noarch"

@@ -1,0 +1,2 @@
+---
+- include: ca_msso_private_key.yml

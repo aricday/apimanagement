@@ -1,0 +1,22 @@
+---
+- hosts: all
+  vars_files:
+    - group_vars/mysql.yml
+    - group_vars/gateway.yml
+    - group_vars/sso.yml
+    - group_vars/cassandra.yml
+    - group_vars/otk.yml
+    - group_vars/mobile.yml
+  roles:
+    - common
+    - mysql
+    - gateway
+    - sso
+    - cassandra
+    - otk
+    - otk_schema_data
+    - mobile
+    - mobile_schema_data
+    - otk_extras
+    - private_key
+    - restart_services

@@ -1,0 +1,34 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+mas_identity_sk:
+  owner: "layer7"
+  group: "root"
+  ssl_port: 9443
+  sskar_file:
+    src: "/Users/pagch04/API/apim_vagrant_ansible_files/MAS-Identity-1.2.00-b311.sskar"
+    dest: "/var/tmp/MAS-Identity-1.2.00-b311.sskar"
+  api_url: '/restman/1.0/solutionKitManagers'
+mas_identity_iip_database:
+  technology: "mysql"
+  schema: "ssg"
+  user: "mas_identity_user"
+  pass: "7layer"
+  host: "localhost"
+  port: 3306
+  admin:
+    user: "root"
+    pass: "7layer"
+mas_identity_mas_database:
+  technology: "cassandra"
+  schema: "mas_identities"
+  user: "mas_identity_user"
+  pass: "7layer"
+  host: "localhost"
+  port: 9042
+  admin:
+    user: "root"
+    pass: "7layer"
+mas_identity_scim:
+  #  'TLSOAuthToken', 'TLSOTKFIP
+  security: "TLSOAuthToken"

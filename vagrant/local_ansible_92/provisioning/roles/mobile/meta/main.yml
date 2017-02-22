@@ -1,0 +1,8 @@
+---
+dependencies:
+  #- { role: mysql_python, when: otk_database.technology is defined and otk_database.technology == "mysql" }
+  #- { role: mysql_client, when: otk_database.technology is defined and otk_database.technology == "mysql" }
+  #- { role: cassandra_client, when: mag_database.technology is defined and mag_database.technology == "cassandra" }
+  - { role: mysql_python }
+  - { role: mysql_client }
+  - { role: cassandra_client }

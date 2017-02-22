@@ -1,0 +1,12 @@
+---
+## packages.yml
+- name: install the Mosquitto lib, Mosquitto, Mosquitto-clients packages
+  yum: name={{ item }} state=installed
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "mosquitto-{{ mosquitto_version }}*.x86_64"
+  - "mosquitto-clients-{{ mosquitto_version }}*.x86_64"
+  - "libmosquitto1-{{ mosquitto_version }}*.x86_64"
+
+- name: ensure mosquitto is running and starts on boot
+  service: name=mosquitto state=started enabled=true

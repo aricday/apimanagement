@@ -1,0 +1,4 @@
+---
+## packages.yml
+- name: copy the solution kit {{ mas_messaging_sk.sskar_file.src}}
+  copy: src={{ mas_messaging_sk.sskar_file.src}} dest={{ mas_messaging_sk.sskar_file.dest }} mode=644

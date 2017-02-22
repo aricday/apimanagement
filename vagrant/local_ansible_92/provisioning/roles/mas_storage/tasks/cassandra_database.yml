@@ -1,0 +1,18 @@
+---
+## database.yml
+- name: set the fact
+  set_fact:
+    create_statement: "CREATE KEYSPACE IF NOT EXISTS {{ mas_storage_database.schema }} WITH replication = {'class' : 'SimpleStrategy', 'replication_factor' : 1};"
+
+- name: create the MAS Storage database keyspace
+  command: "/usr/bin/cqlsh -u {{ mas_storage_database.admin.user }} -p {{ mas_storage_database.admin.pass }} {{ mas_storage_database.host }} {{ mas_storage_database.port }} -e \"{{ create_statement }}\" >> /var/tmp/install_mas_storage_mas_storage_database.sql.log 2>&1"
+  when: mas_storage_database.technology == "cassandra"
+
+- name: copy the {{ mas_storage_database_files.cql.db_schema.src }} to the appropriate destination
+  template: src={{ mas_storage_database_files.cql.db_schema.src }} dest={{ mas_storage_database_files.cql.db_schema.dest }} mode=644
+
+- name: create the MAS Storage database schema
+  command: "/usr/bin/cqlsh -u {{ mas_storage_database.admin.user }} -p {{ mas_storage_database.admin.pass }} {{ mas_storage_database.host }} {{ mas_storage_database.port }} -k {{ mas_storage_database.schema }} -f {{ item.dest }} >> /var/tmp/install_otk_mas_storage_database.sql.log 2>&1"
+  with_items:
+    - "{{ mas_storage_database_files.cql.db_schema }}"
+  when: mas_storage_database.technology is defined and mas_storage_database.technology == "cassandra"

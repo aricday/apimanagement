@@ -1,0 +1,4 @@
+[datastax]
+baseurl = https://rpm.datastax.com/community
+gpgcheck = 0
+name = DataStax Repo for Apache Cassandra

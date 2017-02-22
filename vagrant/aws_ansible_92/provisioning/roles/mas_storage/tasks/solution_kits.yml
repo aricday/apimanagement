@@ -1,0 +1,11 @@
+---
+## solution_kits.yml
+## Install all of the MAS Storage solution kits for now. We need an internal storage provider, cassandra connection, and a jdbc connection
+## e88a0d725afda214e7a6d2d788bbc267 - CASSANDRA_CONFIG - MAS Storage -- does not work
+## selectedCassandraConnectionID
+## cloudStoreUrl - This is the full host URL and port of the internal gateway.
+## MasMessagingSecuritySelection - Configure the authentication options for MAS Storage.
+#TLSOAuthToken: Assert that the HTTP connection is made over SSL/TLS. This option will validate that the request contains a valid OAuth Bearer token. The token must have 'mas_storage' scope. TLSOTKFIP: Assert that the HTTP connection is made over SSL/TLS with a client certificate. Validate that the client certificate using the OTK Federated Identity Provider.
+- name: Install the MAS Storage Solution Kit
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form selectedCassandraConnectionID={{ cassandra_connection_id.stdout }} --form cloudStoreUrl={{ mas_storage_cloud.url }} --form MasMessagingSecuritySelection={{ mas_storage_cloud.security }} --form 'file=@{{ mas_storage_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_storage_sk.ssl_port }}{{ mas_storage_sk.api_url }}"
+- debug: msg="Restart is required for SK installations"

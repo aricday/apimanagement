@@ -1,0 +1,3 @@
+---
+## the main.yml includes all the components for the role
+- include: repo.yml

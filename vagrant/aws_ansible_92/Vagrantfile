@@ -1,0 +1,159 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require 'yaml'
+require 'json'
+
+current_dir = File.dirname(File.expand_path(__FILE__))
+
+## Set the default gateway_role
+gateway_role = 'gateway_otk_mobile'
+## Set the gateway_role if GATEWAY_ROLE is defined
+if not ENV['GATEWAY_ROLE'].nil?
+  gateway_role = ENV['GATEWAY_ROLE']
+end
+
+## Set the default vagrant config file
+vagrant_config = YAML.load_file("#{current_dir}/vagrant_configs/aws/#{gateway_role}.yaml")
+## Set the vagrant config file if VAGRANT_CONFIG_FILE is defined
+if not ENV['VAGRANT_CONFIG_FILE'].nil?
+  vagrant_config = YAML.load_file("#{current_dir}/#{ENV['VAGRANT_CONFIG_FILE']}")
+end
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  ## iterate over each host
+  vagrant_config['hosts'].each do |host|
+    config.vm.define host['fqdn'] do |role|
+      config.vm.box = "dummy"
+      config.vm.synced_folder ".", "/vagrant", disabled: true
+      ## run aws provider
+      role.vm.provider :aws do |aws, override|
+        ## AWS access credendials
+    	  aws.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    	  aws.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+    	  aws.keypair_name = ENV['AWS_PRIVATE_KEY_NAME']
+
+        ## AWS instance resources
+	      if host.has_key?("aws") and host["aws"].has_key?("ami")
+    	    aws.ami = host["aws"]["ami"]
+	      else
+    	    aws.ami = "ami-a4827dc9" # Amazon Linux AMI 2016.03.2 (HVM), SSD Volume Type
+        end
+        if host.has_key?("aws") and host["aws"].has_key?("instance_type")
+          aws.instance_type = host["aws"]["instance_type"]
+        else
+    	    aws.instance_type = "t2.micro" # 1vCPU, 1GB mem
+        end
+        if host.has_key?("aws") and host["aws"].has_key?("security_groups")
+    	    aws.security_groups = host["aws"]["security_groups"]
+        else
+    	    aws.security_groups = ["apim_gateway"]
+        end
+        if host.has_key?("override") and host["override"].has_key?("ssh") \
+          and host["override"]["ssh"].has_key?("username")
+          override.ssh.username = host["override"]["ssh"]["username"]
+        else
+          override.ssh.username = "ec2-user"
+        end
+        ## Doesn't work with destroy
+        #aws.elastic_ip = true
+
+        ## AWS instance extra metadata
+        aws.tags = { "Name" => "#{host["fqdn"]}" }
+        ## AWS local private key file
+        override.ssh.private_key_path = ENV['AWS_PRIVATE_KEY_FILE']
+
+        # ## AWS Route53 configuration
+        # if !ENV['AWS_HOSTED_ZONE_ID'].nil?
+        #   aws_hosted_zone_id = ENV['AWS_HOSTED_ZONE_ID']
+        # else
+        #   aws_hosted_zone_id = 'ZSSW6J8PYHFJ5' # vagrant.apim.ca.com
+        # end
+        # override.dns.record_sets = [%W(#{aws_hosted_zone_id} #{host["fqdn"]} A)]
+        ## TODO use aws sdk/info to pull public dns record of instance
+        #override.dns.record_sets = [%W(#{aws_hosted_zone_id} #{host["fqdn"]} CNAME #{:dns_name})]
+      end
+
+      ## run ansible provisioner
+      if host.has_key?("ansible")
+        role.vm.provision :ansible do |ansible|
+          ansible.playbook = host['ansible']['playbook']
+          ansible.verbose = "v"
+          ansible.sudo = true
+          ## groups are defined for each host in the config
+          if host["ansible"].has_key?("groups")
+            groups = host["ansible"]["groups"].map{|key,value| {key => host["fqdn"]}}.reduce({}, :merge)
+            ansible.groups = groups
+          end
+          ## to call the extra variables from the CLI, you'll need to wrap --exta_vars=' '
+          ## in single quotee or import/include the YAML file
+          #ansible.extra_vars = JSON.parse(vagrant_config['ansible']['extra_vars'])
+          #puts host['ansible']['extra_vars'].to_json
+          ansible.extra_vars = host['ansible']['extra_vars']
+        end
+      end
+    end
+  end
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
+end

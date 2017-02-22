@@ -1,0 +1,14 @@
+---
+## packages.yml
+- name: Add the OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Copy the MySQL Python client library RPM for Ansible mysql_user
+  copy: src={{ mysql_packages.python.src }} dest={{ mysql_packages.python.dest }} owner={{ mysql_packages.owner }} group={{ mysql_packages.group }} mode=755
+  when:
+    - ansible_os_family == 'RedHat'
+
+- name: Install the MySQL system packages in Redhat derivatives for APIM images
+  command: "rpm -Uvh --replacepkgs {{ mysql_packages.python.dest }}"
+  when:
+    - ansible_os_family == 'RedHat'

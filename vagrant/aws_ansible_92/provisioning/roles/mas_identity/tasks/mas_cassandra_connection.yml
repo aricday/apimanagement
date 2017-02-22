@@ -1,0 +1,25 @@
+---
+## cassandra_connection.yml
+- name:
+  set_fact:
+    mas_cassandra_connection_command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X GET -k -H 'Content-Type: application/xml' -s -D - https://localhost:{{ mas_cassandra_connection.ssl_port }}{{ mas_cassandra_connection.api_url }}?name={{ mas_cassandra_connection.name }} | grep '{{ mas_cassandra_connection.id_xml_tag }}' | sed -e '{{ mas_cassandra_connection.id_regex }}'"
+
+- name: Check if the MAS Identity Cassandra Connection exists
+  shell: "{{mas_cassandra_connection_command}}"
+  register: mas_cassandra_connection_id
+- debug: msg="{{mas_cassandra_connection_id.stdout}}"
+
+- name: copy the {{ mas_cassandra_connection.file.src }} to the appropriate destination
+  template: src={{ mas_cassandra_connection.file.src }} dest={{ mas_cassandra_connection.file.dest }} mode=644
+  when: mas_cassandra_connection_id != ""
+
+- name: create the MAS Identity Cassandra connection
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ mas_cassandra_connection.file.dest }} -s -D - https://localhost:{{ mas_cassandra_connection.ssl_port }}{{ mas_cassandra_connection.api_url }} -o {{ mas_cassandra_connection.curl_log }}"
+  when: mas_cassandra_connection_id != ""
+
+- name: Capture the MAS Identity Cassandra connection ID
+  shell: "{{mas_cassandra_connection_command}}"
+  register: mas_cassandra_connection_id
+  when: mas_cassandra_connection_id != ""
+
+- debug: msg="{{mas_cassandra_connection_id.stdout}}"
