@@ -22,9 +22,9 @@ services:
       - RDS_PASSWORD=CAdemo123
       - ca_accept_license=enu
     volumes:
-      # - ${PWD}/files/lac/BeerDataComments.json:/usr/local/tomcat/bin/BeerData.json
-      # - ${PWD}/files/lac/BeerData.json:/usr/local/tomcat/bin/BeerData.json
-      # - ${PWD}/files/lac/import_data.sh:/usr/local/tomcat/bin/import_data.sh
+      #- ${PWD}/files/lac/BeerDataComments.json:/usr/local/tomcat/bin/BeerData.json
+      #- ${PWD}/files/lac/BeerData.json:/usr/local/tomcat/bin/BeerData.json
+      #- ${PWD}/files/lac/import_data.sh:/usr/local/tomcat/bin/import_data.sh
       - ${PWD}/files/lac/StartLiveAPICreator.sh:/usr/local/tomcat/bin/StartLiveAPICreator.sh
     deploy:
       placement:
@@ -67,10 +67,10 @@ services:
       resources:
         limits:
           memory: 256m
-  mysql_beer_comments:
-    image: mysql:5.7.9
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-    volumes:
-      - ${PWD}/files/mysql_beer_comments:/docker-entrypoint-initdb.d
-    restart: always
+  #mysql_beer_comments:
+    #image: mysql:5.7.9
+    #environment:
+      #- MYSQL_ROOT_PASSWORD=root
+    #volumes:
+      #- ${PWD}/files/mysql_beer_comments:/docker-entrypoint-initdb.d
+    #restart: always

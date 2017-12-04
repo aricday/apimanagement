@@ -4,7 +4,7 @@
 ##    databases. Define a microservice for validting a JWT and exchanging tokens
 ##    Protect both MS with a MSGW and leverage MAS as the OAuth hub.
 ##
-##  Email: christopher.page@ca.com
+##  Email: aric.day@ca.com
 ##
 ################################################################################
 version: '3'

@@ -1,4 +1,4 @@
-# Microservices Demo (MSD) edited for the Minneapolis CA API Maanagement User Group
+# Microservices Demo (MSD): Microservice creation, discovery, consumption, and enforcement 
 
 The folder structure contains the iOS app and Docker application. Navigate to the [Docker README](docker) to get started.
 
@@ -7,5 +7,5 @@ The folder structure contains the iOS app and Docker application. Navigate to th
 
 ## iOS Splash Screen
 <p align="center">
-<img src="images/ios_splash_screen.gif" height="50%" width="50%">
+  <img src="images/ios_splash_screen.gif" height="50%" width="50%">
 </p>
