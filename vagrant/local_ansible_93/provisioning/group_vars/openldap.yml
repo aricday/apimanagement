@@ -1,0 +1,10 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+openldap_server_domain_name: apim.ca
+openldap_server_rootpw: CAdemo123
+openldap_server_enable_ssl: false
+#openldap_server_country: US                 # The self signed ssl certificate parameters
+#openldap_server_state: Pennsylvania
+#openldap_server_location: Philadelphia
+#openldap_server_organization: IT

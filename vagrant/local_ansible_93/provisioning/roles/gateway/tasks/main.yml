@@ -1,0 +1,15 @@
+---
+## the main.yml includes all the components for the role
+- include: packages.yml
+  when: apim_image is not defined
+- include: license.yml
+- include: mobile_license.yml
+  when: mobile_license is defined
+- include: mas_license.yml
+  when: mas_license is defined
+- include: auto_provision.yml
+- include: database.yml
+## disable headless for non-provisioned GW
+- include: headless.yml
+  when: ssg_packages.appliance is defined
+- include: trusted_certificate.yml

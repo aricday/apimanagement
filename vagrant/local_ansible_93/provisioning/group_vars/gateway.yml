@@ -1,0 +1,49 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+cluster:
+  host: "gateway.apim.ca"
+  ssl_port: 8443
+  pass: "7layer"
+admin:
+  user: "admin"
+  pass: "CAdemo123"
+database:
+  technology: "mysql"
+  host: "localhost"
+  port: 3306
+  name: "ssg"
+  user: "gateway"
+  pass: "7layer"
+  admin:
+    user: "root"
+    pass: "7layer"
+  failover:
+    host:
+    port: 3306
+node:
+  enable: true
+license:
+  owner: "layer7"
+  group: "root"
+  file:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/SSG_Gateway_9.xml"
+    dest: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/SSG_Gateway_9.xml"
+ssg_packages:
+  owner: "root"
+  group: "root"
+  gateway:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.3.00-7814.noarch.rpm"
+    dest: "/var/tmp/ssg-9.3.00-7814.noarch.rpm"
+  appliance:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.3.00-7814.x86_64.rpm"
+    dest: "/var/tmp/ssg-appliance-9.3.00-7814.x86_64.rpm"
+  platform:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-platform-1.7.00-181.noarch.rpm"
+    dest: "/var/tmp/ssg-platform-platform-1.7.00-181.noarch.rpm"
+mysql_packages:
+  owner: "root"
+  group: "root"
+  python:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/MySQL-python-1.2.3-0.3.c1.1.el6.x86_64.rpm"
+    dest: "/var/tmp/MySQL-python-1.2.3-0.3.c1.1.el6.x86_64.rpm"

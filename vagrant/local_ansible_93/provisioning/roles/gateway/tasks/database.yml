@@ -1,0 +1,28 @@
+---
+## database.yml
+- debug: msg="ansible_hostname, inventory_hostname, database.host - {{ ansible_hostname }}, {{inventory_hostname}}, {{ database.host }}"
+
+- name: Set the login_host to "localhost" if {{ database.host }} == {{ inventory_hostname }}
+  set_fact:
+    login_host: "localhost"
+  when: "'{{database.host}}' == '{{inventory_hostname}}'"
+
+- name: Set the login_host to {{ database.host }} if {{ database.host }} != {{ inventory_hostname }}
+  set_fact:
+    login_host: "{{ database.host }}"
+  when: "'{{database.host}}' != '{{inventory_hostname}}'"
+
+- name: create the gateway user sql
+  mysql_user: name={{ database.user }}
+            host={{ item }}
+            priv={{ database.name }}.*:ALL
+            password={{ database.pass }}
+            login_host={{ login_host }}
+            login_port={{ database.port }}
+            login_user={{ database.admin.user }}
+            login_password={{ database.admin.pass }}
+  with_items:
+    - "%"
+    - 127.0.0.1
+    - ::1
+    - localhost

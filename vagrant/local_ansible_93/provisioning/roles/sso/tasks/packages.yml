@@ -1,0 +1,18 @@
+---
+## packages.yml
+- name: copy the SSO Gateway RPM
+  copy: src={{ item.src }} dest={{ item.dest }} owner={{ sso_packages.owner }} group={{ sso_packages.group }} mode=644
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "{{ sso_packages.sm12 }}"
+
+- name: install the SSO Gateway RPMs
+  yum: name={{item}} state=installed
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "{{ sso_packages.sm12.dest }}"
+
+- name: install the glibc i686, x86_64, and dependencies
+  yum: name={{ item }} state=installed
+  with_items:
+  - "glibc.i686"

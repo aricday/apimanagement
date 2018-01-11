@@ -1,0 +1,38 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+otk_sk:
+  owner: "layer7"
+  group: "root"
+  ssl_port: 9443
+  file:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/OTK_Installers_4.2.00-3367.zip"
+    dest: "/var/tmp"
+  sskar_file:
+    dest: "/var/tmp/OTK_Installers_4.2.00-3367/OAuthSolutionKit-4.2.00-3367.sskar"
+  api_url: '/restman/1.0/solutionKitManagers'
+otk_database:
+  technology: "mysql"
+  #technology: "cassandra"
+  schema: "otk"
+  user: "otk_user"
+  pass: "7layer"
+  host: "localhost"
+  port: 3306
+  #port: 9042
+  admin:
+    user: "root"
+    pass: "7layer"
+otk_database_files:
+  owner: "layer7"
+  group: "root"
+  sql:
+    otk_db_schema:
+      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/mysql/otk_db_schema.sql"
+    otk_db_testdata:
+      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/mysql/otk_db_testdata.sql"
+  cql:
+    otk_db_schema:
+      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/cassandra/otk_db_schema_cassandra.cql"
+    otk_db_testdata:
+      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/cassandra/otk_db_testdata_cassandra.cql"

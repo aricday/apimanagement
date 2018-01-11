@@ -1,0 +1,8 @@
+---
+packages:
+  - bind-utils
+  - unzip
+  - telnet
+  - traceroute
+  - nmap
+  - ntp

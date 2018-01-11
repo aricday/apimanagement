@@ -1,0 +1,8 @@
+---
+mysql_rpms:
+    - "mysql55-libs-{{ mysql_version }}*.x86_64"
+    - "mysql55-{{ mysql_version }}*.x86_64"
+    - "mysql55-server-{{ mysql_version }}*.x86_64"
+credentials:
+  root_username: "root"
+  root_password: "root"

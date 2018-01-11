@@ -1,0 +1,19 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+sso_packages:
+  owner: "root"
+  group: "root"
+  sm12:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-sm12-9.0.00-5.x86_64.rpm"
+    dest: "/var/tmp/ssg-sm12-9.0.00-5.x86_64.rpm"
+sso_sdk:
+  owner: "root"
+  group: "root"
+  src: "/Users/AricDay/API/apim_vagrant_ansible_files/CA_SSO_sdk.tar.gz"
+  dest: "/"
+sso_sdk_library:
+  owner: "root"
+  group: "root"
+  src: "/Users/AricDay/API/apim_vagrant_ansible_files/siteminder-sdk_12.51_linux.tar.gz"
+  dest: "/var/tmp/"

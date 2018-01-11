@@ -1,0 +1,116 @@
+---
+hosts:
+  -
+    fqdn: &mysql_database_fqdn "mysql.vagrant.local"
+    box: "box-cutter/centos67"
+    hostname: *mysql_database_fqdn
+    hostname_aliases: "mysql.vagrant mysql"
+    memory: 512
+    cpus: 1
+    ip_address: "192.168.50.101"
+    ansible:
+      groups: ["mysql_databases"]
+      playbook: "provisioning/gateway_sso_otk_mobile_mas-cassandra.groups.yml"
+      extra_vars:
+        database:
+          host: *mysql_database_fqdn
+          port: 3306
+          name: "ssg"
+          user: "gateway"
+          pass: "7layer"
+          admin:
+            user: "root"
+            pass: "7layer"
+  -
+    fqdn: &cassandra_database_fqdn "cassandra.vagrant.local"
+    box: "box-cutter/centos67"
+    hostname: *cassandra_database_fqdn
+    hostname_aliases: "cassandra.vagrant cassandra"
+    memory: 1024
+    cpus: 1
+    ip_address: "192.168.50.102"
+    ansible:
+      groups: ["cassandra_databases"]
+      playbook: "provisioning/gateway_sso_otk_mobile_mas-cassandra.groups.yml"
+  -
+    fqdn: &mqtt_broker_fqdn "mqtt.vagrant.local"
+    box: "box-cutter/centos67"
+    hostname: *mqtt_broker_fqdn
+    hostname_aliases: "mqtt.vagrant mqtt"
+    memory: 512
+    cpus: 1
+    ip_address: "192.168.50.103"
+    ansible:
+      groups: ["mosquitto_mqtt_brokers"]
+      playbook: "provisioning/gateway_sso_otk_mobile_mas-cassandra.groups.yml"
+  -
+    fqdn: &gateway_fqdn "gateway.vagrant.local"
+    box: "box-cutter/centos67"
+    hostname: *gateway_fqdn
+    hostname_aliases: "gateway.vagrant gateway"
+    memory: 2560
+    cpus: 2
+    ip_address: "192.168.50.100"
+    ansible:
+      groups: ["gateways"]
+      playbook: "provisioning/gateway_sso_otk_mobile_mas-cassandra.groups.yml"
+      extra_vars:
+        cluster:
+          host: *gateway_fqdn
+          ssl_port: 8443
+          pass: "7layer"
+        database:
+          host: *mysql_database_fqdn
+          port: 3306
+          name: "ssg"
+          user: "gateway"
+          pass: "7layer"
+          admin:
+            user: "root"
+            pass: "7layer"
+          failover:
+            host:
+            port: 3306
+        otk_database:
+          technology: "cassandra"
+          schema: "otk"
+          user: "otk_user"
+          pass: "7layer"
+          host: *cassandra_database_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mag_database:
+          technology: "cassandra"
+          schema: "otk"
+          user: "otk_user"
+          pass: "7layer"
+          host: *cassandra_database_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_identity_mas_database:
+          technology: "cassandra"
+          schema: "mas_identities"
+          user: "mas_user"
+          pass: "7layer"
+          host: *cassandra_database_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_storage_database:
+          technology: "cassandra"
+          schema: "mas_storage"
+          user: "mas_user"
+          pass: "7layer"
+          host: *cassandra_database_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_message_broker:
+          host: *mqtt_broker_fqdn
+          port: 1883

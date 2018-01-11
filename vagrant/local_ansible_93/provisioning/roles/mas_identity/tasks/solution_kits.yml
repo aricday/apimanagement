@@ -1,0 +1,13 @@
+---
+## solution_kits.yml
+## Install all of the MAS Identity solution kits for now. We need an internal identity provider, cassandra connection, and a jdbc connection
+## 3fdf42538190460396f3e703d31b22d9 - ID_PROVIDER_CONFIG - MAS Identity IDP IIP
+## 7a3b078427ed19baaac98cf92fef120b - CASSANDRA_CONFIG - MAS Identity IDP MAS
+## 3772b9a8f897e0a2e0b5bae228f70a6e - ID_PROVIDER_CONFIG - MAS Identity IDP MSAD
+## a6adb5912420041ef353d70fd39cdab0 - JDBC_CONNECTION - MAS Identity IDP IIP (not sure why JDBC connection is required here)
+## ScimSecuritySelection - 'TLSOAuthToken', 'TLSOTKFIP'
+## TODO - dynamically create MSAD, LDAP and Internal IdPs
+## 0000000000000000fffffffffffffffe (default internal idp)
+- name: Install the MAS Identity Solution Kit
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=3fdf42538190460396f3e703d31b22d9::0000000000000000fffffffffffffffe --form entityIdReplace=7a3b078427ed19baaac98cf92fef120b::{{ mas_cassandra_connection_id.stdout }} --form entityIdReplace=3772b9a8f897e0a2e0b5bae228f70a6e::0000000000000000fffffffffffffffe --form entityIdReplace=a6adb5912420041ef353d70fd39cdab0::{{ iip_jdbc_connection_id.stdout }} --form ScimSecuritySelection={{ mas_identity_scim.security }} --form 'file=@{{ mas_identity_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_identity_sk.ssl_port }}{{ mas_identity_sk.api_url }}"
+- debug: msg="Restart is required for SK installations"

@@ -1,0 +1,7 @@
+---
+## the main.yml includes all the components for the role
+- include: packages.yml
+  when: apim_image is not defined
+- include: apim_packages.yml
+  when: apim_image is defined
+- include: database.yml

@@ -1,0 +1,5 @@
+---
+## the main.yml includes all the components for the role
+- include: clustprop1.yml
+- include: clustprop2.yml
+- include: bundle.yml

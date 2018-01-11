@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <l7:CassandraConnection xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+        <l7:Name>{{ mas_cassandra_connection.name }}</l7:Name>
+        <l7:Keyspace>{{ mas_identity_mas_database.schema }}</l7:Keyspace>
+        <l7:ContactPoint>{{ mas_identity_mas_database.host }}</l7:ContactPoint>
+        <l7:Port>{{ mas_identity_mas_database.port }}</l7:Port>
+        <l7:Username/>
+        <l7:Compression>NONE</l7:Compression>
+        <l7:Ssl>false</l7:Ssl>
+        <l7:Enabled>true</l7:Enabled>
+        <l7:Properties></l7:Properties>
+    </l7:CassandraConnection>

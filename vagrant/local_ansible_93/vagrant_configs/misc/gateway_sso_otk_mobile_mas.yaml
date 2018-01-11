@@ -1,0 +1,82 @@
+---
+hosts:
+  -
+    fqdn: &gateway_fqdn "gateway.vagrant.local"
+    box: "box-cutter/centos67"
+    hostname: *gateway_fqdn
+    hostname_aliases: "gateway.vagrant gateway"
+    memory: 4608
+    cpus: 2
+    ip_address: "192.168.50.100"
+    ansible:
+      playbook: "provisioning/gateway_sso_otk_mobile_mas.yml"
+      extra_vars:
+        cluster:
+          host: *gateway_fqdn
+          ssl_port: 8443
+          pass: "7layer"
+        database:
+          host: *gateway_fqdn
+          port: 3306
+          name: "ssg"
+          user: "gateway"
+          pass: "7layer"
+          admin:
+            user: "root"
+            pass: "7layer"
+          failover:
+            host:
+            port: 3306
+        otk_database:
+          technology: "mysql"
+          schema: "otk"
+          user: "otk_user"
+          pass: "7layer"
+          host: *gateway_fqdn
+          port: 3306
+          admin:
+            user: "root"
+            pass: "7layer"
+        mag_database:
+          technology: "mysql"
+          schema: "otk"
+          user: "otk_user"
+          pass: "7layer"
+          host: *gateway_fqdn
+          port: 3306
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_identity_iip_database:
+          technology: "mysql"
+          schema: "ssg"
+          user: "mas_identity_user"
+          pass: "7layer"
+          host: *gateway_fqdn
+          port: 3306
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_identity_mas_database:
+          technology: "cassandra"
+          schema: "mas_identities"
+          user: "mas_identity_user"
+          pass: "7layer"
+          host: *gateway_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_storage_database:
+          technology: "cassandra"
+          schema: "mas_storage"
+          user: "mas_user"
+          pass: "7layer"
+          host: *gateway_fqdn
+          port: 9042
+          admin:
+            user: "root"
+            pass: "7layer"
+        mas_message_broker:
+          host: *gateway_fqdn
+          port: 1883

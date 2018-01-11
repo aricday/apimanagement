@@ -1,0 +1,7 @@
+---
+- name: Add Cassandra Datastax repository
+  yum_repository:
+    name: datastax
+    description: DataStax Repo for Apache Cassandra
+    baseurl: https://rpm.datastax.com/community
+    gpgcheck: no
