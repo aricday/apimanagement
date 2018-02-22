@@ -16,7 +16,6 @@
 - debug: msg="login_host = {{login_host}}, mag_database.port = {{mag_database.port}}, mag_database.technology = {{mag_database.technology}}"
 
 - include: cassandra_connection.yml
-  when: mag_database.technology is defined and mag_database.technology == "cassandra"
 ## Dummy JDBC connection is still required to be added to the OTK SK even if Cassandra is used
 - include: jdbc_connection.yml
 
