@@ -6,7 +6,7 @@ require 'json'
 current_dir = File.dirname(File.expand_path(__FILE__))
 
 ## Set the default gateway_role
-gateway_role = 'gateway_otk_mobile'
+gateway_role = 'gateway_otk_mobile_mas'
 ## Set the gateway_role if GATEWAY_ROLE is defined
 if not ENV['GATEWAY_ROLE'].nil?
   gateway_role = ENV['GATEWAY_ROLE']

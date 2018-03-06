@@ -16,8 +16,8 @@
     - common
     - mysql
     - cassandra
-    - mosquitto
-    - openldap
+    #- mosquitto
+    #- openldap
     - gateway
     - otk
     - otk_schema_data

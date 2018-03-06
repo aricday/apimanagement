@@ -6,9 +6,9 @@ mas_messaging_sk:
   group: "root"
   ssl_port: 9443
   sskar_file:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/MAS-Messaging-4.1.00-b595.sskar"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/MAS-Messaging-4.1.00-b775.sskar"
     dir: "/var/tmp"
-    dest: "/var/tmp/MAS-Messaging-4.1.00-b595.sskar"
+    dest: "/var/tmp/MAS-Messaging-4.1.00-b775.sskar"
   api_url: '/restman/1.0/solutionKitManagers'
 mas_messaging_broker:
   host: "mqtt.vagrant.local"
