@@ -9,11 +9,13 @@ Missing Dependencies
 -------------------------
 * CALiveAPICreator.war 
 * /WEB-INF
-	  /lib
-	  	## additional DB driver jar files ##
+	  ⋅*/lib
+	  	⋅⋅⋅* ## additional DB driver jar files ##
 
 To add additional drivers to the .war file, add jar to directory and execute:
-`jar uf CALiveAPICreator.war WEB-INF/lib/derby.jar`
+```
+jar uf CALiveAPICreator.war WEB-INF/lib/derby.jar
+```
 
 Use CLI to set the external admin DB connection:
 ```
