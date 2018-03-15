@@ -1,0 +1,51 @@
+#
+#  Copyright (c) 2016 CA. All rights reserved.
+#
+#  This software may be modified and distributed under the terms
+#  of the MIT license. See the LICENSE file for details.
+#
+version: '2'
+services:
+  ssg:
+    image: caapim/gateway:latest
+    mem_limit: 4g
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9443:9443"
+    hostname: "mas"
+    volumes:
+     - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+     # - ./config/gwlicense:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license
+     - ./config/gwlicense/CA_GW_9.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+     - ./files/gw/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/proxy_folder.bundle
+    environment:
+      SSG_CLUSTER_HOST: "mas"
+      SSG_CLUSTER_PASSWORD: "7layer"
+      SSG_DATABASE_JDBC_URL: "jdbc:mysql://mysqldb:3306/ssg"
+      SSG_DATABASE_USER: "root"
+      SSG_DATABASE_PASSWORD: "7layer"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+      ACCEPT_LICENSE: "true"
+      SSG_JVM_HEAP: "4g"
+      EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.env.license.enable=false -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
+
+  mysqldb:
+    image: mysql:5.7
+    mem_limit: 512m
+    environment:
+      - MYSQL_ROOT_PASSWORD=7layer
+      - MYSQL_DATABASE=ssg
+      - MYSQL_USER=db_admin
+      - MYSQL_PASSWORD=7layer
+    command:
+      - "--character-set-server=utf8"
+      - "--innodb_log_buffer_size=32M"
+      - "--innodb_log_file_size=80M"
+      - "--max_allowed_packet=8M"
+    volumes:
+      # - ./mysql:/var/lib/mysql
+      - /var/lib/mysql
+      - ./files/mysql/scripts/startup/:/docker-entrypoint-initdb.d/
+      # - ./files/mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf  

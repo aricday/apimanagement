@@ -1,0 +1,33 @@
+#
+#  Copyright (c) 2016 CA. All rights reserved.
+#
+#  This software may be modified and distributed under the terms
+#  of the MIT license. See the LICENSE file for details.
+#
+version: '2'
+services:
+  lac:
+    image: caliveapicreator/4.0.01
+    environment:
+      RDS_HOSTNAME: "lac_mysqldb"
+      RDS_PORT: "3306"
+      RDS_USERNAME: "db_admin"
+      RDS_PASSWORD: "7layer"
+      RDS_DB_NAME: "lacadmindb"
+      ca_accept_license: "enu"
+      LAC_ADMIN_MAX_CONN: "100"
+    links:
+      - lac_mysqldb
+    ports:
+      - "8081:8080"
+  lac_mysqldb:
+    image: mysql:5.5
+    mem_limit: 512m
+    environment:
+      - MYSQL_ROOT_PASSWORD=7layer
+      - MYSQL_DATABASE=lacadmindb
+      - MYSQL_USER=db_admin
+      - MYSQL_PASSWORD=7layer
+    volumes:
+      - ./lac_mysql:/var/lib/mysql
+      - ./files/mysql/scripts/lacstartup/:/docker-entrypoint-initdb.d/

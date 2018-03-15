@@ -1,0 +1,8 @@
+---
+applications:
+- name: ca-live-api-creator
+  memory: 1000M
+  instances: 1
+  path: CALiveAPICreator.war
+  # services:
+  # - CALiveAPICreator_admin
