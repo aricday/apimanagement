@@ -1,0 +1,12 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+hotfix_package:
+  owner: "root"
+  group: "root"
+  package:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.2.00-6904_hotfix_US268860.svn20170306.noarch.rpm"
+    dest: "/var/tmp/ssg-9.2.00-6904_hotfix_US268860.svn20170306.noarch.rpm"
+  appliance:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.2.00-6904_hotfix_US268860.svn20170306.x86_64.rpm"
+    dest: "/var/tmp/ssg-appliance-9.2.00-6904_hotfix_US268860.svn20170306.x86_64.rpm"

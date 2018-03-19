@@ -1,0 +1,9 @@
+---
+packages:
+  - libselinux-python
+  - bind-utils
+  - unzip
+  - telnet
+  - traceroute
+  - nmap
+  - ntp

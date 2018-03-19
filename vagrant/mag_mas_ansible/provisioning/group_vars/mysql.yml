@@ -1,0 +1,4 @@
+---
+## Note this file is only stored for demo purposes. Any production credentials should not
+## be included in version control.
+mysql_version: 5.7

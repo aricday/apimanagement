@@ -1,0 +1,20 @@
+---
+## packages.yml
+- name: Add the OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Add the Amazon specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+  when:
+    - ansible_distribution == 'Amazon'
+
+- name: install MySQL Server, Client, and libraries
+  yum: name={{ item }} enablerepo=mysql57-community state=installed
+  with_items: "{{ packages }}"
+  when: ansible_os_family == 'RedHat'
+
+#- name: Install Amazon specific packages
+  #yum: name={{ item }} state=installed
+  #with_items: "{{ packages }}"
+  #when:
+    #- ansible_distribution == 'Amazon'
