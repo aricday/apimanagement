@@ -1,0 +1,45 @@
+version: '2'
+services:
+  lac:
+    image: caliveapicreator/4.0.01
+    privileged: true
+    stdin_open: true
+    tty: true
+    environment:
+      RDS_HOSTNAME: "database"
+      RDS_PORT: "5432"
+      RDS_USERNAME: "lac_admin"
+      RDS_PASSWORD: "Password1"
+      RDS_DB_NAME: "lacadmindb"
+      ca_accept_license: "enu"
+      LAC_ADMIN_MAX_CONN: "100"
+    links:
+      - "lac_db:database"
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+  lac_db:
+    image: postgres:9.6
+    privileged: true
+    environment:
+      POSTGRES_PASSWORD: "Password1"
+      POSTGRES_USER: "lac_admin"
+      POSTGRES_DB: "lacadmindb"
+    expose:
+      - "5432"
+
+## Ports mapped to host
+#    ports:
+#      - "5432:5432"
+#      - "host:port" # generic port mapping example
+
+## Uncomment selected lines for reliable persistence (no spaces!)
+#    volumes:
+#      - "data_volume:/var/lib/postgresql/data" # persisted data directory
+#      - "entry_volume:/docker-entrypoint-initdb.d" # entry config example
+#      - "conf_volume:/etc/postgres/conf.d" # postgres *.cnf dir
+#volumes:
+#  data_volume: {}
+#  entry_volume: {}
+#  conf_volume: {}
