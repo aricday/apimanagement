@@ -23,6 +23,7 @@ cf set-env ca-live-api-creator JDBC_CONNECTION_STRING jdbc:mysql://us-iron-east-
 cf set-env ca-live-api-creator JDBC_CONNECTION_USERNAME your _username
 cf set-env ca-live-api-creator JDBC_CONNECTION_PASSWORD your _password
 cf set-env ca-live-api-creator JDBC_CONNECTION_DB_NAME name_of_db
+cf set-env ca-live-api-creator TZ 'UTC' (required for Oracle 12c)
 ```
 
 Or set the Environment Variables using PCF console
@@ -37,3 +38,9 @@ If you're feeling lucky, you could even define in-memory database, e.g.:
 ```
 JDBC_CONNECTION_STRING=jdbc:derby:memory:admindb;create=true
 ```
+
+Once running, use the following command to deploy a JWT testing project to the instance
+``` 
+./licenseLAC.sh 
+```
+

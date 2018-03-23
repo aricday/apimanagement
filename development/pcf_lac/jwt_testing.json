@@ -1,0 +1,274 @@
+{
+  "{f}api.json": {
+    "name": "JWT Testing",
+    "urlFragment": "jwt",
+    "comments": "An empty API ready for adding JavaScript functions, JavaScript resources, custom endpoints and data source connections.  \n\nFor example, try creating a new function.",
+    "isEnabled": true,
+    "authProviderName": "Built-in authentication"
+  },
+  "{f}exportoptions.json": {
+    "passwordStyle": "SKIP"
+  },
+  "{f}apioptions.json": {
+    "Permit Authorization parameter in URL": {
+      "dataType": "boolean",
+      "value": true,
+      "defaultValue": false
+    },
+    "Tech docs URL": {
+      "dataType": "string",
+      "value": "https://docops.ca.com/ca-live-api-creator/4-1/en/tutorial/northwind",
+      "defaultValue": null
+    }
+  },
+  "{d}connections": {
+    "{f}ReadMe.md": "This folder contains definitions for connections"
+  },
+  "{d}listeners": {
+    "{f}ReadMe.md": "This folder contains definitions for listeners"
+  },
+  "{d}custom_endpoints": {
+    "{f}ReadMe.md": "This folder contains definitions for custom_endpoints"
+  },
+  "{f}relationships.json": [
+  ],
+  "{d}data_sources": {
+    "{f}ReadMe.md": "This folder contains definitions for data sources"
+  },
+  "{d}filters": {
+    "{f}ReadMe.md": "This folder contains definitions for filters"
+  },
+  "{d}functions": {
+    "{f}ReadMe.md": "This folder contains definitions for functions"
+  },
+  "{d}libraries": {
+    "{f}ReadMe.md": "This folder contains definitions for libraries and whether they are used.\n",
+    "{f}SystemLibraryUsage.json": [
+    ]
+  },
+  "{d}request_events": {
+    "{f}ReadMe.md": "This folder contains definitions for request events"
+  },
+  "{d}resources": {
+    "{f}ReadMe.md": "This folder contains definitions for resources",
+    "{f}apiversions.json": {
+      "v1": {
+        "name": "v1",
+        "comments": null
+      }
+    },
+    "{d}v1": {
+      "{d}validate": {
+        "{f}validate.json": {
+          "name": "validate",
+          "description": null,
+          "siblingRank": 100,
+          "resourceType": "JavaScript",
+          "isCollection": true,
+          "joinCondition": null
+        },
+        "{f}validate.js": "var encodedJwt = req.getHttpHeaders();\nlog.debug(\"1-jwt\" + encodedJwt);\nencodedJwt = JSON.parse(encodedJwt);\nlog.debug(\"3-jwt\" + encodedJwt);\nencodedJwt = encodedJwt.cajwt;\nlog.debug(\"4-jwt\" + encodedJwt);\n\n if ( ! encodedJwt || encodedJwt.trim().length === 0) {\n    var errorMessage = \"No Authorization header provided\";\n    return errorMessage;\n}\n if ( ! encodedJwt.startsWith(\"Bearer \")) {\n    var errorMessage = \"Authorization header does not have scheme Bearer\";\n    return errorMessage;\n}\n\nencodedJwt = encodedJwt.substring(\"Bearer \".length);\nlog.debug(\"new-jwt\" + encodedJwt);\n\n\n// var jwt = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ\";\n\nfunction parseJwt (token) {\n            var base64Url = token.split('.')[1];\n            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');\n            return base64;\n        };\nvar jwtBody = parseJwt(encodedJwt);\n\nvar Base64 = {\n    characters: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\" ,\n\n    encode: function( string )\n    {\n        var characters = Base64.characters;\n        var result     = '';\n\n        var i = 0;\n        do {\n            var a = string.charCodeAt(i++);\n            var b = string.charCodeAt(i++);\n            var c = string.charCodeAt(i++);\n\n            a = a ? a : 0;\n            b = b ? b : 0;\n            c = c ? c : 0;\n\n            var b1 = ( a >> 2 ) & 0x3F;\n            var b2 = ( ( a & 0x3 ) << 4 ) | ( ( b >> 4 ) & 0xF );\n            var b3 = ( ( b & 0xF ) << 2 ) | ( ( c >> 6 ) & 0x3 );\n            var b4 = c & 0x3F;\n\n            if( ! b ) {\n                b3 = b4 = 64;\n            } else if( ! c ) {\n                b4 = 64;\n            }\n\n            result += Base64.characters.charAt( b1 ) + Base64.characters.charAt( b2 ) + Base64.characters.charAt( b3 ) + Base64.characters.charAt( b4 );\n\n        } while ( i < string.length );\n\n        return result;\n    } ,\n\n    decode: function( string )\n    {\n        var characters = Base64.characters;\n        var result     = '';\n\n        var i = 0;\n        do {\n            var b1 = Base64.characters.indexOf( string.charAt(i++) );\n            var b2 = Base64.characters.indexOf( string.charAt(i++) );\n            var b3 = Base64.characters.indexOf( string.charAt(i++) );\n            var b4 = Base64.characters.indexOf( string.charAt(i++) );\n\n            var a = ( ( b1 & 0x3F ) << 2 ) | ( ( b2 >> 4 ) & 0x3 );\n            var b = ( ( b2 & 0xF  ) << 4 ) | ( ( b3 >> 2 ) & 0xF );\n            var c = ( ( b3 & 0x3  ) << 6 ) | ( b4 & 0x3F );\n\n            result += String.fromCharCode(a) + (b?String.fromCharCode(b):'') + (c?String.fromCharCode(c):'');\n\n        } while( i < string.length );\n\n        return result;\n    }\n};\nvar decodedString = Base64.decode(jwtBody);\nvar decodedBody = JSON.parse(decodedString);\nreturn decodedBody;\n"
+      }
+    }
+  },
+  "{d}rules": {
+    "{f}ReadMe.md": "This folder contains definitions for rules"
+  },
+  "{d}security": {
+    "{f}ReadMe.md": "This folder contains definitions for security",
+    "{d}roles": {
+      "{f}ReadMe.md": "This contains Roles defined for the project.\nRoles define which server features are available and what the permissions\non each feature is enabled.",
+      "{f}API$0020Documentation.json": {
+        "name": "API Documentation",
+        "description": "This role is special and is used when generating OpenAPI(Swagger) documentation. It is recognized by the name special name 'API Documentation' and used only for documentation calls.\n Any Resources, Tables, Views, Procedures etc. that are defined and enabled by this role are used to generate the OpenAPI(Swagger) documentation.\n If this role is assigned to a user it will NOT be used for execution permissions.\n If this role is removed or otherwise unavailable, the Swagger/OpenAPI documentation will be nothing more that a name and version.",
+        "defaultTablePermission": "A",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      },
+      "{f}Full$0020access.json": {
+        "name": "Full access",
+        "description": "Full access to everything in this project",
+        "defaultTablePermission": "A",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      },
+      "{f}Read$0020only.json": {
+        "name": "Read only",
+        "description": "Read-only access to everything in this project",
+        "defaultTablePermission": "R",
+        "defaultViewPermission": "R",
+        "defaultFunctionPermission": "X",
+        "globals": {
+        },
+        "apiVisibility": {
+          "table": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "view": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "resource": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "procedure": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "metatable": {
+            "isRestricted": false,
+            "restrictedTo": null
+          },
+          "function": {
+            "isRestricted": false,
+            "restrictedTo": null
+          }
+        },
+        "entityPermission": {
+        },
+        "functionPermission": {
+        }
+      }
+    },
+    "{d}authtokens": {
+      "{f}ReadMe.md": "This contains statically defined API Keys (Auth Tokens) for this project.\nDynamically created keys (using @authentication service) are NOT affected by these.",
+      "{f}Admin$0020key.json": {
+        "name": "Admin key",
+        "authToken": "y8PBDjKg3Sz2CdOG0LJA",
+        "description": "Created as part of this API. Feel free to change or delete this auth token.",
+        "userIdentifier": null,
+        "isActive": true,
+        "expiration": null,
+        "logging": "*=FINE",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      }
+    },
+    "{d}users": {
+      "{f}ReadMe.md": "This contains Users defined for the system when using the default authentication provider.\nWhile this can be used for production systems, typically the authentication provider is LDAP\nor some other mechanism.",
+      "{f}admin.json": {
+        "name": "admin",
+        "fullname": "Admin Account with full access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "DPjAc2xnHcsxdy6Nz9Rr392kWPF1AkCv7kGImjz1xklhSeU9E/nYCQJ2XN/rr8AAI0avEfLDc5EZmJ0YbPZH1w==",
+        "passwordSalt": "9KL79uoEtnKPCsMsOBl6HEELiURvv3g5wavqM8ef",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      },
+      "{f}demo.json": {
+        "name": "demo",
+        "fullname": "Demo Account with full access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "2SQ363YLFOvaUYdXmiJGsqZsRJyXlLLVhuqvjHxPXbvfl32unAb+D01qObe7RCB2kHWaZ6oWSGA6Scn9AOqnfg==",
+        "passwordSalt": "nid/yK7nXCJW0/IoYR8mPwfLVpp8FVLXp8tqab1g",
+        "roles": [
+          "Full access"
+        ],
+        "globals": {
+        }
+      },
+      "{f}guest.json": {
+        "name": "guest",
+        "fullname": "Guest Account with read-only access",
+        "email": null,
+        "isActive": true,
+        "comments": null,
+        "keyLifetimeSeconds": null,
+        "passwordHash": "c+TszK4haxYUbFPyICkh51UVlutqWyH2LgzB9XYwfp6Uy3UPMi+D8LqDFXaZRjThYg3zl4hYbU7JMPS+I5z6XA==",
+        "passwordSalt": "R1gyxu0We1q1LCQxNVJvAZyVZj6wG9pgdlIXkMH9",
+        "roles": [
+          "Read only"
+        ],
+        "globals": {
+        }
+      }
+    }
+  },
+  "{d}sorts": {
+    "{f}ReadMe.md": "This folder contains definitions for sorts"
+  },
+  "{d}timers": {
+    "{f}ReadMe.md": "This folder contains definitions for timers"
+  },
+  "{d}topics": {
+    "{f}ReadMe.md": "This folder contains definitions for topics"
+  }
+}
