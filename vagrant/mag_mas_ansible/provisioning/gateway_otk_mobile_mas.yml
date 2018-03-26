@@ -28,4 +28,5 @@
     - mas_messaging
     - mas_identity
     - mas_storage
+    - gmu
     - restart_services

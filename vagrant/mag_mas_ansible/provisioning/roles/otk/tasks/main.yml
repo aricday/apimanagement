@@ -15,8 +15,9 @@
 
 - debug: msg="login_host = {{login_host}}, otk_database.port = {{otk_database.port}}, otk_database.technology = {{otk_database.technology}}"
 
-## Dummy Cassandra & JDBC connection is still required to be added to the OTK SK 
-- include: jdbc_connection.yml
 - include: cassandra_connection.yml
+
+## Dummy JDBC connection is still required to be added to the OTK SK even if Cassandra is used
+- include: jdbc_connection.yml
 
 - include: solution_kits.yml

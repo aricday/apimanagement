@@ -3,11 +3,11 @@ rpms:
    portal: "/packages/portal/apiportal-3.1-1.el6.centos.noarch.rpm"
 baseX:
   file:
-    src: "/Users/pagch04/API/apim_vagrant_ansible_files/packages/portal/base31-package.tgz"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/packages/portal/base31-package.tgz"
     dest: "/opt/SecureSpan/base31-package.tgz"
 setup_script:
   file:
-    src: "/Users/pagch04/API/apim_vagrant_ansible_files/packages/portal/setup-ssg-3.1.sh"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/packages/portal/setup-ssg-3.1.sh"
     dest: "/opt/SecureSpan/setup-ssg-3.1.sh"
 sql:
   #schema_file: "/opt/SecureSpan/Gateway/config/etc/sql/lrs_db.sql"

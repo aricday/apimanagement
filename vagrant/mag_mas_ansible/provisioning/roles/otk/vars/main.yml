@@ -13,7 +13,7 @@ jdbc_connection:
   curl_log: '/var/tmp/restman_jdbc_connection.log'
 cassandra_connection:
   # OTK Cassandra connection name limitation: https://docops.ca.com/ca-api-management-oauth-toolkit/3-3/installation-workflow/create-or-upgrade-the-otk-database/apache-cassandra-database
-  name: "OAuth_Cassandra"
+  name: "MAG_OAuth_Cassandra"
   owner: "layer7"
   group: "layer7"
   ssl_port: 9443
