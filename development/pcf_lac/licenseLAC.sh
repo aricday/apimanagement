@@ -8,3 +8,6 @@ lacadmin license import --file /Users/AricDay/Documents/LiveAPI/LAClicense.json
 lacadmin login -u admin -p Password1 http://ca-live-api-creator.cfapps.io:80/ -a pcf_lac
 lacadmin api import --file jwt_testing.json --namecollision replace_existing
 echo "Deployed and configured JWT Endpoint to LAC Admin node"
+lacadmin project import --file BeerData.json
+lacadmin datasource update --prefix main --password root
+echo "Deployed and configured Beer API Endpoint to LAC Admin node"
