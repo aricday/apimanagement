@@ -1,9 +1,9 @@
 ---
 hosts:
   -
-    fqdn: &gateway_fqdn "mas.day.apim.ca.com"
+    fqdn: &gateway_fqdn "gateway.day.apim.ca.com"
     aws:
-      ami: "ami-4095622d" # New CentOS 6.7 (HVM), SSD Volume Type
+      ami: "ami-4095622d" # New CentOS 6.7 (HVM)
       instance_type: "t2.medium" # 2vCPU, 4GB mem
       security_groups: "apim_gateway"
     override:

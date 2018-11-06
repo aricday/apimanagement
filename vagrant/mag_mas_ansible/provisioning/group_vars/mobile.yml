@@ -46,6 +46,9 @@ mag_database_files:
     mag_test_client:
       src: "roles/mobile/files/mag_test_client.sql"
       dest: "/var/tmp/mag_test_client.sql"
+    mag_compatability:
+      src: "roles/mobile_schema_data/files/mag_4.1_otk_4.3_compatibility_mysql.sql"
+      dest: "/var/tmp/mag_4.1_otk_4.3_compatibility_mysql.sql"
   cql:
     mag_db_schema:
       dest: "/var/tmp/MAG_Installers_4.1.00-2591/Database_scripts/cassandra/mag_db_schema_cassandra.cql"

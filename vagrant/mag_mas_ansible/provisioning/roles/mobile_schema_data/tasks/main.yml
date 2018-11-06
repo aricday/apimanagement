@@ -21,3 +21,5 @@
   when: mag_database.technology is not defined or mag_database.technology == "mysql"
 - include: mag_test_client.yml
   when: mag_database.technology is not defined or mag_database.technology == "mysql"
+- include: mag_compatability.yml
+  when: mag_database.technology is not defined or mag_database.technology == "mysql"

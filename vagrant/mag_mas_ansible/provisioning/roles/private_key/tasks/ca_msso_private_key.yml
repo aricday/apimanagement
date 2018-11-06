@@ -15,6 +15,9 @@
   template: src={{ ca_msso_private_key.file.src }} dest={{ ca_msso_private_key.file.dest }} mode=644
   when: ca_msso_private_key_id == ""
 
+## aws version was erring due to RESTMAN fail.  Trying delay.
+- pause: seconds=2
+
 - name: create the "{{ ca_msso_private_key.name }}" ca_msso_private_key
   command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: application/xml' -d @{{ ca_msso_private_key.file.dest }} -s -D - https://localhost:{{ ca_msso_private_key.ssl_port }}{{ ca_msso_private_key.api_url }}/00000000000000000000000000000002:{{ ca_msso_private_key.name }} -o {{ ca_msso_private_key.curl_log }}"
   when: ca_msso_private_key_id == ""

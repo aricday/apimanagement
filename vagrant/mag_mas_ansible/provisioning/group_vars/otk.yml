@@ -6,10 +6,10 @@ otk_sk:
   group: "root"
   ssl_port: 9443
   file:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/OTK_Installers_4.2.00-3367.zip"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/OTK_Installers_4.3.00-3789.zip"
     dest: "/var/tmp"
   sskar_file:
-    dest: "/var/tmp/OTK_Installers_4.2.00-3367/OAuthSolutionKit-4.2.00-3367.sskar"
+    dest: "/var/tmp/OTK_Installers_4.3.00-3789/OAuthSolutionKit-4.3.00-3789.sskar"
   api_url: '/restman/1.0/solutionKitManagers'
 otk_database:
   technology: "mysql"
@@ -28,11 +28,11 @@ otk_database_files:
   group: "root"
   sql:
     otk_db_schema:
-      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/mysql/otk_db_schema.sql"
+      dest: "/var/tmp/OTK_Installers_4.3.00-3789/Database_scripts/mysql/otk_db_schema.sql"
     otk_db_testdata:
-      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/mysql/otk_db_testdata.sql"
+      dest: "/var/tmp/OTK_Installers_4.3.00-3789/Database_scripts/mysql/otk_db_testdata.sql"
   cql:
     otk_db_schema:
-      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/cassandra/otk_db_schema_cassandra.cql"
+      dest: "/var/tmp/OTK_Installers_4.3.00-3789/Database_scripts/cassandra/otk_db_schema_cassandra.cql"
     otk_db_testdata:
-      dest: "/var/tmp/OTK_Installers_4.2.00-3367/Database_scripts/cassandra/otk_db_testdata_cassandra.cql"
+      dest: "/var/tmp/OTK_Installers_4.3.00-3789/Database_scripts/cassandra/otk_db_testdata_cassandra.cql"

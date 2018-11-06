@@ -2,7 +2,7 @@
 hosts:
   -
     fqdn: &mysql_database_fqdn "mysql.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *mysql_database_fqdn
     hostname_aliases: "mysql.vagrant mysql"
     memory: 512
@@ -23,7 +23,7 @@ hosts:
             pass: "7layer"
   -
     fqdn: &cassandra_database_fqdn "cassandra.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *cassandra_database_fqdn
     hostname_aliases: "cassandra.vagrant cassandra"
     memory: 1024
@@ -34,7 +34,7 @@ hosts:
       playbook: "provisioning/gateway_otk_mobile_mas.groups.yml"
   -
     fqdn: &mqtt_broker_fqdn "mqtt.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *mqtt_broker_fqdn
     hostname_aliases: "mqtt.vagrant mqtt"
     memory: 512
@@ -45,7 +45,7 @@ hosts:
       playbook: "provisioning/gateway_otk_mobile_mas.groups.yml"
   -
     fqdn: &ldap_broker_fqdn "ldap.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *ldap_broker_fqdn
     hostname_aliases: "ldap.vagrant ldap"
     memory: 512
@@ -59,7 +59,7 @@ hosts:
         openldap_server_domain_name: "vagrant.local"
   -
     fqdn: &gateway_fqdn "gateway.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *gateway_fqdn
     hostname_aliases: "gateway.vagrant gateway"
     memory: 2560

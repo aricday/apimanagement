@@ -1,7 +1,7 @@
 ---
 hosts:
   -
-    fqdn: &gateway_fqdn "ec2-34-193-84-215.compute-1.amazonaws.com"
+    fqdn: &gateway_fqdn "gateway.test.vagrant.apim.ca.com"
     aws:
       ami: "ami-a4827dc9" # Amazon Linux AMI 2016.03.2 (HVM), SSD Volume Type
       instance_type: "t2.medium" # 2vCPU, 4GB mem

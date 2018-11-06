@@ -13,8 +13,8 @@ cluster_property:
 aws_env_bundle:
   ssl_port: 9443
   file:
-    src: "roles/gmu/files/samp_folder.j2"
-    dest: "/var/tmp/samp_folder.xml"
+    src: "roles/gmu/files/samp_folder2.j2"
+    dest: "/var/tmp/samp_folder2.xml"
   curl_log: "/var/tmp/bundle_import.log"
   api_url: "/restman/1.0/bundle?test=false&activate=true"
 cluster_property2:

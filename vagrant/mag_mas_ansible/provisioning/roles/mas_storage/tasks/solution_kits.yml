@@ -1,11 +1,22 @@
 ---
 ## solution_kits.yml
 ## Install all of the MAS Storage solution kits for now. We need an internal storage provider, cassandra connection, and a jdbc connection
+## The MySql Storage extension is not installing remotely, so using Cassandra SK
+
+## --form solutionKitSelect=63fd45c2-7139-47b1-9f5f-c06b51fbf4b1 
+## --form solutionKitSelect=e1ecef5e-50d2-43fc-add7-f69db56f45c9 (Problem installing so not including below)
+## --form solutionKitSelect=862932e8-a8a4-4349-b86f-e5581cd3d09e 
+## --form solutionKitSelect=6ae15241-ce4a-42ed-8717-e43915797a1d
+## --form solutionKitSelect=87837f90-6961-4c21-b335-8c0f047418e9
+
 ## e88a0d725afda214e7a6d2d788bbc267 - CASSANDRA_CONFIG - MAS Storage -- does not work
 ## selectedCassandraConnectionID
+## jdbcConnectionEntityId  
 ## cloudStoreUrl - This is the full host URL and port of the internal gateway.
 ## MasMessagingSecuritySelection - Configure the authentication options for MAS Storage.
-#TLSOAuthToken: Assert that the HTTP connection is made over SSL/TLS. This option will validate that the request contains a valid OAuth Bearer token. The token must have 'mas_storage' scope. TLSOTKFIP: Assert that the HTTP connection is made over SSL/TLS with a client certificate. Validate that the client certificate using the OTK Federated Identity Provider.
+## TLSOAuthToken: Assert that the HTTP connection is made over SSL/TLS. This option will validate that the request contains a valid OAuth Bearer token. The token must have 'mas_storage' scope. TLSOTKFIP: Assert that the HTTP connection is made over SSL/TLS with a client certificate. Validate that the client certificate using the OTK Federated Identity Provider.
+## command:  /usr/bin/curl -u admin:CAdemo123 -X POST -k -H 'Content-Type: multipart/form-data' --form solutionKitSelect=63fd45c2-7139-47b1-9f5f-c06b51fbf4b1 --form entityIdReplace=1aaab2aa36da55a278781ea1f623bf98::d9a7e760dc5d6445a77b78fabd7841bc --form selectedCassandraConnectionID=d9a7e760dc5d6445a77b78fabd7841bc --form solutionKitSelect=87837f90-6961-4c21-b335-8c0f047418e9 --form entityIdReplace=1aaab2aa36da55a278781ea1f623bf98::d9a7e760dc5d6445a77b78fabd7841bc --form solutionKitSelect=862932e8-a8a4-4349-b86f-e5581cd3d09e --form solutionKitSelect=6ae15241-ce4a-42ed-8717-e43915797a1d --form cloudStoreUrl=https://localhost:8443/internal/MAAS --form MasMessagingSecuritySelection=TLSOAuthToken --form 'file=@/var/tmp/MAS-Storage-4.1.00-b439.sskar' -D - https://localhost:9443/restman/1.0/solutionKitManagers
+
 - name: Install the MAS Storage Solution Kit
-  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form selectedCassandraConnectionID={{ cassandra_connection_id.stdout }} --form cloudStoreUrl={{ mas_storage_cloud.url }} --form MasMessagingSecuritySelection={{ mas_storage_cloud.security }} --form 'file=@{{ mas_storage_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_storage_sk.ssl_port }}{{ mas_storage_sk.api_url }}"
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form solutionKitSelect=63fd45c2-7139-47b1-9f5f-c06b51fbf4b1 --form entityIdReplace=1aaab2aa36da55a278781ea1f623bf98::{{ cassandra_connection_id.stdout }} --form selectedCassandraConnectionID={{ cassandra_connection_id.stdout }} --form solutionKitSelect=87837f90-6961-4c21-b335-8c0f047418e9 --form entityIdReplace=1aaab2aa36da55a278781ea1f623bf98::{{ cassandra_connection_id.stdout }} --form solutionKitSelect=862932e8-a8a4-4349-b86f-e5581cd3d09e --form solutionKitSelect=6ae15241-ce4a-42ed-8717-e43915797a1d --form jdbcConnectionEntityId={{ jdbc_connection_id.stdout }} --form cloudStoreUrl={{ mas_storage_cloud.url }} --form MasMessagingSecuritySelection={{ mas_storage_cloud.security }} --form 'file=@{{ mas_storage_sk.sskar_file.dest }}' -s -D - https://localhost:{{ mas_storage_sk.ssl_port }}{{ mas_storage_sk.api_url }}"
 - debug: msg="Restart is required for SK installations"

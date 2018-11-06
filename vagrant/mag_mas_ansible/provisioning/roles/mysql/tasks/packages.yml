@@ -18,7 +18,7 @@
     name: /etc/init.d/mysqld
     regexp: '--initialize'
     replace: ' --initialize-insecure'
-    
+
 - name: Copy new my.cnf file
   copy: src="roles/mysql/files/my.cnf" dest="/etc/my.cnf" owner="root" group="root" mode=644 backup=yes
 

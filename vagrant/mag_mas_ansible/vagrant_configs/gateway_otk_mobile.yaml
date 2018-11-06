@@ -2,12 +2,12 @@
 hosts:
   -
     fqdn: &gateway_fqdn "gateway.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *gateway_fqdn
     hostname_aliases: "gateway.vagrant gateway"
     memory: 3072
     cpus: 2
-    ip_address: "192.168.50.103"
+    ip_address: "192.168.50.100"
     ansible:
       playbook: "provisioning/gateway_otk_mobile.yml"
       extra_vars:

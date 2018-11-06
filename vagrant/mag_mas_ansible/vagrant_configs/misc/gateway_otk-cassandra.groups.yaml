@@ -2,7 +2,7 @@
 hosts:
   -
     fqdn: &mysql_database_fqdn "mysql.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *mysql_database_fqdn
     hostname_aliases: "mysql.vagrant mysql"
     memory: 512
@@ -13,7 +13,7 @@ hosts:
       playbook: "provisioning/gateway_otk-cassandra.groups.yml"
   -
     fqdn: &cassandra_database_fqdn "cassandra.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *cassandra_database_fqdn
     hostname_aliases: "cassandra.vagrant cassandra"
     memory: 1024
@@ -24,7 +24,7 @@ hosts:
       playbook: "provisioning/gateway_otk-cassandra.groups.yml"
   -
     fqdn: &gateway_fqdn "gateway.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *gateway_fqdn
     hostname_aliases: "gateway.vagrant gateway"
     memory: 2048

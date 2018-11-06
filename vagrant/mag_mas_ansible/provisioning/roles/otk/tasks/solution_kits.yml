@@ -1,9 +1,7 @@
 ---
 ## solution_kits.yml
-- debug: msg="jdbc_connection_id.stdout - {{jdbc_connection_id.stdout}}"
-- debug: msg="cass_connection_id.stdout - {{cassandra_connection_id.stdout}}"
 
-## Empty JDBC connection is required for Cassandra: https://docops.ca.com/ca-api-management-oauth-toolkit/3-3/installation-workflow/manage-data-sources#ManageDataSources-TheEmptyJDBCConnection
+## Empty JDBC connection is required for JDBC and Cassandra: https://docops.ca.com/ca-api-management-oauth-toolkit/3-3/installation-workflow/manage-data-sources#ManageDataSources-TheEmptyJDBCConnection
 - name: Install the OTK Solution Kit
-  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=4432207d16a1b505e8a6ed59993eaa24::{{ jdbc_connection_id.stdout }} --form entityIdReplace=c2e0825b2f52dc7819cd6e68893df156::{{cassandra_connection_id.stdout}} --form 'file=@{{ otk_sk.sskar_file.dest }}' -s -D - https://localhost:{{ otk_sk.ssl_port }}{{ otk_sk.api_url }}"
+  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=4432207d16a1b505e8a6ed59993eaa24::{{ jdbc_connection_id.stdout }} --form entityIdReplace=c2e0825b2f52dc7819cd6e68893df156::{{ cassandra_connection_id.stdout }} --form 'file=@{{ otk_sk.sskar_file.dest }}' -s -D - https://localhost:{{ otk_sk.ssl_port }}{{ otk_sk.api_url }}"
 - debug: msg="Restart is required for SK installations"

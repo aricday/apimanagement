@@ -4,4 +4,4 @@ mysql_rpms:
     - "mysql-community-client-{{ mysql_version }}*.x86_64"
 credentials:
   root_username: "root"
-  root_password: "7layer"
+  root_password: "root"

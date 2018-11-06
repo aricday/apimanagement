@@ -33,14 +33,14 @@ ssg_packages:
   owner: "root"
   group: "root"
   gateway:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.3.00-7814.noarch.rpm"
-    dest: "/var/tmp/ssg-9.3.00-7814.noarch.rpm"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.4.00-8872.noarch.rpm"
+    dest: "/var/tmp/ssg-9.4.00-8872.noarch.rpm"
   appliance:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.3.00-7814.x86_64.rpm"
-    dest: "/var/tmp/ssg-appliance-9.3.00-7814.x86_64.rpm"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.4.00-8872.x86_64.rpm"
+    dest: "/var/tmp/ssg-appliance-9.4.00-8872.x86_64.rpm"
   platform:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-platform-1.7.00-181.noarch.rpm"
-    dest: "/var/tmp/ssg-platform-platform-1.7.00-181.noarch.rpm"
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/ssg-platform-1.8.00-346.noarch.rpm"
+    dest: "/var/tmp/ssg-platform-1.8.00-346.noarch.rpm"
 mysql_packages:
   owner: "root"
   group: "root"

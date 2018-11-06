@@ -15,5 +15,5 @@
     - mobile_schema_data
     - otk_extras
     - private_key
-    # - gmu
+    #- gmu
     - restart_services

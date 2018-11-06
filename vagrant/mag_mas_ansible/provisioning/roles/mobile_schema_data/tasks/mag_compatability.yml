@@ -1,0 +1,16 @@
+---
+## mag_compatability.yml
+## database and user credentials
+- name: Copy the MAG 4.1 to OTK 4.3 Compatability Patch Test
+  copy: src={{ mag_database_files.sql.mag_compatability.src }} dest={{ mag_database_files.sql.mag_compatability.dest }} owner={{ mag_database_files.owner }} group={{ mag_database_files.group }} mode=644
+
+- name: Compatability update - MAG4.1_OTK4.3
+  mysql_db: name={{ mag_database.schema }}
+          state=import
+          target={{ item.dest }}
+          login_host={{ login_host }}
+          login_port={{ mag_database.port }}
+          login_user={{ mag_database.admin.user }}
+          login_password={{ mag_database.admin.pass }}
+  with_items:
+    - "{{ mag_database_files.sql.mag_compatability }}"

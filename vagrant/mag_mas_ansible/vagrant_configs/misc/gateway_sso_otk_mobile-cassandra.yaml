@@ -2,7 +2,7 @@
 hosts:
   -
     fqdn: &gateway_fqdn "gateway.vagrant.local"
-    box: "box-cutter/centos67"
+    box: "bento/centos-6.7"
     hostname: *gateway_fqdn
     hostname_aliases: "gateway.vagrant gateway"
     memory: 4096
