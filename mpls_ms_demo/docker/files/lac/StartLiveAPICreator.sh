@@ -17,11 +17,11 @@ else
     echo "Using MySQL database from environment variables"
 fi
 
-export LAC_DEFAULT_LICENSE_FILE=/usr/local/tomcat/bin/EvalLicense_exp20171007.txt
+export LAC_DEFAULT_LICENSE_FILE=/usr/local/tomcat/bin/lac_license.json
 cd /usr/local/tomcat/bin
 
 sleep 5
-#./import_data.sh 2>&1 &
+./import_data.sh 2>&1 &
 
 if [ ! -z "$RDS_HOSTNAME" ] && [ ! -z "$RDS_PORT" ]
 then

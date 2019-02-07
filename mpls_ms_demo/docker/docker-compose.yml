@@ -77,6 +77,7 @@ services:
       # these are in MAS until MSGW quickstart load is added
       - ${PWD}/files/msgw/provision/x-add-quickstart-templates.sh:/opt/docker/rc.d/after-start/x-add-quickstart-templates.sh:rw
       - ${PWD}/files/msgw/quickstart/beer_data.json:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/quickstart/beer_data.json
+      - ${PWD}/config/mag_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/mag_license.xml
     env_file:
       - ${PWD}/.env
     # override the env_file defaults with shell environment variables
@@ -101,14 +102,17 @@ services:
         constraints:
           - node.role == manager
   msgw:
-    image: caapimcollab/microgateway:beta1
+    # image: caapimcollab/microgateway:beta1
+    image: caapim/microgateway:latest
     ports:
       - "9443:9443"
     volumes:
       - ${PWD}/files/msgw/bundles/token_exchange.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/token_exchange.bundle
       - ${PWD}/files/msgw/bundles/RouteHttp.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/RouteHttp.bundle
       - ${PWD}/files/msgw/bundles/consul.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/consul.bundle
+      - ${PWD}/config/msgw_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/msgw_license.xml
     environment:
+      - ACCEPT_LICENSE=true
       - SERVICE_IGNORE=yes
       - SSG_ADMIN_USERNAME=admin
       - SSG_ADMIN_PASSWORD=password

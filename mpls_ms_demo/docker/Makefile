@@ -9,7 +9,7 @@ log:
 	source .custom.env; docker-compose -f docker-compose.yml logs -f
 
 clean: 
-	source .custom.env; docker-compose -f docker-compose.yml stop && docker-compose -f docker-compose.yml rm -f && docker system prune -f
+	source .custom.env; docker-compose -f docker-compose.yml stop && docker-compose -f docker-compose.yml rm -f && docker volume prune -f
 
 run-beers: run
 	source .custom.env; docker-compose -f docker-compose.beers.yml up -d
@@ -18,7 +18,7 @@ log-beers:
 	source .custom.env; docker-compose -f docker-compose.yml -f docker-compose.beers.yml logs -f
 
 clean-beers: clean
-	source .custom.env; docker-compose -f docker-compose.beers.yml stop && docker-compose -f docker-compose.beers.yml rm -f && docker system prune -f
+	source .custom.env; docker-compose -f docker-compose.beers.yml stop && docker-compose -f docker-compose.beers.yml rm -f && docker volume prune -f
 
 run-token_exchange: run
 	source .custom.env; docker-compose -f docker-compose.token_exchange.yml up -d
