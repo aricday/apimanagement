@@ -1,0 +1,94 @@
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>Root Node</l7:Name>
+            <l7:Id>0000000000000000ffffffffffffec76</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:Resource>
+                <l7:Folder id="0000000000000000ffffffffffffec76">
+                    <l7:Name>Root Node</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>sample-folder</l7:Name>
+            <l7:Id>861c0ba809ebf509e60253f287db13fa</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="861c0ba809ebf509e60253f287db13fa">
+                    <l7:Name>sample-folder</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>sample api</l7:Name>
+            <l7:Id>861c0ba809ebf509e60253f287db13fb</l7:Id>
+            <l7:Type>SERVICE</l7:Type>
+            <l7:Resource>
+                <l7:Service id="861c0ba809ebf509e60253f287db13fb">
+                    <l7:ServiceDetail folderId="861c0ba809ebf509e60253f287db13fa" id="861c0ba809ebf509e60253f287db13fb">
+                        <l7:Name>sample api</l7:Name>
+                        <l7:Enabled>true</l7:Enabled>
+                        <l7:ServiceMappings>
+                            <l7:HttpMapping>
+                                <l7:UrlPattern>/sample_api</l7:UrlPattern>
+                                <l7:Verbs>
+                                    <l7:Verb>DELETE</l7:Verb>
+                                    <l7:Verb>POST</l7:Verb>
+                                    <l7:Verb>GET</l7:Verb>
+                                    <l7:Verb>PUT</l7:Verb>
+                                </l7:Verbs>
+                            </l7:HttpMapping>
+                        </l7:ServiceMappings>
+                    </l7:ServiceDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:L7p="http://www.layer7tech.com/ws/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:SslAssertion/&gt;
+        &lt;L7p:HttpBasic/&gt;
+        &lt;L7p:Authentication&gt;
+            &lt;L7p:IdentityProviderOid goidValue="0000000000000000fffffffffffffffe"/&gt;
+        &lt;/L7p:Authentication&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="http://your_server:80/sample_api"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+            &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Service>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" type="FOLDER"/>
+        <l7:Mapping action="NewOrUpdate" srcId="861c0ba809ebf509e60253f287db13fa" type="FOLDER"/>
+        <l7:Mapping action="NewOrUpdate" srcId="861c0ba809ebf509e60253f287db13fb" type="SERVICE"/>
+    </l7:Mappings>
+</l7:Bundle>
