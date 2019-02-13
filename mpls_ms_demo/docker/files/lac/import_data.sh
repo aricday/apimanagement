@@ -101,6 +101,11 @@ while [ $SECONDS -lt $end ]; do
 		get_api_key
 		import_api
 		break
+	elif [[ (($check_code == 500)) ]]; then
+		echo "Weird (different from v4.0) Response. Aric's try to import anyway"
+		get_api_key
+		import_api
+		break
 	elif [[ (($check_code == 000)) ]]; then
 		echo "'${check_url}' is not available"
 	else

@@ -102,7 +102,7 @@ services:
         constraints:
           - node.role == manager
   msgw:
-    # image: caapimcollab/microgateway:beta1
+    #image: caapimcollab/microgateway:beta1
     image: caapim/microgateway:latest
     ports:
       - "9443:9443"
@@ -110,9 +110,9 @@ services:
       - ${PWD}/files/msgw/bundles/token_exchange.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/token_exchange.bundle
       - ${PWD}/files/msgw/bundles/RouteHttp.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/RouteHttp.bundle
       - ${PWD}/files/msgw/bundles/consul.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/consul.bundle
-      - ${PWD}/config/msgw_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/msgw_license.xml
+      - ${PWD}/config/msgw_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+      #- ${PWD}/config/license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
     environment:
-      - ACCEPT_LICENSE=true
       - SERVICE_IGNORE=yes
       - SSG_ADMIN_USERNAME=admin
       - SSG_ADMIN_PASSWORD=password
@@ -130,6 +130,14 @@ services:
       - SCALER_DB_NAME=qstr
       - SCALER_DB_USER=causer
       - SCALER_DB_PASSWORD=capassword
+
+      # For MSGW Specific REST Mode
+      - ACCEPT_LICENSE=true
+      - QUICKSTART_REST_MODE=true
+      - QUICKSTART_REPOSITORY_TYPE=consul
+      - QUICKSTART_REPOSITORY_CONSUL_HOST=consul
+      - QUICKSTART_REPOSITORY_CONSUL_PORT=8500
+      - QUICKSTART_REPOSITORY_CONSUL_PROTOCOL=http
 
       - OTK_SERVER_HOST=mas
       - OTK_SERVER_SSL_PORT=${MAS_PORT}
