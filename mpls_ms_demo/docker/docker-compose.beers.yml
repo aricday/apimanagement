@@ -9,17 +9,14 @@
 ################################################################################
 version: '3'
 services:
-  #lac_ui:
-  lac:
+  lac_ui:
     build:
       context: ./files/lac
       dockerfile: Dockerfile
     ports:
     - "80:8080"
     environment:
-      #- SERVICE_IGNORE=yes
-      - SERVICE_NAME=lac
-      - SERVICE_TAGS=ssg-proxy
+      - SERVICE_IGNORE=yes
       - RDS_HOSTNAME=lac_mysql
       - RDS_PORT=3306
       - RDS_DB_NAME=lac_admin
@@ -30,31 +27,31 @@ services:
       - ${PWD}/files/lac/BeerData.json:/usr/local/tomcat/bin/BeerData.json
       - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/lac_license.json
       - ${PWD}/files/lac/import_data.sh:/usr/local/tomcat/bin/import_data.sh
-      - ${PWD}/files/lac/StartLiveAPICreator.new.sh:/usr/local/tomcat/bin/StartLiveAPICreator.sh
-    # deploy:
-    #   placement:
-    #     constraints:
-    #       - node.role == manager
-  # lac:
-  #   image: 'caliveapicreator/5.1.00'
-  #   # build:
-  #   #   context: ./files/lac
-  #   #   dockerfile: Dockerfile
-  #   environment:
-  #     - SERVICE_NAME=lac
-  #     - SERVICE_TAGS=ssg-proxy
-  #     - RDS_HOSTNAME=lac_mysql
-  #     - RDS_PORT=3306
-  #     - RDS_DB_NAME=lac_admin
-  #     - RDS_USERNAME=lac_admin
-  #     - RDS_PASSWORD=CAdemo123
-  #     - CATALINA_OPTS=--add-modules java.xml.bind $CATALINA_OPTS
-  #     - ca_accept_license=enu
-  #     - ESPRESSO_FORCE_DATASOURCE=true
-  #   volumes:
-  #     - ${PWD}/files/lac/StartLiveAPICreator.slave.sh:/usr/local/tomcat/bin/StartLiveAPICreator.sh
-  #   #   - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/EvalLicense_exp20171007.txt
-  #   #   - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/EvalLicense_exp20180517.txt
+      - ${PWD}/files/lac/StartLiveAPICreator.sh:/usr/local/tomcat/bin/StartLiveAPICreator.sh
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+  lac:
+    build:
+      context: ./files/lac
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_NAME=lac
+      - SERVICE_TAGS=ssg-proxy
+      - RDS_HOSTNAME=lac_mysql
+      - RDS_PORT=3306
+      - RDS_DB_NAME=lac_admin
+      - RDS_USERNAME=lac_admin
+      - RDS_PASSWORD=CAdemo123
+      - CATALINA_OPTS=--add-modules java.xml.bind $CATALINA_OPTS
+      - ca_accept_license=enu
+      - ESPRESSO_FORCE_DATASOURCE=true
+    volumes:
+      - ${PWD}/files/lac/BeerData.json:/usr/local/tomcat/bin/BeerData.json
+      - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/lac_license.json
+      - ${PWD}/files/lac/import_data.sh:/usr/local/tomcat/bin/import_data.sh
+      - ${PWD}/files/lac/StartLiveAPICreator.sh:/usr/local/tomcat/bin/StartLiveAPICreator.sh
   lac_mysql:
     image: mysql:5.7
     environment:

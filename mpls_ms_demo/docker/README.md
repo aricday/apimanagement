@@ -72,7 +72,7 @@ This tutorial will cover the following:
 *	[Apple Xcode](https://developer.apple.com/xcode) basic knowledge
 * 	[Docker-MAS README](https://github.com/CAAPIM/Docker-MAS/blob/master/README.md)
 *	Docker environment running
-*	Download this [repo](https://github.com/phriscage/ca_ms_demo)
+*	Download this [repo](https://)
 
 
 ### <a name="configuration"></a>Configuration:
@@ -296,5 +296,5 @@ Export custom RouteHttp if JWT payload has been modified and update if existing 
 
 ### Testing Token Exchange URL:
 
-	curl -i -4 -k -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:token-exchange' --data-urlencode 'subject_token_type=urn:ietf:params:oauth:token-type:jwt' --data-urlencode 'subject_token=eyJhbGciOiJFUzI1NiIsImtpZCI6IjE2In0.eyJhdWQiOiJodHRwczovL2FzLmV4YW1wbGUuY29tIiwiaXNzIjoiaHR0cHM6Ly9vcmlnaW5hbC1pc3N1ZXIuZXhhbXBsZS5uZXQiLCJleHAiOjE0NDE5MTA2MDAsIm5iZiI6MTQ0MTkwOTAwMCwic3ViIjoiYmNAZXhhbXBsZS5uZXQiLCJzY3AiOlsib3JkZXJzIiwicHJvZmlsZSIsImhpc3RvcnkiXX0.JDe7fZ267iIRXwbFmOugyCt5dmGoy6EeuzNQ3MqDek5cCUlyPhQC6cz9laKjK1bnjMQbLJqWix6ZdBI0isjsTA' https://msgw.docker.local/auth/oauth/v2/token/exchange --data-urlencode 'audience=abc.com333' --data 'debug=true'
+	curl -i -4 -k -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:token-exchange' --data-urlencode 'subject_token_type=urn:ietf:params:oauth:token-type:jwt' --data-urlencode 'subject_token=eyJhbGciOiJFUzI1NiIsImtpZCI6IjE2In0.eyJhdWQiOiJodHRwczovL2FzLmV4YW1wbGUuY29tIiwiaXNzIjoiaHR0cHM6Ly9vcmlnaW5hbC1pc3N1ZXIuZXhhbXBsZS5uZXQiLCJleHAiOjE0NDE5MTA2MDAsIm5iZiI6MTQ0MTkwOTAwMCwic3ViIjoiYmNAZXhhbXBsZS5uZXQiLCJzY3AiOlsib3JkZXJzIiwicHJvZmlsZSIsImhpc3RvcnkiXX0.JDe7fZ267iIRXwbFmOugyCt5dmGoy6EeuzNQ3MqDek5cCUlyPhQC6cz9laKjK1bnjMQbLJqWix6ZdBI0isjsTA' https://msgw.docker.local:9443/auth/oauth/v2/token/exchange --data-urlencode 'audience=abc.com333' --data 'debug=true'
 

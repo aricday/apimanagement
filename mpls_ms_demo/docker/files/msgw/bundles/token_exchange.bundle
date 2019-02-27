@@ -4028,7 +4028,7 @@ Lyui4IeqDyqOJE/xexkT4syaN1tm1MlTaEagRjsWDAgAOw==</l7:StringValue>
                 &lt;L7p:VariableToSet stringValue="subject_token"/&gt;
             &lt;/L7p:SetVariable&gt;
             &lt;L7p:SetVariable&gt;
-                &lt;L7p:Base64Expression stringValue="aHR0cHM6Ly8ke3JlcXVlc3QudXJsLmhvc3R9OiR7cmVxdWVzdC51cmwucG9ydH0vcXVpY2tzdGFydC8xLjAvandr"/&gt;
+                &lt;L7p:Base64Expression stringValue="aHR0cHM6Ly8ke3JlcXVlc3QudXJsLmhvc3R9OiR7cmVxdWVzdC51cmwucG9ydH0vcXVpY2tzdGFydC8xLjAvandrcy5qc29u"/&gt;
                 &lt;L7p:VariableToSet stringValue="jku"/&gt;
             &lt;/L7p:SetVariable&gt;
         &lt;/wsp:All&gt;

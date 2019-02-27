@@ -23,7 +23,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock"
   developer-console:
-    image: caapimcollab/mobile-developer-console:1.0.00
+    image: caapimcollab/mobile-developer-console:1.2.00
     ports:
       - ${MDC_PORT}:443
     environment:

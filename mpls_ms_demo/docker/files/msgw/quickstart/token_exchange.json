@@ -4,9 +4,6 @@
     "gatewayUri": "/token*",
     "httpMethods": [ "get", "post" ],
     "policy": [
-      	{
-       	    "Cors" : {}
-      	},
 	{
 	  "RequireOauth2Token": {
 	    "scope_required": "oob",
@@ -15,13 +12,6 @@
 	    "given_access_token": ""
 	  }
 	},
-        {
-          "RateLimit" : {
-            "maxRequestsPerSecond": 1,
-            "hardLimit": true,
-            "counterName": "RateLimit-Counter"
-      	  }
-        },
         {
           "RouteHttp" : {
             "targetUrl" : "http://api:8000",

@@ -10,13 +10,21 @@
 version: '3'
 services:
   api:
-    image: phriscage/msgw_te-api:develop
+    build:
+      context: ./files/api/
+      dockerfile: Dockerfile
+    image: aricday/jwt_api
     environment:
       - SERVICE_NAME=api
       - SERVICE_TAGS=ssg-proxy
       - MSGW_HOSTNAME=msgw
+    # volumes:
+    #   - ${PWD}/files/api/requirements.txt:/app/requirements.txt:rw
   api2:
-    image: phriscage/msgw_te-api:develop
+    build:
+      context: ./files/api/
+      dockerfile: Dockerfile
+    image: aricday/jwt_api
     environment:
       - SERVICE_NAME=api2
       - SERVICE_TAGS=ssg-proxy
