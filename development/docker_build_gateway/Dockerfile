@@ -9,6 +9,7 @@ FROM caapim/gateway:latest
 
 ## Load bundles
 # ADD ./files/bundles/*.* /opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/
+COPY ./files/bundles/deployment-1.0.0.gw7 /opt/docker/rc.d/deployment.gw7
 
 ## Mount license file(s)
 ADD ./config/gwlicense/*.xml /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/
