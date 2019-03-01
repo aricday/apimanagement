@@ -1,4 +1,0 @@
----
-dependencies:
-  - { role: mysql-community-repo }
-  - { role: mysql_python }

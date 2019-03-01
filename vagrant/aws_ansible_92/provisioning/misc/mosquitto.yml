@@ -1,6 +1,0 @@
----
-- hosts: mosquitto_mqtt_brokers
-  vars_files:
-    - group_vars/mosquitto.yml
-  roles:
-    - mosquitto

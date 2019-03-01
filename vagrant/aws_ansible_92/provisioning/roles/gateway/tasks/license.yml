@@ -1,7 +1,0 @@
----
-## licenses.yml
-- name: create the license file directory
-  file: path=/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license owner={{ license.owner }} group={{ license.group }}  mode=755 state=directory recurse=true
-
-- name: copy the license file
-  copy: src={{ license.file.src }} dest={{ license.file.dest }} owner={{ license.owner }} group={{ license.group }} mode=755 backup=yes

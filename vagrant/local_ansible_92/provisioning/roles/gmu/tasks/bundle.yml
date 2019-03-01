@@ -1,7 +1,0 @@
----
-## set restman max size cluster property
-- name: copy the {{ aws_env_bundle.file.src }} to the appropriate destination
-  template: src={{ aws_env_bundle.file.src }} dest={{ aws_env_bundle.file.dest }} mode=644
-
-- name: post a new property
-  command: "/usr/bin/curl -u {{ admin.user }}:{{ admin.pass }} -X PUT -k -H 'Content-Type: application/xml' -d @{{ aws_env_bundle.file.dest }} -s -D - https://localhost:{{ aws_env_bundle.ssl_port }}{{ aws_env_bundle.api_url }} -o {{ aws_env_bundle.curl_log }}"

@@ -1,8 +1,0 @@
----
-## packages.yml
-- name: unzip the {{ mag_sk.file.src }} for MAG solution kit RESTman installation
-  unarchive: src={{ mag_sk.file.src }} dest={{ mag_sk.file.dest }} mode=644
-  environment:
-    LANG: C
-    LC_ALL: C
-    LC_MESSAGES: C

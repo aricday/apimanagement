@@ -1,8 +1,0 @@
----
-## restart_ssg.yml
-- name: Restart SSG after all SKs are installed
-  service: name=ssg state=restarted
-  when: ssg_packages.platform is defined
-
-- name: Wait for {{ cluster.ssl_port }} port to be open
-  wait_for: port={{ cluster.ssl_port }}

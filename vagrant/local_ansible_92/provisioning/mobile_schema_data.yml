@@ -1,6 +1,0 @@
----
-- hosts: all
-  vars_files:
-    - group_vars/mobile.yml
-  roles:
-    - mobile_schema_data

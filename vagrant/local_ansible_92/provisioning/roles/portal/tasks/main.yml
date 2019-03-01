@@ -1,6 +1,0 @@
----
-## the main.yml includes all the components for the role
-- include: packages.yml
-- include: database.yml
-#- name: replace the JDK from the config_portal.sh script
-# sed -i -e 's!/opt/jdk/bin/keytool!/opt/SecureSpan/JDK/bin/keytool!g' config_portal.sh

@@ -1,7 +1,0 @@
----
-mysql_rpms:
-    - "mysql-community-libs-{{ mysql_version }}*.x86_64"
-    - "mysql-community-client-{{ mysql_version }}*.x86_64"
-credentials:
-  root_username: "root"
-  root_password: "root"

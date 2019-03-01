@@ -1,8 +1,0 @@
----
-- name: Add MQTT repository
-  yum_repository:
-    name: mqtt
-    description: MQTT repository for Mosquitto Server
-    baseurl: http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/
-    gpgkey: http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/repodata/repomd.xml.key
-    gpgcheck: yes

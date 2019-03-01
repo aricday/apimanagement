@@ -1,9 +1,0 @@
----
-## licenses.yml
-- name: create the license file directory
-  file: path=/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license owner={{ license.owner }} group={{ license.group }}  mode=755 state=directory recurse=true
-
-- name: copy the MAG license file
-  copy: src={{ mobile_license.file.src }} dest={{ mobile_license.file.dest }} owner={{ mobile_license.owner }} group={{ mobile_license.group }} mode=755 backup=yes
-
-

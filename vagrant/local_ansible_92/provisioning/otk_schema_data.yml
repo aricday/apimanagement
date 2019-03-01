@@ -1,6 +1,0 @@
----
-- hosts: all
-  vars_files:
-    - group_vars/otk.yml
-  roles:
-    - otk_schema_data

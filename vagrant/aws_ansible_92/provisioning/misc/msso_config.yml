@@ -1,6 +1,0 @@
----
-- hosts: all
-  vars_files:
-    - group_vars/gateway.yml
-  roles:
-    - msso_config

@@ -1,8 +1,0 @@
----
-## packages.yml
-- name: unzip the {{ otk_sk.file.src }} for OTK solution kit RESTman installation
-  unarchive: src={{ otk_sk.file.src }} dest={{ otk_sk.file.dest }} mode=644
-  environment:
-    LANG: C
-    LC_ALL: C
-    LC_MESSAGES: C

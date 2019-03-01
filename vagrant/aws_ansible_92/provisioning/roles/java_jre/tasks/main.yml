@@ -1,3 +1,0 @@
-## packages.yml
-- name: install JRE
-  yum: name={{ java_jre_version }} state=installed

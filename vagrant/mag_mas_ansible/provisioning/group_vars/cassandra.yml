@@ -1,3 +1,16 @@
 ---
 ## Note this file is only stored for demo purposes. Any production credentials should not
 ## be included in version control.
+cassandra_package:
+  owner: "root"
+  group: "root"
+  cass21:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/cassandra21-2.1.7-1.noarch.rpm"
+    dest: "/var/tmp/cassandra21-2.1.7-1.noarch.rpm"
+  tool21:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/cassandra21-tools-2.1.7-1.noarch.rpm"
+    dest: "/var/tmp/cassandra21-tools-2.1.7-1.noarch.rpm"
+  dsc21:
+    src: "/Users/AricDay/API/apim_vagrant_ansible_files/dsc21-2.1.7-1.noarch.rpm"
+    dest: "/var/tmp/dsc21-2.1.7-1.noarch.rpm"
+    

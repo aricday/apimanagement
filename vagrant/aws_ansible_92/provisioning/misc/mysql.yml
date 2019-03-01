@@ -1,6 +1,0 @@
----
-- hosts: mysql_databases
-  vars_files:
-    - group_vars/mysql.yml
-  roles:
-    - mysql

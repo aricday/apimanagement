@@ -13,10 +13,15 @@ if not ENV['GATEWAY_ROLE'].nil?
 end
 
 ## Set the default vagrant config file
-vagrant_config = YAML.load_file("#{current_dir}/vagrant_configs/aws/#{gateway_role}.yaml")
+vagrant_config = YAML.load_file("#{current_dir}/vagrant_configs/#{gateway_role}.yaml")
 ## Set the vagrant config file if VAGRANT_CONFIG_FILE is defined
 if not ENV['VAGRANT_CONFIG_FILE'].nil?
   vagrant_config = YAML.load_file("#{current_dir}/#{ENV['VAGRANT_CONFIG_FILE']}")
+end
+
+ansible_verbosity = 'v'
+if not ENV['ANSIBLE_VERBOSITY'].nil?
+  ansible_verbosity = ENV['ANSIBLE_VERBOSITY']
 end
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
@@ -28,64 +33,31 @@ Vagrant.configure(2) do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.ignore_private_ip = false
+  config.vbguest.auto_update = false
+  #config.vbguest.iso_path = "VBoxGuestAdditions.iso"
+
   ## iterate over each host
   vagrant_config['hosts'].each do |host|
+    config.vm.synced_folder ".", "/vagrant", disabled: true
     config.vm.define host['fqdn'] do |role|
-      config.vm.box = "dummy"
-      config.vm.synced_folder ".", "/vagrant", disabled: true
-      ## run aws provider
-      role.vm.provider :aws do |aws, override|
-        ## AWS access credendials
-    	  aws.access_key_id = ENV['AWS_ACCESS_KEY_ID']
-    	  aws.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-    	  aws.keypair_name = ENV['AWS_PRIVATE_KEY_NAME']
-
-        ## AWS instance resources
-	      if host.has_key?("aws") and host["aws"].has_key?("ami")
-    	    aws.ami = host["aws"]["ami"]
-	      else
-    	    aws.ami = "ami-a4827dc9" # Amazon Linux AMI 2016.03.2 (HVM), SSD Volume Type
-        end
-        if host.has_key?("aws") and host["aws"].has_key?("instance_type")
-          aws.instance_type = host["aws"]["instance_type"]
-        else
-    	    aws.instance_type = "t2.micro" # 1vCPU, 1GB mem
-        end
-        if host.has_key?("aws") and host["aws"].has_key?("security_groups")
-    	    aws.security_groups = host["aws"]["security_groups"]
-        else
-    	    aws.security_groups = ["api_gateway"]
-        end
-        if host.has_key?("override") and host["override"].has_key?("ssh") \
-          and host["override"]["ssh"].has_key?("username")
-          override.ssh.username = host["override"]["ssh"]["username"]
-        else
-          override.ssh.username = "ec2-user"
-        end
-        ## Doesn't work with destroy
-        #aws.elastic_ip = true
-
-        ## AWS instance extra metadata
-        aws.tags = { "Name" => "#{host["fqdn"]}" }
-        ## AWS local private key file
-        override.ssh.private_key_path = ENV['AWS_PRIVATE_KEY_FILE']
-
-        # ## AWS Route53 configuration
-        # if !ENV['AWS_HOSTED_ZONE_ID'].nil?
-        #   aws_hosted_zone_id = ENV['AWS_HOSTED_ZONE_ID']
-        # else
-        #   aws_hosted_zone_id = 'ZSSW6J8PYHFJ5' # vagrant.apim.ca.com
-        # end
-        # override.dns.record_sets = [%W(#{aws_hosted_zone_id} #{host["fqdn"]} A)]
-        ## TODO use aws sdk/info to pull public dns record of instance
-        #override.dns.record_sets = [%W(#{aws_hosted_zone_id} #{host["fqdn"]} CNAME #{:dns_name})]
+      role.vm.provider "virtualbox" do |v|
+        v.memory = host['memory']
+        v.cpus = host['cpus']
       end
-
-      ## run ansible provisioner
+      role.vm.box = host["box"]
+      if host.has_key?("hostname_aliases")
+        role.hostmanager.aliases = host['hostname_aliases']
+      end
+      if host.has_key?("ip_address")
+        role.vm.network "private_network", ip: host['ip_address']
+      end
       if host.has_key?("ansible")
         role.vm.provision :ansible do |ansible|
           ansible.playbook = host['ansible']['playbook']
-          ansible.verbose = "v"
+          ansible.verbose = ansible_verbosity
           ansible.sudo = true
           ## groups are defined for each host in the config
           if host["ansible"].has_key?("groups")

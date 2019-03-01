@@ -1,9 +1,0 @@
----
-## licenses.yml
-- name: create the license file directory
-  file: path=/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license owner={{ license.owner }} group={{ license.group }}  mode=755 state=directory recurse=true
-
-- name: copy the MAS license file
-  copy: src={{ mas_license.file.src }} dest={{ mas_license.file.dest }} owner={{ mas_license.owner }} group={{ mas_license.group }} mode=755 backup=yes
-
-

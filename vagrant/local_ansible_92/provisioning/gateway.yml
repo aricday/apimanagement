@@ -1,9 +1,0 @@
----
-- hosts: all
-  vars_files:
-    - group_vars/mysql.yml
-    - group_vars/gateway.yml
-  roles:
-    - common
-    - mysql
-    - gateway

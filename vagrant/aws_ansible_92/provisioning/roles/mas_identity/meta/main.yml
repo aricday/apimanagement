@@ -1,8 +1,0 @@
----
-dependencies:
-  #- { role: mysql_python, when: mas_identity_iip_database.technology is defined and mas_identity_iip_database.technology == "mysql" }
-  #- { role: mysql_client, when: mas_identity_iip_database.technology is defined and mas_identity_iip_database.technology == "mysql" }
-  #- { role: cassandra_client, when: mas_identity_mas_database.technology is defined and mas_identity_mas_database.technology == "cassandra" }
-  - { role: mysql_python }
-  - { role: mysql_client }
-  - { role: cassandra_client }

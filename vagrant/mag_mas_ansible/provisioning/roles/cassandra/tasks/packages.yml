@@ -1,12 +1,21 @@
 ---
 ## packages.yml
+- name: copy the Cassandra, Cassandra-tools, Datastax packages
+  copy: src={{ item.src }} dest={{ item.dest }} owner={{ cassandra_package.owner }} group={{ cassandra_package.group }} mode=644
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "{{ cassandra_package.cass21 }}"
+  - "{{ cassandra_package.tool21 }}"
+  - "{{ cassandra_package.dsc21 }}"
+
+
 - name: install the Cassandra, Cassandra-tools, Datastax packages
   yum: name={{item}} state=installed
   with_items:
   ## These must be in this order since Ansible cannot determine local RPM dependencies
-  - "cassandra21-{{ cassandra_version }}*.noarch"
-  - "cassandra21-tools-{{ cassandra_version }}*.noarch"
-  - "dsc21-{{ cassandra_version }}*.noarch"
+  - "{{ cassandra_package.cass21.dest }}"
+  - "{{ cassandra_package.tool21.dest }}"
+  - "{{ cassandra_package.dsc21.dest }}"
 
 #cassandra_resources:
   #MAX_HEAP_SIZE: "256M"

@@ -1,9 +1,0 @@
----
-## the main.yml includes all the components for the role
-- debug:
-    msg: "mas_identity_mas_database={{ mas_identity_mas_database }}"
-  when: mas_identity_mas_database is defined
-- debug:
-    msg: "mas_identity_iip_database={{ mas_identity_iip_database }}"
-  when: mas_identity_iip_database is defined
-- include: repo.yml
