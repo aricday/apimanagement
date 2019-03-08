@@ -49,9 +49,9 @@ Required Dependencies
     
 ### provisioning/group_vars/gateway.yml
     * /Users/AricDay/API/apim_vagrant_ansible_files/SSG_Gateway_9.xml
-    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.3.00-7814.noarch.rpm
-    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.3.00-7814.x86_64.rpm
-    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-platform-1.7.00-181.noarch.rpm
+    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-9.4.00-8872.noarch.rpm
+    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-appliance-9.4.00-8872.x86_64.rpm
+    * /Users/AricDay/API/apim_vagrant_ansible_files/ssg-platform-1.8.00-346.noarch.rpm
     * /Users/AricDay/API/apim_vagrant_ansible_files/MySQL-python-1.2.3-0.3.c1.1.el6.x86_64.rpm
 
 ### provisioning/group_vars/mas_messaging.yml
@@ -65,7 +65,7 @@ Required Dependencies
     * /Users/AricDay/API/apim_vagrant_ansible_files/uuid-1.6.1-10.el6.x86_64.rpm
 
 ### provisioning/group_vars/otk.yml
-    * /Users/AricDay/API/apim_vagrant_ansible_files/OTK_Installers_4.2.00-3367.zip
+    * /Users/AricDay/API/apim_vagrant_ansible_files/OTK_Installers_4.3.00-3789.zip
 
 ### provisioning/group_vars/mobile.yml
     * /Users/AricDay/API/apim_vagrant_ansible_files/SSG_MAG_9.xml
