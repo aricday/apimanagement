@@ -33,6 +33,10 @@ Please contact your CA representative for additional information on required lic
 
 Required Dependencies
 -------------------------
+### License files
+    * provisioning/group_vars/gateway.yml: /Users/AricDay/API/ansible_artifacts/SSG_Gateway_9.xml
+    * provisioning/group_vars/mas.yml: /Users/AricDay/API/ansible_artifacts/SSG_MAS_9.xml
+    * provisioning/group_vars/mobile.yml: /Users/AricDay/API/ansible_artifacts/SSG_MAG_9.xml
 
 ### MySQL Dependencies
     * /Users/AricDay/API/apim_vagrant_ansible_files/mysql-community-server-5.7.21-1.el6.x86_64.rpm
@@ -42,7 +46,7 @@ Required Dependencies
 ### Java 
     * /Users/AricDay/API/apim_vagrant_ansible_files/jdk-8u91-linux-i586.rpm
 
-### Cassandra
+### provisioning/group_vars/cassandra.yml
     * /Users/AricDay/API/apim_vagrant_ansible_files/cassandra21-2.1.7-1.noarch.rpm
     * /Users/AricDay/API/apim_vagrant_ansible_files/cassandra21-tools-2.1.7-1.noarch.rpm
     * /Users/AricDay/API/apim_vagrant_ansible_files/dsc21-2.1.7-1.noarch.rpm

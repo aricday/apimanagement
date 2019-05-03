@@ -1,12 +1,24 @@
 ---
 ## packages.yml
+- name: copy the Mosquitto lib, Mosquitto, Mosquitto-clients packages
+  copy: src={{ item.src }} dest={{ item.dest }} owner={{ mosquitto_packages.owner }} group={{ mosquitto_packages.group }} mode=644
+  with_items:
+  ## These must be in this order since Ansible cannot determine local RPM dependencies
+  - "{{ mosquitto_packages.uuid }}"
+  - "{{ mosquitto_packages.tcp_wrappers }}"
+  - "{{ mosquitto_packages.main }}"
+  - "{{ mosquitto_packages.clients }}"
+  - "{{ mosquitto_packages.lib }}"
+
 - name: install the Mosquitto lib, Mosquitto, Mosquitto-clients packages
   yum: name={{ item }} state=installed
   with_items:
   ## These must be in this order since Ansible cannot determine local RPM dependencies
-  - "mosquitto-{{ mosquitto_version }}*.x86_64"
-  - "mosquitto-clients-{{ mosquitto_version }}*.x86_64"
-  - "libmosquitto1-{{ mosquitto_version }}*.x86_64"
+  - "{{ mosquitto_packages.uuid.dest }}"
+  - "{{ mosquitto_packages.tcp_wrappers.dest }}"
+  - "{{ mosquitto_packages.main.dest }}"
+  - "{{ mosquitto_packages.clients.dest }}"
+  - "{{ mosquitto_packages.lib.dest }}"
 
 - name: ensure mosquitto is running and starts on boot
   service: name=mosquitto state=started enabled=true
