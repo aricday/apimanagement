@@ -3,17 +3,17 @@
             <l7:References>
                 <l7:Item>
                     <l7:Name>mas.docker.local</l7:Name>
-                    <l7:Id>8c5ae07247f7a3f5d5fdcc3926f2eeb6</l7:Id>
+                    <l7:Id>e7400e8803fc3059fc307221395717fc</l7:Id>
                     <l7:Type>TRUSTED_CERT</l7:Type>
-                    <l7:TimeStamp>2019-05-01T13:46:37.727Z</l7:TimeStamp>
+                    <l7:TimeStamp>2019-05-03T14:39:15.825Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:TrustedCertificate id="8c5ae07247f7a3f5d5fdcc3926f2eeb6" version="0">
+                        <l7:TrustedCertificate id="e7400e8803fc3059fc307221395717fc" version="0">
                             <l7:Name>mas.docker.local</l7:Name>
                             <l7:CertificateData>
                                 <l7:IssuerName>CN%3Dmas.docker.local</l7:IssuerName>
-                                <l7:SerialNumber>9830121966467924271</l7:SerialNumber>
+                                <l7:SerialNumber>13821923571978981873</l7:SerialNumber>
                                 <l7:SubjectName>CN%3Dmas.docker.local</l7:SubjectName>
-                                <l7:Encoded>MIIFJjCCAw6gAwIBAgIJAIhrm9imFcEvMA0GCSqGSIb3DQEBBQUAMBsxGTAXBgNVBAMMEG1hcy5kb2NrZXIubG9jYWwwHhcNMTcwNzA2MTkxOTEwWhcNMTkwNzA2MTkxOTEwWjAbMRkwFwYDVQQDDBBtYXMuZG9ja2VyLmxvY2FsMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3h8BYvPsnCXz0juXMSGiHz2fct8qpIhHzRxc44LmY17gYWI9A+cpi30qFrFEHXT0YpYm2ed6T7bprfW1RpcW40q5gujhLukMFQlmnutzKNe0AowrDoDNKIpCGlJImb72nNRyF8kML0ANDLDoC1vztUM4esMh+fPUyaIoA23GVmobnUtr5H865s4bKbUArTSPIr5GPkhGTAOx05lBq+tX8P0RcyXPdahWoDmooWrseByyslebPD4q9UagKQxbPRZEVZjzZC6k/LJZa9+OY4n1F8tfEuMB5SKlrNBKqj1dcqVElNzCLAp+lR9FYYYz+r9VB/6qwkMguWed+koVuvhfRZWIavFJHARiVPwn5R68Q25sQkxNwUHE6/PwEHUxe4biKIHg/HgLMa6Mb8BhlifYz6M5W3T/ro9SNeid5hGNa77svNYl+i9lZEPfDDAfa5lTAILVCB4d5CvfoT9XZYei/2agIqyhWbKDUQv9Y05MR2agcSQQ0HPAUmhvOdzjpHx6RVJ4MSnvz51iXrrAGGPgaaxaxT+7sNJ4zisHVNd2aE5o8/e3EGDgSy7pttEE+VBD3kKXcAHNZqV8/kHjBBQb4kPGQqfQiWmlZBYZ+jpORJgK0U4dZxZLuXBUTd6qOnc9oOCtuaeUWtyevB1w7/eL3XKY5O3FR9/GMsFmX7Y4qA8CAwEAAaNtMGswGwYDVR0RBBQwEoIQbWFzLmRvY2tlci5sb2NhbDAdBgNVHQ4EFgQUsGqxJDURn0ol94M4SAjKa8iW5VowHwYDVR0jBBgwFoAUsGqxJDURn0ol94M4SAjKa8iW5VowDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAgEAKvwYZmKDJj6+A7roClEV4UUYLgO3AkOxZahBRIEXbwBSPKvvhHAXe3Vnh+yYsmy3Laq4Lsiehk5boGZ62Az5neljFENSkbr0RQLmE3nGSuuG6wvMVnIjRSC2FR2TD7AkXSxLvFhbZTcPAf6HWEdLlosmVPy6SiffuZk/qOTDsEzJQxEAJ9diV0/0FpR2BtRoJVrPtNPu8XIwLDVuVmCXHpkvFbEbnN1qk7yziooF2VJQ19WOGBIGdiD09S1KSxf37VMtKrrdVZVLxY12Hr7F0Qs6CoLrpe2j07+nBglbxONOrimkCyhXAOy1nUOsvcNEUJPcSo3wU4snlQpG7rdOacmu6HCKIDaxRkAFZwdvLn8BuMDbMfF9xiHLz3CNAqayuXuKv8v+KiKSBZ35it0y9bV2hlGGi+Z7D+wPYoNitzBVuKSvUTcj8+lTMcKy6qD4Axmt/6rrUpLeKJtANvGuHjJt2k6mXuPKJMkd5lmHesOVxCLtfjAWGVJ8jKdjlRh3ldZved7PUJLmVdc3WN174A4ifkVVnJDncYklR85l3Qv6/lnjcRAnVISaCuiQjZ5p7dQ3HcQuXNkrSq3GiCeIaRzvHbyZb+1Jrl82sGD9U5jpMQVyMo3UbCzFZxWFBfLYLLQwmB+yds1UR7I0wjUSVACq8Zr7ZH05R2ChjMEq98M=</l7:Encoded>
+                                <l7:Encoded>MIIFJjCCAw6gAwIBAgIJAL/RVkHMZ9HxMA0GCSqGSIb3DQEBCwUAMBsxGTAXBgNVBAMMEG1hcy5kb2NrZXIubG9jYWwwHhcNMTkwNTAzMDIzNjAzWhcNMjEwNTAyMDIzNjAzWjAbMRkwFwYDVQQDDBBtYXMuZG9ja2VyLmxvY2FsMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtsw4IbjByTRfLZLFmmJd29rWu8BUdqO10FfyeCakbhbvTaYkec+j1TQRBW8un+8P0qSzA3K2cipLCy1fv3egWuPaDXEd2nrWsfCOgiOlIC/9cvuyglntHCEKK9wTK1vjSsAfFyeBH8qGj2TQGazpb1LVqo9uXFUMwaRsKgoEdwwMytntCRPuCjJJwfukEIiX6VH8aLPdS03BhVakoEG1bCn+1b0FR2O4B1UOJVKcZXmW14ZFZEEh5IjJj4kz4ygoXSzNbGVUtN+MJdun9l9GCvy+2Lw946RqHZ+/iPDWMN8jOAgCbTnnWuE12NLdnp2QuJEj16QIwDIpEd5msrufLDdE0eBgC9kAcjB6nLLkXw4e4d1OiMHWD+AreVX5i2FMp/7ExEmBsnRqmVbJUrhH4bfLwMNbIBA7w2KgvWNTdbA7mWG3olW11N+0BuJl99af63NPtV/M7/UXCn4LGBOkXW1avM21JmYMxSh0caSnH76Lr1V65GqyRhsINdkpGV3tMUI42Zwg+mj/XG9odkWMsCJ0lIC6mtviOocWrXfFpeUZbsarjsRF0feEcCiC1WAshIhS+OZKuUnuxDc9hXOQ/jWwTvtP4VahHRBPPtssnvYGX9fzAxbCwx3ViH7cV0g9+f8rWd2SKqhHLrjdX0pz4gnHu4bR2oSNJl2+ZSsnBDkCAwEAAaNtMGswGwYDVR0RBBQwEoIQbWFzLmRvY2tlci5sb2NhbDAdBgNVHQ4EFgQUbcoz5X+R71dt98s9YNsVLKBUu2EwHwYDVR0jBBgwFoAUbcoz5X+R71dt98s9YNsVLKBUu2EwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEApskN4ooYIwoOJf84r0SlUGSVNS4NkitXg6Ju6L9wEeQtd+dA9wJBX4Ztc5YRSiJm+UqLJOgBzd5rKHnBt9gwVjYT0jGkDLnMtB0GglKygeJYqhygQCHG65crdgpijk0wq8P2CXvKDZMfCj1KDCEWMel6jZL2/+F5CZqYIkIULZl5vxcmIa6gYwaIaUXoYr40b/aRJaXrZlffbQ/aMZ/w6i6NkUzvO4wLKK+H1dq+jIP/lk7oJK9774aAsSRf7wH6mgHeHEBOPy9YBmwAOW8JNTQVXn1ZKjqOO0eNFpsvLoen+BrDrrvI8grVWnAGnp8/C9wwjx/DkHaNaur5E8P2fxxqWQTDAsDZJ6FrhNcroU/mbc08+4VHy5d7PkkC9Y+YiScdfJCOmEhgNNnIC4iBV5w5l/o+GCccwjdcMNi2UJQYNbbfy2ccEcezZSBqs5oBEBkkX54S0Y4kqr1W8MlHM+EObaVbWY0gs4WQFlIzoCS5buPc0xdB9PLQwlMfnCcUvl/17Spd5hfwrLwyPAS9LKuGecsetclg90Txf7Xlb5TqLz9aahxzSszBzHGIAXID2dy/jfb0Lv539/AG4ad+Vlb/GZEsqTKyJ57Z9QbgGohXTrjAx3JBKxfUndfawLwKNS1E9XClFwemmkMRtZM5i9nvBENuCvvR+BRLec37XNQ=</l7:Encoded>
                             </l7:CertificateData>
                             <l7:Properties>
                                 <l7:Property key="revocationCheckingEnabled">
@@ -45,12 +45,86 @@
                     </l7:Resource>
                 </l7:Item>
                 <l7:Item>
+                    <l7:Name>msgw.docker.local</l7:Name>
+                    <l7:Id>40d44f326379dab7fbcbf8ddaa6cfa73</l7:Id>
+                    <l7:Type>TRUSTED_CERT</l7:Type>
+                    <l7:TimeStamp>2019-05-03T14:39:15.827Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:TrustedCertificate id="40d44f326379dab7fbcbf8ddaa6cfa73" version="0">
+                            <l7:Name>msgw.docker.local</l7:Name>
+                            <l7:CertificateData>
+                                <l7:IssuerName>CN%3Dmsgw.docker.local</l7:IssuerName>
+                                <l7:SerialNumber>16738608486165073783</l7:SerialNumber>
+                                <l7:SubjectName>CN%3Dmsgw.docker.local</l7:SubjectName>
+                                <l7:Encoded>MIIFKTCCAxGgAwIBAgIJAOhLe7u0NU93MA0GCSqGSIb3DQEBCwUAMBwxGjAYBgNVBAMMEW1zZ3cuZG9ja2VyLmxvY2FsMB4XDTE5MDUwMzAyMzUyNloXDTIxMDUwMjAyMzUyNlowHDEaMBgGA1UEAwwRbXNndy5kb2NrZXIubG9jYWwwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQC9XXTdO1X8AMjRTyPrqZdZboQ2PXtURVw9b+300z5n5zTXl/UC9DINx+RcmCpOhq+/lBP85WV7ZTNEPF+5EL/En0MXcRkb+cXpSFGQTLv9wjzvb2Np8A79spHPydixtz1X7XBgfZgzn4V7F8tAYnVqbNCP3Vom72xefHzYYlZjkYUy5+T32RE0+ty1V2HzPfTXcvcPeq8+Q58EgrKMbAIe2Q4wyVedCtgCnsN1tVy8TaU47HhRufCcbeYmiIyIeaAG/yabqAjRyMuRUwQHw2wI0O0iTq7K/QuNubbVhzrPrDQs0TgK1ozgfiek1Gq5NAzlffI0hVFrH2Wrc9dOcuhQSl/0j5zr19EKyG1dXhBQuMqPjZq9PRA3WKorvWM0CHVDhK7rrp0gfmLaksug5e4buhCufiw+ssPk/PObBLdtK0lDR0ljgT2I1V/4OZ614zYL515tKFADFD3o9DcK0PxMXnUScHI4pKTlpBDH0+wS0v5sefMBWnTvIps8ldwDuuMHmgzJiTq9hdvkdRu91FzLpCY3YTjG9ggrBIWYKZhNY5z9V+iPKcOmTIUIunhjGZ2xIQjgXeVqs0pKSZu7M9wjJK9TsAXIdrXsF750BbjhY7s7qeZfjJYkQplbSR0Eyy8syeEBnVRK/mI+ESoOR0xlY4SJbBy9xy9f9oVEh32V7QIDAQABo24wbDAcBgNVHREEFTATghFtc2d3LmRvY2tlci5sb2NhbDAdBgNVHQ4EFgQUtdf2wlZKE5wk/okOszAf7OJU73wwHwYDVR0jBBgwFoAUtdf2wlZKE5wk/okOszAf7OJU73wwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEApkF2nHOGxzXa0TJrWszmnJ7ocpIbpNYHZ1O3ONZIcnTlWdNjFsXFePkGapywpfYg4ZxpQcQUsqLT0mAXHgxin8b/OUzs0Bg6lzAtG5NdCaWC2WKQIr7/zmg2SYVkOhVP3hAyVaTttyQkMQt7lgwlmUKPlK7I88zii7j1zqaRVV/vBcsMHlrysyV8Lb6zcrkD8j494RTJgTWBmXgh6tOaRzv34SxLdkRMcZZGYUxwhw9SrI+Q/YrRmWgs6FZxOsds/LmhAUPnAzR8Q86IrV1cbtqYPxgkApms462d6u10YidKkJZ+HOCZ5me1QIGmay7h0+m/qbriYx2GlA8wG4boAPWd4NDaLLc+H+z+qiw0tf7erGX86BSplYIrqsfCQdTj7/obAlLV8hGxwlLfudN4/KBxIIXJqq4pAbK/Dqyb9CcnkotndauzLV2vX3LTw+9dYBryShqtTSM8bCjV3aKFaCWkBPYLoiwAdK9+LeWGR7x7TvXtngOHipuvrEfHs7Tl0f04HqtuuO1pan8DzcoHSrNej9MLuMbT26p57gfuSmMnwe4b6RntnFCHQgM4BgnV+dOD4PgNRACjdiQcozo5g5Gf93uCng+UrPVas8nEGuFZ0HltePPGPOnh82CeZJNVVpest3u6iI88m2ewWy1RMQSMtNumCqBmM4crDhAQH2A=</l7:Encoded>
+                            </l7:CertificateData>
+                            <l7:Properties>
+                                <l7:Property key="revocationCheckingEnabled">
+                                    <l7:BooleanValue>true</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustAnchor">
+                                    <l7:BooleanValue>true</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustedAsSamlAttestingEntity">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustedAsSamlIssuer">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustedForSigningClientCerts">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustedForSigningServerCerts">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="trustedForSsl">
+                                    <l7:BooleanValue>true</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="verifyHostname">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                            </l7:Properties>
+                        </l7:TrustedCertificate>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
+                    <l7:Name>Gateway as a Client Identity Provider</l7:Name>
+                    <l7:Id>e7400e8803fc3059fc30722139571827</l7:Id>
+                    <l7:Type>ID_PROVIDER_CONFIG</l7:Type>
+                    <l7:TimeStamp>2019-05-03T14:39:15.828Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:IdentityProvider id="e7400e8803fc3059fc30722139571827" version="1">
+                            <l7:Name>Gateway as a Client Identity Provider</l7:Name>
+                            <l7:IdentityProviderType>Federated</l7:IdentityProviderType>
+                            <l7:Properties>
+                                <l7:Property key="certificateValidation">
+                                    <l7:StringValue>Validate Certificate Path</l7:StringValue>
+                                </l7:Property>
+                                <l7:Property key="enableCredentialType.saml">
+                                    <l7:BooleanValue>false</l7:BooleanValue>
+                                </l7:Property>
+                                <l7:Property key="enableCredentialType.x509">
+                                    <l7:BooleanValue>true</l7:BooleanValue>
+                                </l7:Property>
+                            </l7:Properties>
+                            <l7:Extension>
+                                <l7:FederatedIdentityProviderDetail>
+                                    <l7:CertificateReferences resourceUri="http://ns.l7tech.com/2010/04/gateway-management/trustedCertificates">
+                                        <l7:Reference id="e7400e8803fc3059fc307221395717fc"/>
+                                        <l7:Reference id="40d44f326379dab7fbcbf8ddaa6cfa73"/>
+                                    </l7:CertificateReferences>
+                                </l7:FederatedIdentityProviderDetail>
+                            </l7:Extension>
+                        </l7:IdentityProvider>
+                    </l7:Resource>
+                </l7:Item>
+                <l7:Item>
                     <l7:Name>OAuth SAML Identity Provider</l7:Name>
                     <l7:Id>1047c671c8d2cb44c606523f9c1521a3</l7:Id>
                     <l7:Type>ID_PROVIDER_CONFIG</l7:Type>
-                    <l7:TimeStamp>2019-05-01T13:46:37.730Z</l7:TimeStamp>
+                    <l7:TimeStamp>2019-05-03T14:39:15.828Z</l7:TimeStamp>
                     <l7:Resource>
-                        <l7:IdentityProvider id="1047c671c8d2cb44c606523f9c1521a3" version="1">
+                        <l7:IdentityProvider id="1047c671c8d2cb44c606523f9c1521a3" version="0">
                             <l7:Name>OAuth SAML Identity Provider</l7:Name>
                             <l7:IdentityProviderType>Federated</l7:IdentityProviderType>
                             <l7:Properties>
@@ -67,7 +141,7 @@
                             <l7:Extension>
                                 <l7:FederatedIdentityProviderDetail>
                                     <l7:CertificateReferences resourceUri="http://ns.l7tech.com/2010/04/gateway-management/trustedCertificates">
-                                        <l7:Reference id="8c5ae07247f7a3f5d5fdcc3926f2eeb6"/>
+                                        <l7:Reference id="e7400e8803fc3059fc307221395717fc"/>
                                     </l7:CertificateReferences>
                                 </l7:FederatedIdentityProviderDetail>
                             </l7:Extension>
@@ -78,7 +152,7 @@
                     <l7:Name>OTK grant_type=SAML Authentication</l7:Name>
                     <l7:Id>bc9a31b7578652a08a514d7d4fef3147</l7:Id>
                     <l7:Type>POLICY</l7:Type>
-                    <l7:TimeStamp>2019-05-01T13:46:37.734Z</l7:TimeStamp>
+                    <l7:TimeStamp>2019-05-03T14:39:15.837Z</l7:TimeStamp>
                     <l7:Resource>
                         <l7:Policy guid="59b9ada1-ac0f-4e8d-a6d4-ddb7544e9eca" id="bc9a31b7578652a08a514d7d4fef3147" version="1">
                             <l7:PolicyDetail folderId="e04ad90cfcec38e51fbe3ed9fe092aef" guid="59b9ada1-ac0f-4e8d-a6d4-ddb7544e9eca" id="bc9a31b7578652a08a514d7d4fef3147" version="1">
@@ -129,6 +203,12 @@
             &lt;L7p:Enabled booleanValue=&quot;false&quot;/&gt;
         &lt;/L7p:FalseAssertion&gt;
         &lt;L7p:Authentication&gt;
+            &lt;L7p:Enabled booleanValue=&quot;false&quot;/&gt;
+            &lt;L7p:IdentityProviderOid goidValue=&quot;e7400e8803fc3059fc30722139571827&quot;/&gt;
+            &lt;L7p:OtherTargetMessageVariable stringValue=&quot;bearerToken&quot;/&gt;
+            &lt;L7p:Target target=&quot;OTHER&quot;/&gt;
+        &lt;/L7p:Authentication&gt;
+        &lt;L7p:Authentication&gt;
             &lt;L7p:IdentityProviderOid goidValue=&quot;1047c671c8d2cb44c606523f9c1521a3&quot;/&gt;
             &lt;L7p:OtherTargetMessageVariable stringValue=&quot;bearerToken&quot;/&gt;
             &lt;L7p:Target target=&quot;OTHER&quot;/&gt;
@@ -171,7 +251,9 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrUpdate" srcId="8c5ae07247f7a3f5d5fdcc3926f2eeb6" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/8c5ae07247f7a3f5d5fdcc3926f2eeb6" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrUpdate" srcId="e7400e8803fc3059fc307221395717fc" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/e7400e8803fc3059fc307221395717fc" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrUpdate" srcId="40d44f326379dab7fbcbf8ddaa6cfa73" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/40d44f326379dab7fbcbf8ddaa6cfa73" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrUpdate" srcId="e7400e8803fc3059fc30722139571827" srcUri="https://mas.docker.local:8443/restman/1.0/identityProviders/e7400e8803fc3059fc30722139571827" type="ID_PROVIDER_CONFIG"/>
                 <l7:Mapping action="NewOrUpdate" srcId="1047c671c8d2cb44c606523f9c1521a3" srcUri="https://mas.docker.local:8443/restman/1.0/identityProviders/1047c671c8d2cb44c606523f9c1521a3" type="ID_PROVIDER_CONFIG"/>
                 <l7:Mapping action="NewOrExisting" srcId="e04ad90cfcec38e51fbe3ed9fe092aef" srcUri="https://mas.docker.local:8443/restman/1.0/folders/e04ad90cfcec38e51fbe3ed9fe092aef" type="FOLDER">
                     <l7:Properties>
