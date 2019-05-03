@@ -14,15 +14,8 @@ services:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
       - ${PWD}/config/license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
       - ${PWD}/config/mag_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/mag_license.xml
-      # - ${PWD}/files/mas/bundles/andriod_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/03_andriod_service.bundle
+      - ${PWD}/files/mas/bundles/andriod_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/03_andriod_service.bundle
       - ${PWD}/files/mas/bundles/saml_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/02_saml_service.bundle
-      # - ${PWD}/files/mas/provision/add-otk-user.sh:/opt/docker/rc.d/after-start/add-otk-user.sh:rw
-      # - ${PWD}/files/mas/provision/x-add-otk-user.sh:/opt/docker/rc.d/after-start/x-add-otk-user.sh:rw
-      # - ${PWD}/files/mas/provision/ca-msso-cert.sh:/opt/docker/rc.d/after-start/ca-msso-cert.sh:rw
-      ## Activated using after-start scripts
-      # - ${PWD}/files/mas/bundles/ca_msso_key.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/after-start/ca_msso_key.xml:rw
-      # - ${PWD}/files/mas/bundles/ca_msso_cert.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/after-start/ca_msso_cert.xml:rw
-      # - ${PWD}/files/mas/bundles/ca_msso_fip.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/after-start/ca_msso_fip.xml:rw
     environment:
       SSG_CLUSTER_HOST: "mas.docker.local"
       SSG_CLUSTER_PASSWORD: "7layer"
@@ -47,8 +40,8 @@ services:
       - "--innodb_log_file_size=80M"
       - "--max_allowed_packet=10M"
     volumes:
-      # - mag-otk-data:/var/lib/mysql
-      - ${PWD}/files/mas/data:/var/lib/mysql
+      - mag-otk-data:/var/lib/mysql
+      # - ${PWD}/files/mas/data:/var/lib/mysql
       - ${PWD}/files/mas/dbinit:/docker-entrypoint-initdb.d    
-# volumes:
-#   mag-otk-data:
+volumes:
+  mag-otk-data:
