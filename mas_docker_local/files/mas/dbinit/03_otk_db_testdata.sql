@@ -43,6 +43,15 @@ INSERT INTO oauth_client_key (client_key, secret, status, created_by, client_ide
 VALUES ('54f0c455-4d80-421f-82ca-9194df24859d', 'a0f2742f-31c7-436f-9802-b7015b8fd8e6', 'ENABLED', 'admin', 'TestClient2.0', 'OAuth2Client', 'https://mas.docker.local:8443/oauth/v2/client/authcode?auth=done,https://mas.docker.local:8443/oauth/v2/client/implicit?auth=done', '{}');
 --
 --
+-- Create MDC client
+--
+INSERT INTO oauth_client (client_ident, name, description, organization, registered_by, type, custom)
+VALUES ('0daffd5c-d8b8-46f3-b38f-3f617624e591', 'Developer Console Access', 'Client used by the Developer Console', 'CA Technologies Inc.', 'admin', 'public', '{}');
+
+INSERT INTO oauth_client_key (client_key, secret, status, created_by, client_ident, client_name, scope, callback, custom)
+VALUES ('0daffd5c-d8b8-46f3-b38f-3f617624e591', 'e62afc98-7b87-11e6-9288-0fe490372cd1', 'ENABLED', 'admin', '0daffd5c-d8b8-46f3-b38f-3f617624e591', 'Developer Console Access', 'openid profile email name address devconsole', 'https://mas.docker.local:443', '{}');
+--
+--
 -- Swagger OAuth2 Client
 --
 INSERT INTO oauth_client (client_ident, name, description, organization, registered_by, type, custom)

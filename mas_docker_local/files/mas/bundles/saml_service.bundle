@@ -251,8 +251,8 @@
                 </l7:Item>
             </l7:References>
             <l7:Mappings>
-                <l7:Mapping action="NewOrUpdate" srcId="e7400e8803fc3059fc307221395717fc" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/e7400e8803fc3059fc307221395717fc" type="TRUSTED_CERT"/>
-                <l7:Mapping action="NewOrUpdate" srcId="40d44f326379dab7fbcbf8ddaa6cfa73" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/40d44f326379dab7fbcbf8ddaa6cfa73" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="e7400e8803fc3059fc307221395717fc" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/e7400e8803fc3059fc307221395717fc" type="TRUSTED_CERT"/>
+                <l7:Mapping action="NewOrExisting" srcId="40d44f326379dab7fbcbf8ddaa6cfa73" srcUri="https://mas.docker.local:8443/restman/1.0/trustedCertificates/40d44f326379dab7fbcbf8ddaa6cfa73" type="TRUSTED_CERT"/>
                 <l7:Mapping action="NewOrUpdate" srcId="e7400e8803fc3059fc30722139571827" srcUri="https://mas.docker.local:8443/restman/1.0/identityProviders/e7400e8803fc3059fc30722139571827" type="ID_PROVIDER_CONFIG"/>
                 <l7:Mapping action="NewOrUpdate" srcId="1047c671c8d2cb44c606523f9c1521a3" srcUri="https://mas.docker.local:8443/restman/1.0/identityProviders/1047c671c8d2cb44c606523f9c1521a3" type="ID_PROVIDER_CONFIG"/>
                 <l7:Mapping action="NewOrExisting" srcId="e04ad90cfcec38e51fbe3ed9fe092aef" srcUri="https://mas.docker.local:8443/restman/1.0/folders/e04ad90cfcec38e51fbe3ed9fe092aef" type="FOLDER">

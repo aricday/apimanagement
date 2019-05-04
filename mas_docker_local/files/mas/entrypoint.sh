@@ -255,7 +255,7 @@ installOTK(){
 		echo "Installing OTK in background..."
 		
 		#call the RESTMAN API to install OTK
-		curl -u $SSG_ADMIN_USERNAME:$SSG_ADMIN_PASSWORD --insecure -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=4432207d16a1b505e8a6ed59993eaa24::175ace8f404dd47c8cefe0a762271542 --form entityIdReplace=c2e0825b2f52dc7819cd6e68893df156::8e7af8f5fe78af7719574812da0b3c8e --form "file=@//root/OTK_Installers/OAuthSolutionKit-4.3.1-4141.sskar" -s -D - https://localhost:8443/restman/1.0/solutionKitManagers
+		curl -u $SSG_ADMIN_USERNAME:$SSG_ADMIN_PASSWORD --insecure -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=4432207d16a1b505e8a6ed59993eaa24::175ace8f404dd47c8cefe0a762271542 --form entityIdReplace=c2e0825b2f52dc7819cd6e68893df156::8e7af8f5fe78af7719574812da0b3c8e --form "file=@//root/OTK_Installers/OAuthSolutionKit-4.2.00-3367.sskar" -s -D - https://localhost:8443/restman/1.0/solutionKitManagers
 		echo "OTK installed successfully. Continuing."
 
 		echo "Installing MAG in background..."
@@ -272,6 +272,10 @@ installOTK(){
 		#call the RESTMAN API to install MAG
 		curl -u $SSG_ADMIN_USERNAME:$SSG_ADMIN_PASSWORD --insecure -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=a6adb5912420041ef353d70fd39cdab0::175ace8f404dd47c8cefe0a762271543 --form MasConfigurationBrokerHost=mqtt.vagrant.local --form MasConfigurationBrokerPort=1883 --form MasMessagingSecuritySelection=TCPNoAuth --form 'file=@//root/MAG_Installers/MAS-Messaging-4.2.00-b885.sskar' -s -D - https://localhost:8443/restman/1.0/solutionKitManagers
 		echo "MAS-Messaging installed successfully. Continuing."
+
+		echo "Installing MDC solution kit..."
+		curl -u $SSG_ADMIN_USERNAME:$SSG_ADMIN_PASSWORD --insecure -X POST -k -H 'Content-Type: multipart/form-data' --form entityIdReplace=8bc013b1238e366ee30841839616078f::175ace8f404dd47c8cefe0a762271542 --form "file=@//root/MAG_Installers/MobileDeveloperConsole-1.1.00-9.sskar" -s -D - https://localhost:8443/restman/1.0/solutionKitManagers
+		echo "MDC installed successfully. Continuing."
 
 		echo "Shutting down the gateway to perform required restart post OTK&MAG installation..."
 		ssg_pid=$(grep java /proc/*/status | awk -F'/' '{print $3}')

@@ -1,0 +1,47 @@
+version: '3.7'
+services:
+  mas:
+    image: aricday/mas:4.2
+    build:
+      context: ./files/mas
+      dockerfile: Dockerfile
+    hostname: mas.docker.local   
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9443:9443"
+    volumes:
+      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+      - ${PWD}/config/license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+      - ${PWD}/config/mag_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/mag_license.xml
+      - ${PWD}/files/mas/bundles/andriod_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/03_andriod_service.bundle
+      - ${PWD}/files/mas/bundles/saml_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/02_saml_service.bundle
+    environment:
+      SSG_CLUSTER_HOST: "mas.docker.local"
+      SSG_CLUSTER_PASSWORD: "7layer"
+      SSG_DATABASE_USER: "gateway"
+      SSG_DATABASE_PASSWORD: "7layer"
+      SSG_DATABASE_JDBC_URL: "jdbc:mysql://mysql:3306/ssg"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+      ACCEPT_LICENSE: "true"
+      SSG_SSL_KEY: "${MAS_SSL_KEY_B64}"
+      SSG_SSL_KEY_PASS: "${MAS_SSL_KEY_PASS}"
+      MSGW_SSL_PUBLIC_CERT_B64:
+      SSG_JVM_HEAP: "6g"
+      EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4"
+  mysql:
+    image: mysql:5.7
+    environment:
+       MYSQL_ROOT_PASSWORD: "7layer"
+    command:
+      - "--character-set-server=utf8"
+      - "--innodb_log_buffer_size=32M"
+      - "--innodb_log_file_size=80M"
+      - "--max_allowed_packet=10M"
+    volumes:
+      - mag-otk-data:/var/lib/mysql
+      # - ${PWD}/files/mas/data:/var/lib/mysql
+      - ${PWD}/files/mas/dbinit:/docker-entrypoint-initdb.d    
+volumes:
+  mag-otk-data:

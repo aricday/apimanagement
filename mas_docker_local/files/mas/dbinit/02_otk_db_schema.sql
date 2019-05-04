@@ -6,6 +6,14 @@
 
 USE otk_db;
 
+CREATE TABLE mdc_template (
+  templateId varchar(128) not null,
+  htmlContent longtext not null,
+  primary key (templateId),
+  name varchar(128) not null COMMENT 'The associated name for the template',
+  mode varchar(128) not null,
+  constraint temp_name unique (name) ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8;
+
 CREATE TABLE oauth_client (
   client_ident varchar(255) primary key,
   name varchar(255) not null COMMENT 'The associated name of the application using this client_id',
