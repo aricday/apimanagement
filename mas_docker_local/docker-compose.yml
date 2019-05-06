@@ -2,7 +2,7 @@ version: '3.7'
 services:
   consul:
     command: "agent -server -ui -bootstrap -client 0.0.0.0"
-    image: consul:1.4.4
+    image: consul:1.2.2
     environment:
       - CONSUL_BIND_INTERFACE=eth0
       - SERVICE_IGNORE=yes
@@ -42,6 +42,7 @@ services:
       - ${PWD}/config/mag_license.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/mag_license.xml
       - ${PWD}/files/mas/bundles/andriod_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/03_andriod_service.bundle
       - ${PWD}/files/mas/bundles/saml_service.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/02_saml_service.bundle
+      - ${PWD}/files/mas/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/04_proxy_folder.bundle
       # these are in MAS until MSGW quickstart load is added
       - ${PWD}/files/msgw/provision/x-add-quickstart-templates.sh:/opt/docker/rc.d/after-start/z-add-quickstart-templates.sh:rw
       - ${PWD}/files/msgw/quickstart/beer_data.json:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/quickstart/beer_data.json
