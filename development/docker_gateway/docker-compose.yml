@@ -18,7 +18,7 @@ services:
      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
      # - ./config/gwlicense:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license
      # - ./config/gwlicense/CA_GW_9.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
-     - ./files/gw/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/proxy_folder.bundle
+     # - ./files/gw/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/proxy_folder.bundle
     environment:
       SSG_CLUSTER_HOST: "mas"
       SSG_CLUSTER_PASSWORD: "7layer"
