@@ -3,7 +3,7 @@ SHELL := /bin/bash
 default: run-beers
 
 run:
-	source .custom.env; docker-compose -f docker-compose.yml up -d
+	source .custom.env; DB_HOST_REPLACE=$(sed -e "s~YOUR_SSG~${MAS_HOSTNAME}~g" files/mas/dbinit/04_mag_otk_db_data.sql); echo "${DB_HOST_REPLACE}" > files/mas/dbinit/04_mag_otk_db_data.sql; docker-compose -f docker-compose.yml up -d
 
 log:
 	source .custom.env; docker-compose -f docker-compose.yml logs -f
