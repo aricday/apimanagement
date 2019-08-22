@@ -1,0 +1,1 @@
+Put your gateway license file in this folder with the name ssg_license.xml
