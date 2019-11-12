@@ -7,7 +7,7 @@
 version: '3'
 services:
   lac:
-    image: caliveapicreator/4.1.00
+    image: caliveapicreator/5.3.00
     privileged: true
     stdin_open: true
     tty: true
@@ -17,9 +17,8 @@ services:
       RDS_USERNAME: "db_admin"
       RDS_PASSWORD: "7layer"
       RDS_DB_NAME: "lacadmindb"
-      CATALINA_OPTS: "--add-modules java.xml.bind $CATALINA_OPTS"
-      ca_accept_license: "enu"
-      LAC_ADMIN_MAX_CONN: "100"
+      CA_ACCEPT_LICENSE: "ENU"
+      LAC_DEFAULT_LICENSE_FILE: "/usr/local/tomcat/bin/lac_license.json"
     links:
       - lac_mysqldb
     ports:
@@ -27,7 +26,7 @@ services:
     expose:
       - "8080"
     volumes:
-      - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/EvalLicense_exp20180920.txt
+      - ${PWD}/config/lac_license.json:/usr/local/tomcat/bin/lac_license.json
   lac_mysqldb:
     image: mysql:5.7
     privileged: true
