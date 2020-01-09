@@ -4,22 +4,21 @@ This repository contains some of my labs and tests using the Broadcom Layer7 API
 
 ## Getting Started
 
-As of this version, you're going to find 3 docker-compose files as follows:
+As of this version, you're going to find 4 docker-compose files as follows:
 
 * **gateway-derby.yml** - deployment of a database-less gateway and not use the hazelcast cluster
 * **hazelcast.yml** - hazelcast cluster and management ui. I modified the original repository that can be found [here](https://github.com/hazelcast/hazelcast-code-samples/tree/master/hazelcast-integration/docker-compose).
 * **gateway-hazelcast.yml** - same database-less gateway form factor, however using the hazelcast cluster
+* **gateway-hazelcast-cluster.yml** - same database-less gateway duplicate-2, distinct gateway also using hazelcast
 
 ## Pre-requisites
 
 Before running this project, make sure you have the following:
 
 * Docker and docker-compose installed and working
-* Add the gateway file under the folder **license**. The file name **must** be **ssg_license.xml**, unless you want to change both the **gateway-derby.yml** and **gateway-hazelcast.yml** to include a different license name
+* Add the gateway file under the folder **license**.
 
 ## Running the containers
-
-I created a Makefile with some commands to make it easier for anyone to standup the containers without having to type much. You can open and inspect the Makefile yourself, but below are some of the common commands:
 
 ### Starting a hazelcast cluster and a gateway all together
 
@@ -32,7 +31,7 @@ The Hazelcast Management UI can be accessed by the following URL:
 
 (http://localhost:8081/hazelcast-mancenter)
 
-For some reason the hazelcast management container will log a different port. I had to change the UI port to 8081 to avoid conflicting with the API gateway HTTP port, which is the same.
+The hazelcast management container UI port is on 8081 to avoid conflicting with the API gateway HTTP port.
 
 After launching the Hazelcast Management UI for the first time you're going to need to define a password for the user admin.
 
@@ -50,6 +49,14 @@ Run the following make command to get attached to all the logs
 ```bash
 make log
 ```
+
+### Demo Policy
+
+For testing the external integration to hazelcast, the API gateway policy for rate limit and quota are exposed via URL "<server>/hazelcast":
+
+* **Policy** - Here you can see all the demo policy
+![Policy](images/policy_bundle.png)
+
 
 ### Destroying everything
 
