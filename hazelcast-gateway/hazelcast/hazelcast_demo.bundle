@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+            <l7:References>
+                <l7:Item>
+                    <l7:Name>Hazelcast Demo</l7:Name>
+                    <l7:Id>1054cb3e23ff5181d19dee0ecc9baf1f</l7:Id>
+                    <l7:Type>SERVICE</l7:Type>
+                    <l7:TimeStamp>2020-01-09T14:50:39.015Z</l7:TimeStamp>
+                    <l7:Resource>
+                        <l7:Service id="1054cb3e23ff5181d19dee0ecc9baf1f" version="2">
+                            <l7:ServiceDetail folderId="0000000000000000ffffffffffffec76" id="1054cb3e23ff5181d19dee0ecc9baf1f" version="2">
+<l7:Name>Hazelcast Demo</l7:Name>
+<l7:Enabled>true</l7:Enabled>
+<l7:ServiceMappings>
+    <l7:HttpMapping>
+        <l7:UrlPattern>/hazelcast</l7:UrlPattern>
+        <l7:Verbs>
+            <l7:Verb>GET</l7:Verb>
+            <l7:Verb>POST</l7:Verb>
+            <l7:Verb>PUT</l7:Verb>
+            <l7:Verb>DELETE</l7:Verb>
+        </l7:Verbs>
+    </l7:HttpMapping>
+</l7:ServiceMappings>
+<l7:Properties>
+    <l7:Property key="internal">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="policyRevision">
+        <l7:LongValue>2</l7:LongValue>
+    </l7:Property>
+    <l7:Property key="soap">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="tracingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+    <l7:Property key="wssProcessingEnabled">
+        <l7:BooleanValue>false</l7:BooleanValue>
+    </l7:Property>
+</l7:Properties>
+                            </l7:ServiceDetail>
+                            <l7:Resources>
+<l7:ResourceSet tag="policy">
+    <l7:Resource type="policy" version="1">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+    &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+        &lt;L7p:CustomizeErrorResponse&gt;
+            &lt;L7p:Content stringValue=&quot;Hazelcast Demo - Limit Error&quot;/&gt;
+            &lt;L7p:ExtraHeaders nameValuePairArray=&quot;included&quot;/&gt;
+        &lt;/L7p:CustomizeErrorResponse&gt;
+        &lt;L7p:RateLimit&gt;
+            &lt;L7p:CounterName stringValue=&quot;hazelcast&quot;/&gt;
+            &lt;L7p:HardLimit booleanValue=&quot;true&quot;/&gt;
+            &lt;L7p:MaxRequestsPerSecond stringValue=&quot;1&quot;/&gt;
+        &lt;/L7p:RateLimit&gt;
+        &lt;L7p:ThroughputQuota&gt;
+            &lt;L7p:CounterName stringValue=&quot;hazelcast&quot;/&gt;
+            &lt;L7p:Global booleanValue=&quot;true&quot;/&gt;
+            &lt;L7p:Quota stringValue=&quot;20&quot;/&gt;
+            &lt;L7p:TimeUnit stringValue=&quot;minute&quot;/&gt;
+            &lt;L7p:VariablePrefix stringValue=&quot;quotaOut&quot;/&gt;
+        &lt;/L7p:ThroughputQuota&gt;
+        &lt;L7p:RateLimitQuery&gt;
+            &lt;L7p:CounterName stringValue=&quot;hazelcast&quot;/&gt;
+            &lt;L7p:VariablePrefix stringValue=&quot;limitOut&quot;/&gt;
+        &lt;/L7p:RateLimitQuery&gt;
+        &lt;L7p:HardcodedResponse&gt;
+            &lt;L7p:Base64ResponseBody stringValue=&quot;ewogICJxdW90YU91dC5pZCIgOiAiJHtxdW90YU91dC5pZH0iLAogICJxdW90YU91dC5tYXgiIDogIiR7cXVvdGFPdXQubWF4fSIsCiAgInF1b3RhT3V0LnVzZXIiIDogIiR7cXVvdGFPdXQudXNlcn0iLAogICJxdW90YU91dC52YWx1ZSIgOiAiJHtxdW90YU91dC52YWx1ZX0iLAogICJxdW90YU91dC5wZXJpb2QiIDogIiR7cXVvdGFPdXQucGVyaW9kfSIsCiAgImxpbWl0T3V0LmNvdW50ZXIubmFtZSIgOiAiJHtsaW1pdE91dC5jb3VudGVyLm5hbWV9IiwKICAibGltaXRPdXQuY291bnRlci5yZXF1ZXN0c3JlbWFpbmluZyIgOiAiJHtsaW1pdE91dC5jb3VudGVyLnJlcXVlc3RzcmVtYWluaW5nfSIsCiAgImxpbWl0T3V0LmNvdW50ZXIuYmxhY2tvdXRtaWxsaXNyZW1haW5pbmciIDogIiR7bGltaXRPdXQuY291bnRlci5ibGFja291dG1pbGxpc3JlbWFpbmluZ30iCn0=&quot;/&gt;
+            &lt;L7p:ResponseContentType stringValue=&quot;application/json; charset=UTF-8&quot;/&gt;
+        &lt;/L7p:HardcodedResponse&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+</l7:ResourceSet>
+                            </l7:Resources>
+                        </l7:Service>
+                    </l7:Resource>
+                </l7:Item>
+            </l7:References>
+            <l7:Mappings>
+                <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://95caafc2aec7:32772/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+                    <l7:Properties>
+                        <l7:Property key="FailOnNew">
+                            <l7:BooleanValue>true</l7:BooleanValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:Mapping>
+                <l7:Mapping action="NewOrExisting" srcId="1054cb3e23ff5181d19dee0ecc9baf1f" srcUri="https://95caafc2aec7:32772/restman/1.0/services/1054cb3e23ff5181d19dee0ecc9baf1f" type="SERVICE"/>
+            </l7:Mappings>
+        </l7:Bundle>

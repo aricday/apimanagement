@@ -1,11 +1,11 @@
 ####################################################################################
 #
-# Modified by Aric Day (aric.day@broadcom.com) - August 2019
+# Modified by Aric Day (aric.day@broadcom.com) - Jan 2020
 #
 ####################################################################################
 version: '3.7'
 services:
-  api-gateway:
+  api-gateway-1:
     image: caapim/gateway
     ports:
       - "8080"
@@ -14,6 +14,7 @@ services:
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
       - ./license:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license
+      - ./hazelcast/hazelcast_demo.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/hazelcast_demo.bundle
       - ./hazelcast/apigw-hazelcast-client.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/assertions/ExternalHazelcastSharedStateProviderAssertion/hazelcast-client.xml
     environment:
       ACCEPT_LICENSE: "true"
