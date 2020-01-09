@@ -11,8 +11,11 @@ hazelcast-cluster:
 gwhazelcast:
 	docker-compose -f gateway-hazelcast.yml up -d
 
+gateway-hazelcast-cluster:
+	docker-compose -f gateway-hazelcast-cluster.yml up -d
+
 log:
-	docker-compose -f hazelcast.yml -f gateway-derby.yml -f gateway-hazelcast.yml logs -f
+	docker-compose -f hazelcast.yml -f gateway-derby.yml -f gateway-hazelcast.yml -f gateway-hazelcast-cluster.yml logs -f
 
 log-hazelcast:
 	docker-compose -f hazelcast.yml logs -f
@@ -32,7 +35,10 @@ clean-hazelcast:
 clean-gwhazelcast:
 	docker-compose -f gateway-hazelcast.yml stop && docker-compose -f gateway-hazelcast.yml rm -f && docker volume prune -f
 
-run:
-	docker-compose -f hazelcast.yml up -d && docker-compose -f gateway-hazelcast.yml up -d
+clean-gateway-hazelcast-cluster:
+	docker-compose -f gateway-hazelcast-cluster.yml stop && docker-compose -f gateway-hazelcast-cluster.yml rm -f && docker volume prune -f
 
-clean: clean-derby clean-hazelcast clean-gwhazelcast
+run:
+	docker-compose -f hazelcast.yml up -d && docker-compose -f gateway-hazelcast.yml -f gateway-hazelcast-cluster.yml up -d
+
+clean: clean-derby clean-hazelcast clean-gwhazelcast clean-gateway-hazelcast-cluster
