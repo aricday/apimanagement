@@ -16,10 +16,11 @@ services:
     volumes:
      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
      - ./config/gwlicense:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license
-     # - ./config/gwlicense/CA_GW_9.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
      # - ./files/gw/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/proxy_folder.bundle
-     - ${PWD}/files/papim/papim-3.4.33.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/07_papim-3.4.33.bundle
-     - ${PWD}/files/papim/apm-cluster-property.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/08_apm-cluster-property.bundle
+     
+     ## PAPIM Bundles for APM Integration
+#     - ${PWD}/files/papim/papim-3.4.33.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/07_papim-3.4.33.bundle
+#     - ${PWD}/files/papim/apm-cluster-property.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/08_apm-cluster-property.bundle
     environment:
       SSG_CLUSTER_HOST: "mas.docker.local"
       SSG_CLUSTER_PASSWORD: "7layer"
@@ -46,28 +47,27 @@ services:
       - "--innodb_log_file_size=80M"
       - "--max_allowed_packet=8M"
     volumes:
-      # - ./mysql:/var/lib/mysql
       - /var/lib/mysql
       - ./files/mysql/scripts/startup/:/docker-entrypoint-initdb.d/
-      # - ./files/mysql/config/my.cnf:/etc/mysql/conf.d/my.cnf
 
-  papim-agent:
-    image: papim-epagent:latest
-    ports:
-      - "9090:9090"
-      - "9080:9080"
-    environment:
-      EPAGENT_PORT_TCP: "9090"
-      EPAGENT_PORT_REST: "9080"
-      EPAGENT_DELAY_OS_RESOURCE: "60"
-      EPAGENT_DELAY_OPERATING_STATUS: "900"
-      ENTERPRISE_MANAGER: "apm.aricday.net:5001"
-      MYSQL_NODE: "true"
-      MYSQL_SERVER: mysqldb
-      MYSQL_DBNAME: "ssg"
-      MYSQL_PORT: "3306"
-      DB_USER: "root"
-      DB_PASSWORD: "7layer"
-      GATEWAY_NODE_NAME: "mas.docker.local"
-    links:
-      - ssg   
+## Must enable lines 22/23 to integrate
+#  papim-agent:
+#    image: papim-epagent:latest
+#    ports:
+#      - "9090:9090"
+#      - "9080:9080"
+#    environment:
+#      EPAGENT_PORT_TCP: "9090"
+#      EPAGENT_PORT_REST: "9080"
+#      EPAGENT_DELAY_OS_RESOURCE: "60"
+#      EPAGENT_DELAY_OPERATING_STATUS: "900"
+#      ENTERPRISE_MANAGER: "apm.aricday.net:5001"
+#      MYSQL_NODE: "true"
+#      MYSQL_SERVER: mysqldb
+#      MYSQL_DBNAME: "ssg"
+#      MYSQL_PORT: "3306"
+#      DB_USER: "root"
+#      DB_PASSWORD: "7layer"
+#      GATEWAY_NODE_NAME: "mas.docker.local"
+#    links:
+#      - ssg
