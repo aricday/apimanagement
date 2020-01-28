@@ -1,0 +1,6 @@
+{
+  "name": "MQTT",
+  "description": "This is a provider for creating connections/listeners that can listen to MQTT Queues. Important! Before making any changes, such as changing the code, create a backup of this listener provider.",
+  "mustHaveConnection": true,
+  "isEnabled": true
+}

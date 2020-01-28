@@ -1,0 +1,27 @@
+{
+  "name": "Items",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "Order Details",
+  "join": "\"OrderID\" = [OrderID]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "Quantity",
+      "attribute": "Quantity",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ProductNumber",
+      "attribute": "ProductID",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

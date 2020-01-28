@@ -1,0 +1,45 @@
+{
+  "name": "LineItems",
+  "description": "API example",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "demo",
+  "entity": "LineItem",
+  "join": "\"order_number\" = [order_number]",
+  "isCollection": true,
+  "filter": null,
+  "order": "\"product_number\" asc",
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ProductNumber",
+      "attribute": "product_number",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "OrderNumber",
+      "attribute": "order_number",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Quantity",
+      "attribute": "qty_ordered",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Price",
+      "attribute": "product_price",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Amount",
+      "attribute": "amount",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

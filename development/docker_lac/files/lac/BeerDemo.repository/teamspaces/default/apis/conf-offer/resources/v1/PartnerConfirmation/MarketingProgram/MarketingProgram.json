@@ -1,0 +1,28 @@
+{
+  "name": "MarketingProgram",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "ConfManagement",
+  "entity": "MarketingPrograms",
+  "join": "\"name\" = [\"MarketingProgramName\"]",
+  "isCollection": false,
+  "isCombined": true,
+  "filter": "",
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "Description",
+      "attribute": "Description",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ProgramName",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

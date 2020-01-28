@@ -1,0 +1,45 @@
+{
+  "name": "OrderDetails_List",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "Order Details",
+  "join": "\"OrderID\" = [\"OrderID\"]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "UnitPrice",
+      "attribute": "UnitPrice",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Quantity",
+      "attribute": "Quantity",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Discount",
+      "attribute": "Discount",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Amount",
+      "attribute": "Amount",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "isHealthy",
+      "attribute": "isHealthy",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

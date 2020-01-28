@@ -1,0 +1,26 @@
+{
+  "name": "emp",
+  "description": "Example of adding an attribute into a row.",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "employees",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "Name",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Salary",
+      "attribute": "base_salary",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

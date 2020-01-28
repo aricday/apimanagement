@@ -1,0 +1,27 @@
+{
+  "name": "product_item",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "products",
+  "join": "\"name\" = [product_name]",
+  "isCollection": false,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ProductNotes",
+      "attribute": "notes",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "CurrentPrice",
+      "attribute": "price",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "EmployeesWithRaises",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "Employees",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "EmployeeID",
+      "attribute": "EmployeeID",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "LastName",
+      "attribute": "LastName",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "FirstName",
+      "attribute": "FirstName",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "EmployeeSalary",
+      "attribute": "Salary",
+      "description": "Observe this is de-aliased for Function code.\n\nThe giveRaise function can thus refer to \"Salary\", without worrying about how it was aliased.",
+      "isKey": false
+    }
+  ]
+}

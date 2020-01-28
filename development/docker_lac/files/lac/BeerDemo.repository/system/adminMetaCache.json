@@ -1,0 +1,5625 @@
+{
+  "schemaCache": {
+    "serializedSchemaVersion": "Product 5.3.00.{$espressoBuildNumber} Serialized MetaSchema 60",
+    "prefix": "admin",
+    "properties": {
+      "catalog": null,
+      "schema": "LACAdmin",
+      "sqlStrategy": {
+        "sqlStrategyClassName": "com.kahuna.server.db.derby.SqlStrategyDerby",
+        "supportBoolean": true,
+        "databaseProductName": "Apache Derby",
+        "databaseProductVersion": "10.14.1.0 - (1808820)"
+      },
+      "tableViewFilteredCount": 0,
+      "procedureFilteredCount": 0,
+      "supportBoolean": false
+    },
+    "typeDefinitions": {
+      "BIGINT": {
+        "modelType": "IntegralNumber",
+        "jdbcSqlType": -5,
+        "numBytes": 8
+      },
+      "BLOB": {
+        "modelType": "Binary",
+        "jdbcSqlType": 2004,
+        "maxLength": 2147483647
+      },
+      "BOOLEAN": {
+        "modelType": "Boolean",
+        "jdbcSqlType": 16
+      },
+      "CHAR": {
+        "modelType": "String",
+        "jdbcSqlType": 1,
+        "maxLength": 1,
+        "isFixedLength": true
+      },
+      "CHAR(3)": {
+        "modelType": "String",
+        "jdbcSqlType": 1,
+        "maxLength": 3,
+        "isFixedLength": true
+      },
+      "CLOB": {
+        "modelType": "String",
+        "jdbcSqlType": 2005,
+        "maxLength": 2147483647
+      },
+      "CLOB(16M)": {
+        "modelType": "String",
+        "jdbcSqlType": 2005,
+        "maxLength": 16777216
+      },
+      "CLOB(65K)": {
+        "modelType": "String",
+        "jdbcSqlType": 2005,
+        "maxLength": 66560
+      },
+      "INTEGER": {
+        "modelType": "IntegralNumber",
+        "jdbcSqlType": 4,
+        "numBytes": 4
+      },
+      "TIMESTAMP": {
+        "modelType": "Timestamp",
+        "jdbcSqlType": 93,
+        "precision": 9
+      },
+      "VARCHAR(1)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 1
+      },
+      "VARCHAR(10)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 10
+      },
+      "VARCHAR(100)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 100
+      },
+      "VARCHAR(1000)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 1000
+      },
+      "VARCHAR(15)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 15
+      },
+      "VARCHAR(150)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 150
+      },
+      "VARCHAR(20)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 20
+      },
+      "VARCHAR(200)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 200
+      },
+      "VARCHAR(2000)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 2000
+      },
+      "VARCHAR(250)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 250
+      },
+      "VARCHAR(256)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 256
+      },
+      "VARCHAR(3)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 3
+      },
+      "VARCHAR(30)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 30
+      },
+      "VARCHAR(300)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 300
+      },
+      "VARCHAR(3000)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 3000
+      },
+      "VARCHAR(30000)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 30000
+      },
+      "VARCHAR(32)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 32
+      },
+      "VARCHAR(4)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 4
+      },
+      "VARCHAR(5)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 5
+      },
+      "VARCHAR(50)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 50
+      },
+      "VARCHAR(500)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 500
+      },
+      "VARCHAR(5000)": {
+        "modelType": "String",
+        "jdbcSqlType": 12,
+        "maxLength": 5000
+      }
+    },
+    "tables": [
+      {
+        "name": "accounts",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url_name",
+            "attrTypeName": "VARCHAR(32)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "status",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "public_key",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "private_key",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_accounts",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "account_users",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "fullname",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "status",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "roles",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "apikey_lifespan",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "password_hash",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(256)"
+          },
+          {
+            "name": "password_salt",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(256)"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_account_users",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apitypes",
+        "columns": [
+          {
+            "name": "apitype",
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_apitypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "apitype"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apiversions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_apiversions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "apivisibilities",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "role_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "apitype",
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "object_name",
+            "attrTypeName": "VARCHAR(150)"
+          },
+          {
+            "name": "resource_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "function_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_apivisibilities",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "applications",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "default_language",
+            "attrTypeName": "VARCHAR(5)"
+          },
+          {
+            "name": "skin_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_applications",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "app_options",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "option_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "notes",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "app_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "type_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_app_options",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "app_option_types",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "data_type",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "default_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_app_option_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "app_skins",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "css",
+            "isNullable": true,
+            "attrTypeName": "CLOB"
+          },
+          {
+            "name": "app_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_app_skins",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "app_table_settings",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "table_name",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "object_type",
+            "isNullable": true,
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "app_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_app_table_settings",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "app_table_settings_loc",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "table_settings_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "language_code",
+            "attrTypeName": "VARCHAR(5)"
+          },
+          {
+            "name": "country_code",
+            "isNullable": true,
+            "attrTypeName": "CHAR(3)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_app_table_settings_loc",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "authproviders",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "auth_type_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "class_name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "javascript_authprovider_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "bootstrap_config_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "param_map",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(3000)"
+          },
+          {
+            "name": "get_config_info_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "configure_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "get_login_info_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "auth_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_authproviders",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "auth_types",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "display_name",
+            "attrTypeName": "VARCHAR(30)"
+          },
+          {
+            "name": "class_name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "config_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(30)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_auth_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "breakpoints",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "enabled",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "line_num",
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "expression",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "logic_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "logic_type",
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_breakpoints",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "connections",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "connect_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "disconnect_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "provider_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_connections",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "connection_params",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "value",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "type_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "connection_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_connection_params",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "connection_paramtypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "datatype",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "required",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "multiple_ok",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "default_value",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "provider_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "group",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "deprecated",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "javatype",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "kind",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "secret",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_connection_paramtypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "connection_param_datatypes",
+        "columns": [
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_connection_param_datatypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "name"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "countries",
+        "columns": [
+          {
+            "name": "code",
+            "attrTypeName": "CHAR(3)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_countries",
+            "isDatabasePrimary": true,
+            "columns": [
+              "code"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "datasource_providers",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(30)"
+          },
+          {
+            "name": "description",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "enabled",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "config_info_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "open_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "structure_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "test_connection_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "commit_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "rollback_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "by_key_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "query_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "attribute_value_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "invoke_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "insert_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "update_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "delete_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "close_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_datasource_providers",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dbaseschemas",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "conn_type",
+            "isNullable": true,
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "prefix",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "title",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "datasource_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(3000)"
+          },
+          {
+            "name": "catalog_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "schema_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "table_includes",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "table_excludes",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "proc_includes",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "proc_excludes",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "user_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "password",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "properties",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "salt",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "schema_editable",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "read_only",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "provider_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "provider_param_map",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "support_boolean",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "role_strategy",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "log_errors",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "status",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "max_connections",
+            "isNullable": true,
+            "isDefaulted": true,
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "use_defined_model",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "defined_model_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "dbasetype_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_dbaseschemas",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dbaseschema_errors",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "error_type",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "context",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "error_log",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_dbaseschema_errors",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dbaseschema_metacache",
+        "columns": [
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "compressed_metaschema",
+            "isNullable": true,
+            "attrTypeName": "BLOB"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_dbaseschema_metacache",
+            "isDatabasePrimary": true,
+            "columns": [
+              "dbaseschema_ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dbaseschema_role_strategies",
+        "columns": [
+          {
+            "name": "role_strategy",
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "description",
+            "attrTypeName": "VARCHAR(200)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_dbaseschema_role_strategies",
+            "isDatabasePrimary": true,
+            "columns": [
+              "role_strategy"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dbasetypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(30)"
+          },
+          {
+            "name": "description",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "sqlstrategy_class_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "catalog_term",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(15)"
+          },
+          {
+            "name": "schema_term",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(15)"
+          },
+          {
+            "name": "url_prototype",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "enabled",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "managed_data_capable",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "is_custom",
+            "isNullable": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_dbasetypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "eventhandlers",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "enabled_verbs",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "resource_name_pattern",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "eventtype_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_eventhandlers",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "eventtypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_eventtypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "functionpermissions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "access_type",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(1)"
+          },
+          {
+            "name": "function_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "role_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_functionpermissions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "functions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "is_api_level",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "extended_properties_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "resource_names",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "return_type",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_functions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "function_params",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "param_order",
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "is_required",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "function_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "type_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_function_params",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "function_param_types",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_function_param_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "gateways",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "default_username",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url",
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_gateways",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "gateway_publish_audits",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url",
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "username",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "project_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "apiversion_name",
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "gw_response",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_gateway_publish_audits",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "handlers",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(256)"
+          },
+          {
+            "name": "active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "url_pattern",
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "verbs",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "authenticate",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_handlers",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "known_languages",
+        "columns": [
+          {
+            "name": "code",
+            "attrTypeName": "VARCHAR(5)"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_known_languages",
+            "isDatabasePrimary": true,
+            "columns": [
+              "code"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "listeners",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "logging_level",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "num_servers",
+            "isNullable": true,
+            "isDefaulted": true,
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "connection_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "provider_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_listeners",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "listener_log_levels",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(50)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_listener_log_levels",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "listener_params",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "value",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "type_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "listener_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_listener_params",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "listener_paramtypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "datatype",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "required",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "multiple_ok",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "default_value",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "listener_provider_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "group",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "deprecated",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "javatype",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "kind",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "secret",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_listener_paramtypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "listener_providers",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "must_have_connection",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "startup_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "shutdown_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "test_connection_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "start_connection_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "stop_connection_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "start_listener_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "stop_listener_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "publish_message_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "listener_documentation",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "connection_documentation",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "code_completion_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "code_example_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_listener_providers",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "logic_libraries",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "group_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "lib_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "version",
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "doc_url",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "ref_url",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "BLOB"
+          },
+          {
+            "name": "system_only",
+            "isNullable": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "logic_type",
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "project_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_logic_libraries",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "logic_library_types",
+        "columns": [
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(20)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_logic_library_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "name"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "managed_data_servers",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(30)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "datasource_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(3000)"
+          },
+          {
+            "name": "catalog_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "user_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "password",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "salt",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "dbasetype_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_managed_data_servers",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "named_filters",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(5000)"
+          },
+          {
+            "name": "resource_names",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "filter_text",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_named_filters",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "named_sorts",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(5000)"
+          },
+          {
+            "name": "resource_names",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "sort_text",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_named_sorts",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "np_attributes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "table_name",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "attr_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "data_type",
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_np_attributes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "permissiondata",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "prefix",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "query",
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "query_order",
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "required",
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "code_type",
+            "attrTypeName": "VARCHAR(15)"
+          },
+          {
+            "name": "role_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_permissiondata",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "problemtypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "description_template",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "full_description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "has_defaultfix",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "can_be_shown",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "defaultfix_description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "defaultfix_is_destructive",
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_problemtypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "procedure_infos",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "procedure_name",
+            "attrTypeName": "VARCHAR(250)"
+          },
+          {
+            "name": "extended_properties_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_procedure_infos",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "projectoptions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "option_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "projectoptiontype_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_projectoptions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "projectoptiontypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "data_type",
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "default_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "valid_values",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "system_only",
+            "isNullable": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_projectoptiontypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "projectproblems",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "entity_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "row_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "row_ident2",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "parameters",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "status",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "resolution_date",
+            "isNullable": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "resolution",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "problemtype_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_projectproblems",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "projects",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "url_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "status",
+            "isNullable": true,
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "account_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "authprovider_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_projects",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "project_libraries",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "logic_library_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_project_libraries",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "relationships",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(30000)"
+          },
+          {
+            "name": "parent_entity_name",
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "child_entity_name",
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "role_to_child",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "role_to_parent",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "parent_columns",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "child_columns",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "update_rule",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "delete_rule",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "key_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_relationships",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "resources",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "apiversion_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "resource_type_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "container_ident",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "prefix",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "table_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "extended_properties_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_collection",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "join_condition",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "filter",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "sorting",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "code_text",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "event_get_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "event_put_post_code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "sibling_rank",
+            "isDefaulted": true,
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "combined",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_resources",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "resource_attributes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "roles_to_ancestor",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "column_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "json_type",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "is_defined_key_part",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "is_lookup_key_part",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "is_hidden_virtual",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "sibling_rank",
+            "isDefaulted": true,
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "resource_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_resource_attributes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "resource_types",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_resource_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "roles",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "default_table_permission",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(4)"
+          },
+          {
+            "name": "default_view_permission",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(4)"
+          },
+          {
+            "name": "default_function_permission",
+            "isDefaulted": true,
+            "attrTypeName": "VARCHAR(4)"
+          },
+          {
+            "name": "default_apivisibility",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(10)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_roles",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "rules",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "entity_name",
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "attribute_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop1",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop2",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop3",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop4",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop5",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "rule_text1",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "rule_text2",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text3",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text4",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text5",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "predicate",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "title",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "is_auto_title",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "verbs",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "sqlable",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "jit",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ruletype_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_rules",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ruletypes",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "name_template",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "title_template",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "short_desc",
+            "attrTypeName": "VARCHAR(100)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_ruletypes",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "rule_topics",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "topic_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "rule_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_rule_topics",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "rule_versions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "entity_name",
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "attribute_name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop1",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop2",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop3",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop4",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop5",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "rule_text1",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "rule_text2",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text3",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text4",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "rule_text5",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "predicate",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "title",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "is_auto_title",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "verbs",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "sqlable",
+            "isNullable": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "jit",
+            "isNullable": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "ruletype_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "rule_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_rule_versions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "schedule_items",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "code",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "is_active",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "start_time",
+            "isNullable": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "end_time",
+            "isNullable": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "no_overlap",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "num_servers",
+            "isNullable": true,
+            "attrTypeName": "INTEGER"
+          },
+          {
+            "name": "crontab",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "log_error_only",
+            "isDefaulted": true,
+            "attrTypeName": "BOOLEAN"
+          },
+          {
+            "name": "logging_level",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "max_log_age",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "schedule_type_ident",
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_schedule_items",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "schedule_item_types",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_schedule_item_types",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "server_licenses",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "license_text",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_server_licenses",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "server_properties",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "prop_name",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "prop_value",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_server_properties",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tablepermissions",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "entity_name",
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "column_names",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "predicate",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "access_type",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(3)"
+          },
+          {
+            "name": "role_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_tablepermissions",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "table_infos",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "table_name",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "sequence_info",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "extended_properties_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "primary_key_definition",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_table_infos",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "topics",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(200)"
+          },
+          {
+            "name": "color",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(20)"
+          },
+          {
+            "name": "summary",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "description",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_topics",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "users",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "name",
+            "attrTypeName": "VARCHAR(50)"
+          },
+          {
+            "name": "fullname",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "email",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "status",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "roles",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(300)"
+          },
+          {
+            "name": "data",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(1000)"
+          },
+          {
+            "name": "comments",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(2000)"
+          },
+          {
+            "name": "apikey_lifespan",
+            "isNullable": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "password_hash",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(256)"
+          },
+          {
+            "name": "password_salt",
+            "isNullable": true,
+            "attrTypeName": "VARCHAR(256)"
+          },
+          {
+            "name": "project_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_users",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "user_logins",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "ip_address",
+            "attrTypeName": "VARCHAR(100)"
+          },
+          {
+            "name": "status",
+            "attrTypeName": "CHAR"
+          },
+          {
+            "name": "failure_message",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "user_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_user_logins",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "view_infos",
+        "columns": [
+          {
+            "name": "ident",
+            "isAutoIncrement": true,
+            "isDefaulted": true,
+            "attrTypeName": "BIGINT"
+          },
+          {
+            "name": "ts",
+            "isDefaulted": true,
+            "attrTypeName": "TIMESTAMP"
+          },
+          {
+            "name": "view_name",
+            "attrTypeName": "VARCHAR(500)"
+          },
+          {
+            "name": "primary_key_definition",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "sequence_info",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "extended_properties_json",
+            "isNullable": true,
+            "attrTypeName": "CLOB(16M)"
+          },
+          {
+            "name": "autonum_columns",
+            "isNullable": true,
+            "attrTypeName": "CLOB(65K)"
+          },
+          {
+            "name": "dbaseschema_ident",
+            "attrTypeName": "BIGINT"
+          }
+        ],
+        "keys": [
+          {
+            "name": "PK_view_infos",
+            "isDatabasePrimary": true,
+            "columns": [
+              "ident"
+            ]
+          }
+        ]
+      }
+    ],
+    "foreignKeys": [
+      {
+        "name": "fk_apiversions_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "apiversions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_apivisibilities_apitypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "apitypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "apivisibilities"
+        },
+        "columns": [
+          {
+            "parent": "apitype",
+            "child": "apitype"
+          }
+        ]
+      },
+      {
+        "name": "fk_apivisibilities_functions",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "functions"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "apivisibilities"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "function_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_apivisibilities_roles",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "roles"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "apivisibilities"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "role_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_apivisibilties_resources",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "resources"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "apivisibilities"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "resource_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_appoptions_app",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "applications"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_options"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "app_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_appoptions_type",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "app_option_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_options"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "type_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_appsettings_app",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "applications"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_table_settings"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "app_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_appskins_app",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "applications"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_skins"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "app_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_app_languages",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "known_languages"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "applications"
+        },
+        "columns": [
+          {
+            "parent": "code",
+            "child": "default_language"
+          }
+        ]
+      },
+      {
+        "name": "fk_app_project",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "applications"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_authprovider_accounts",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "authproviders"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_authprovider_authtype",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "auth_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "authproviders"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "auth_type_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_breakpoints_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "breakpoints"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_connection_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "connections"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_connparamtypes_connprov",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_providers"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "connection_paramtypes"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "provider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_conn_listen_prov",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_providers"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "connections"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "provider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_conn_paramtypes_types",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "connection_param_datatypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "connection_paramtypes"
+        },
+        "columns": [
+          {
+            "parent": "name",
+            "child": "datatype"
+          }
+        ]
+      },
+      {
+        "name": "fk_conn_param_conn",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "connections"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "connection_params"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "connection_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_datasource_providers",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "datasource_providers"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "provider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_dbaseschemas_dbasetypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbasetypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbasetype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_dbaseschemas_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_dbaseschemas_role_strategy",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschema_role_strategies"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "columns": [
+          {
+            "parent": "role_strategy",
+            "child": "role_strategy"
+          }
+        ]
+      },
+      {
+        "name": "fk_dbaseschema_metacache",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschema_metacache"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_errors_dbaseschemas",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "dbaseschema_errors"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_eventhandlers_eventtypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "eventtypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "eventhandlers"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "eventtype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_eventhandlers_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "eventhandlers"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_filters_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "named_filters"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_functionpermissions_roles",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "roles"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "functionpermissions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "role_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_functions_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "functions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_function_params_functions",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "functions"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "function_params"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "function_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_function_params_types",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "function_param_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "function_params"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "type_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_gateways_accounts",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "gateways"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_gateways_published_account",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "gateway_publish_audits"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_handler_proj",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "handlers"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_listeners_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listeners"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_listener_log_levels",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_log_levels"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listeners"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "logging_level"
+          }
+        ]
+      },
+      {
+        "name": "fk_listener_provider",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_providers"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listeners"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "provider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_listen_paramtypes_types",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "connection_param_datatypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listener_paramtypes"
+        },
+        "columns": [
+          {
+            "parent": "name",
+            "child": "datatype"
+          }
+        ]
+      },
+      {
+        "name": "fk_listparamtypes_listprov",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_providers"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listener_paramtypes"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "listener_provider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_list_param_listener",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listeners"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "listener_params"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "listener_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_logic_library_type",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "logic_library_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "logic_libraries"
+        },
+        "columns": [
+          {
+            "parent": "name",
+            "child": "logic_type"
+          }
+        ]
+      },
+      {
+        "name": "fk_man_db_srv_accounts",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "managed_data_servers"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_man_db_srv_dbasetypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbasetypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "managed_data_servers"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbasetype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_npatts_dbaseschemas",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "np_attributes"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_procedureinfo_dbaseschemas",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "procedure_infos"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projectoptions_project",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projectoptions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projectoptions_projopttypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projectoptiontypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projectoptions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "projectoptiontype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projectproblems_probtypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "problemtypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projectproblems"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "problemtype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projectproblems_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projectproblems"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projects_accounts",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_projects_authproviders",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "authproviders"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "authprovider_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_proj_lib_lib",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "logic_libraries"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "project_libraries"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "logic_library_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_proj_lib_proj",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "project_libraries"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_rel_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "relationships"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_resources_apiversions",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "apiversions"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "resources"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "apiversion_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_resources_resource_type",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "resource_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "resources"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "resource_type_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_rolepermissiondata_roles",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "roles"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "permissiondata"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "role_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_roles_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "roles"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_rules_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "rules"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_rules_ruletypes",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "ruletypes"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "rules"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "ruletype_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_rule_versions_rules",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "rules"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "rule_versions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "rule_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_sched_items_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "schedule_items"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_sched_log_levels",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "listener_log_levels"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "schedule_items"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "logging_level"
+          }
+        ]
+      },
+      {
+        "name": "fk_sched_sched_type",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "NO_ACTION",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "schedule_item_types"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "schedule_items"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "schedule_type_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_settings_loc_settings",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "app_table_settings"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_table_settings_loc"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "table_settings_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_sorts_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "named_sorts"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_tableinfo_dbaseschemas",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "table_infos"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_tablepermissions_roles",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "roles"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "tablepermissions"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "role_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_table_loc_country",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "countries"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "app_table_settings_loc"
+        },
+        "columns": [
+          {
+            "parent": "code",
+            "child": "country_code"
+          }
+        ]
+      },
+      {
+        "name": "fk_topics_projects",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "topics"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_users_account",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "accounts"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "account_users"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "account_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_users_project",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "projects"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "users"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "project_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_user_logins_users",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "users"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "user_logins"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "user_ident"
+          }
+        ]
+      },
+      {
+        "name": "fk_viewinfo_dbaseschemas",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "dbaseschemas"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "view_infos"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "dbaseschema_ident"
+          }
+        ]
+      },
+      {
+        "name": "resource__resourceAttributeList",
+        "updateRule": "NO_ACTION",
+        "deleteRule": "CASCADE",
+        "parent": {
+          "schema": "LACAdmin",
+          "name": "resources"
+        },
+        "child": {
+          "schema": "LACAdmin",
+          "name": "resource_attributes"
+        },
+        "columns": [
+          {
+            "parent": "ident",
+            "child": "resource_ident"
+          }
+        ]
+      }
+    ]
+  }
+}

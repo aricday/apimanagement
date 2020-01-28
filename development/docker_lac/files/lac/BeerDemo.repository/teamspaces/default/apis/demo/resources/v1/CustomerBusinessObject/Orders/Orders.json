@@ -1,0 +1,13 @@
+{
+  "name": "Orders",
+  "description": "Orders of Customer",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "demo",
+  "entity": "PurchaseOrder",
+  "join": "\"customer_name\" = [name]",
+  "isCollection": true,
+  "filter": null,
+  "order": "\"order_number\" desc",
+  "useSchemaAttributes": true
+}

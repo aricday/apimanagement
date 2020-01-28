@@ -1,0 +1,10 @@
+{
+  "chargeback_id": "<_CHARGEBACK_ID_HERE_>",
+  "domain_name": "<_DOMAIN_NAME_HERE_>",
+  "pla_enabled": false,
+  "proxy_port": "<_PROXY_PORT_HERE_>",
+  "proxy_url": "<_PROXY_URL_HERE_>",
+  "proxy_username": "<_PROXY_USERNAME_HERE_>",
+  "send_enabled": true,
+  "site_id": "<_SITE_ID_HERE_>"
+}

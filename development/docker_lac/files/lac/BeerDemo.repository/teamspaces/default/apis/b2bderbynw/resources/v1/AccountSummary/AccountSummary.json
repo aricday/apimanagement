@@ -1,0 +1,38 @@
+{
+  "name": "AccountSummary",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "Customers",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "CustomerID",
+      "attribute": "CustomerID",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "CompanyName",
+      "attribute": "CompanyName",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Balance",
+      "attribute": "Balance",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "CreditLimit",
+      "attribute": "CreditLimit",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ProcessCharges",
+  "description": "Note Extended Properties, working with the Request Event, save the JSON payload to resource PersistCharges (MessageAudits) for error retry.",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "main",
+  "entity": "Charges",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "name",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "TalksCost",
+      "attribute": "Cost_Talks",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ExhibitsCost",
+      "attribute": "Cost_Exhibits",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ident",
+      "attribute": "SourceIdent",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "MarketingProgramName",
+      "attribute": "MarketingProgramName",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

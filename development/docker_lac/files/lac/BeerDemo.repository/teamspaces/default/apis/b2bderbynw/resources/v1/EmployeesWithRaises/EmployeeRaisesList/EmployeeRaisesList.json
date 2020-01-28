@@ -1,0 +1,33 @@
+{
+  "name": "EmployeeRaisesList",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "EmployeeRaises",
+  "join": "\"EmployeeID\" = [\"EmployeeID\"]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "EmployeeRaiseID",
+      "attribute": "EmployeeRaiseID",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "EmployeeID",
+      "attribute": "EmployeeID",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Salary",
+      "attribute": "Salary",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

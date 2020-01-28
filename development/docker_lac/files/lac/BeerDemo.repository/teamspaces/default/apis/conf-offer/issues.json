@@ -1,0 +1,22 @@
+[
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'PartnerConfirmation' has a subresource named 'MarketingProgram' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "PartnerConfirmation,MarketingProgram",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "MarketingProgram",
+    "objectName": "PartnerConfirmation",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'PartnerConfirmation' has a subresource named 'MarketingProgram' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "PartnerConfirmation,MarketingProgram",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "PartnerConfirmation",
+    "objectName": "MarketingProgram",
+    "resolution": null
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "LineItems",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "lineitems",
+  "join": "\"order_ident\" = [ident]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "quantityOrdered",
+      "attribute": "quantity_ordered",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "productName",
+      "attribute": "product_name",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

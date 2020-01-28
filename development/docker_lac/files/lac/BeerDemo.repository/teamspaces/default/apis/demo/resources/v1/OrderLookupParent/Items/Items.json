@@ -1,0 +1,21 @@
+{
+  "name": "Items",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "demo",
+  "entity": "LineItem",
+  "join": "\"order_number\" = [order_number]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "Quantity",
+      "attribute": "qty_ordered",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

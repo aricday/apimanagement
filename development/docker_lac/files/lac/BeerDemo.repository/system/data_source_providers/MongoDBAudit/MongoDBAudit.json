@@ -1,0 +1,5 @@
+{
+  "name": "MongoDBAudit",
+  "description": "MongoDB data source provider used by the Audit feature of LAC",
+  "isEnabled": true
+}

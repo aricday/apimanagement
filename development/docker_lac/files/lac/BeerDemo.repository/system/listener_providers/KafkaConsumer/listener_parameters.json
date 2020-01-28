@@ -1,0 +1,15 @@
+[
+  {
+    "name": "topics",
+    "description": "The name of a topic",
+    "kind": null,
+    "datatype": "string",
+    "isRequired": true,
+    "isMultipleOk": false,
+    "group": null,
+    "javaType": null,
+    "isSecret": false,
+    "defaultValue": null,
+    "isDeprecated": false
+  }
+]

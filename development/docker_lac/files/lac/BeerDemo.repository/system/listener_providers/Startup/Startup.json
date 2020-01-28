@@ -1,0 +1,6 @@
+{
+  "name": "Startup",
+  "description": "Listener provider for server startup - each listener is executed once when the Live API Creator war starts up. Note that, in a cluster, each cluster node will execute its own instance. Important! Before making any changes, such as changing the code, create a backup of this listener provider.",
+  "mustHaveConnection": false,
+  "isEnabled": true
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Product",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "demo",
+  "entity": "product",
+  "join": "\"product_number\" = [product_number]",
+  "isCollection": false,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ProductName",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Price",
+      "attribute": "price",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

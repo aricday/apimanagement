@@ -1,0 +1,14 @@
+<h3>Shutdown Listeners</h3>
+A shutdown listener is a piece of code that gets executed any time a Live API Creator
+server is shut down.
+<p/>
+More specifically, it gets executed any time the WAR file for Live API Creator is stopped
+or restarted.
+<p/>
+You can create a shutdown listener and have it execute any JavaScript code.
+Typical examples might include:
+<ul>
+<li>writing out some results to a file before the service stops
+<li>notifying an outside service that this Live API Creator is coming down
+<li>cleaning up anything that was started by a startup listener
+</ul>

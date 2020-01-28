@@ -11,7 +11,7 @@ $ docker-compose -f docker-compose.yml logs -f
 
 ## docker-compose.lac.yml
 ```
-$ docker-compose -f docker-compose.lac.yml up lac_mysqldb
+$ docker-compose -f docker-compose.lac.yml up -d lac_mysqldb
 $ docker-compose -f docker-compose.lac.yml up -d
 $ docker-compose -f docker-compose.lac.yml logs -f
 ```

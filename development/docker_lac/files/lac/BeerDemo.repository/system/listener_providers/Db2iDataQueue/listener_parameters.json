@@ -1,0 +1,41 @@
+[
+  {
+    "name": "keyed",
+    "description": "Whether to use keyed or non-keyed data queues.",
+    "kind": "parameter",
+    "datatype": "boolean",
+    "isRequired": true,
+    "isMultipleOk": false,
+    "group": "common",
+    "javaType": "boolean",
+    "isSecret": false,
+    "defaultValue": null,
+    "isDeprecated": false
+  },
+  {
+    "name": "searchKey",
+    "description": "Search key for keyed data queues.",
+    "kind": "parameter",
+    "datatype": "string",
+    "isRequired": false,
+    "isMultipleOk": false,
+    "group": "common",
+    "javaType": "java.lang.String",
+    "isSecret": false,
+    "defaultValue": null,
+    "isDeprecated": false
+  },
+  {
+    "name": "searchType",
+    "description": "Search type such as EQ for equal etc.",
+    "kind": "parameter",
+    "datatype": "object",
+    "isRequired": false,
+    "isMultipleOk": false,
+    "group": "common",
+    "javaType": "org.apache.camel.component.jt400.Jt400Configuration.SearchType",
+    "isSecret": false,
+    "defaultValue": "var Jt400Configuration = Java.type(\"org.apache.camel.component.jt400.Jt400Configuration\");\nvar fact = Jt400Configuration.SearchType.EQ;\nreturn fact;",
+    "isDeprecated": false
+  }
+]

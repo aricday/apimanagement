@@ -1,0 +1,75 @@
+{
+  "name": "orders_c",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "orders",
+  "join": "\"customer_name\" = [name]",
+  "isCollection": true,
+  "filter": "\"approving_officer\" <> 'G PO.4'",
+  "order": "\"placed_date\" asc",
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "OrderID",
+      "attribute": "ident",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "AmountTotal",
+      "attribute": "amount_total",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "AmountDiscounted",
+      "attribute": "amount_discounted",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "AmountPaid",
+      "attribute": "amount_paid",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "AmountUnPaid",
+      "attribute": "amount_un_paid",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "IsReady",
+      "attribute": "is_ready",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "placed_date",
+      "attribute": "placed_date",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "customer",
+      "attribute": "customer_name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "approvingOfficer",
+      "attribute": "approving_officer",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "salesrep_name",
+      "attribute": "salesrep_name",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

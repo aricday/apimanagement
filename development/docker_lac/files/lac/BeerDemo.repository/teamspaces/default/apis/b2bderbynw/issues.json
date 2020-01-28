@@ -1,0 +1,122 @@
+[
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Product",
+    "objectName": "SupplierAlert",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Supplier' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Supplier",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Supplier",
+    "objectName": "SupplierAlert",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Customer' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Customer",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Customer",
+    "objectName": "SupplierAlert",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'AccountSummary' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "AccountSummary,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Product",
+    "objectName": "AccountSummary",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'ShipperAPIDef' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "ShipperAPIDef,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Product",
+    "objectName": "ShipperAPIDef",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'OrderSummary' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "OrderSummary,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "Product",
+    "objectName": "OrderSummary",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'OrderSummary' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "OrderSummary,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "OrderSummary",
+    "objectName": "Product",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'ShipperAPIDef' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "ShipperAPIDef,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "ShipperAPIDef",
+    "objectName": "Product",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'AccountSummary' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "AccountSummary,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "AccountSummary",
+    "objectName": "Product",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Customer' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Customer",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "SupplierAlert",
+    "objectName": "Customer",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Supplier' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Supplier",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "SupplierAlert",
+    "objectName": "Supplier",
+    "resolution": null
+  },
+  {
+    "entity_name": "admin:resources",
+    "description": "Resource 'SupplierAlert' has a subresource named 'Product' which uses the combined feature.\nThe combined feature will be removed in the next release.\nAdd resource attributes on the parent using lookup or virtual attributes and event code.\n\nSee: https://docops.ca.com/ca-live-api-creator/5-3/en/creating-apis/customize-your-api/define-table-based-resource-types/manage-resource-attributes",
+    "parameters": "SupplierAlert,Product",
+    "status": "O",
+    "problemType": "Resource uses the combined feature which has been deprecated",
+    "rootObject": "SupplierAlert",
+    "objectName": "Product",
+    "resolution": null
+  }
+]

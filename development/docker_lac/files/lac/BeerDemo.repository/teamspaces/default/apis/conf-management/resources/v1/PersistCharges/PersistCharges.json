@@ -1,0 +1,32 @@
+{
+  "name": "PersistCharges",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "main",
+  "entity": "MessageAudits",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "idAlerts",
+      "attribute": "idAlerts",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "msgContent",
+      "attribute": "msgContent",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Alerts_datetime",
+      "attribute": "Alerts_datetime",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

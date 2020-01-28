@@ -1,0 +1,81 @@
+{
+  "name": "financeOrders",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "finance",
+  "entity": "orders",
+  "join": "customer_name = [name]",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "cloned_from_order_ident",
+      "attribute": "cloned_from_order_ident",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ident",
+      "attribute": "ident",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ts",
+      "attribute": "ts",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "amountTotal",
+      "attribute": "amount_total",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "amountDiscounted",
+      "attribute": "amount_discounted",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "amountPaid",
+      "attribute": "amount_paid",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "amountNn_paid",
+      "attribute": "amount_un_paid",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "is_ready",
+      "attribute": "is_ready",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "approving_officer",
+      "attribute": "approving_officer",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "officer_item_usage_approval",
+      "attribute": "officer_item_usage_approval",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "unresolved_usage_count",
+      "attribute": "unresolved_usage_count",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

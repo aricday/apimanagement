@@ -1,0 +1,21 @@
+<h3>Startup Listeners</h3>A <em>startup listener</em> is a piece of code that gets executed any time a Live API Creator
+server starts up.
+<p/>
+More technically, it gets executed any time the WAR file for Live API Creator is started
+or restarted.
+<p/>
+You can create a startup listener and have it execute any JavaScript code. Typical
+examples might be:
+<ul>
+<li>retrieving configuration parameters from an outside source, such as a file or a
+service such as Consul.
+<li>notifying an outside service that this Live API Creator server is starting
+<li>starting a background thread to monitor a directory for new files
+</ul>
+If you define a startup listener, you may consider defining a corresponding shutdown
+listener if you need to clean up any resources when Live API Creator shuts down.
+<p/>
+A listener's code will have access to the following pre-defined variables:
+<ul>
+<li><code>env</code>: the environment for the listener.
+</ul>

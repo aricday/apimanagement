@@ -1,0 +1,21 @@
+{
+  "name": "Product",
+  "description": null,
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "nw",
+  "entity": "Products",
+  "join": "\"ProductID\" = [ProductID]",
+  "isCollection": false,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ProductName",
+      "attribute": "ProductName",
+      "description": null,
+      "isKey": true
+    }
+  ]
+}

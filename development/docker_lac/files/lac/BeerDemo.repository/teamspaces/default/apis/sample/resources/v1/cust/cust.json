@@ -1,0 +1,32 @@
+{
+  "name": "cust",
+  "description": "Small resource for test",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "customers",
+  "isCollection": true,
+  "filter": null,
+  "order": "\"name\" asc",
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "Name",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Balance",
+      "attribute": "balance",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "CreditLimit",
+      "attribute": "credit_limit",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

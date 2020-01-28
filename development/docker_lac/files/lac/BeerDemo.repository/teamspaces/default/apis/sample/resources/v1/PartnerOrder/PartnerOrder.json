@@ -1,0 +1,44 @@
+{
+  "name": "PartnerOrder",
+  "description": "See Topic: Regulatory Compliance",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "sample",
+  "entity": "orders",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ident",
+      "attribute": "ident",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "approving_officer",
+      "attribute": "approving_officer",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "isReady",
+      "attribute": "is_ready",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "customer",
+      "attribute": "customer_name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "salesrep_name",
+      "attribute": "salesrep_name",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

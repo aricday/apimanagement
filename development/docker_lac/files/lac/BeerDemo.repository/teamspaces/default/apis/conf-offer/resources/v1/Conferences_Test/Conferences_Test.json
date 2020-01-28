@@ -1,0 +1,50 @@
+{
+  "name": "Conferences_Test",
+  "description": "Used by Function ApprovalTest() - e.g., part of your Automated Build / Test (CI/CD) procedures.",
+  "siblingRank": 100,
+  "resourceType": "TableBased",
+  "prefix": "main",
+  "entity": "ConferenceOffers",
+  "isCollection": true,
+  "filter": null,
+  "order": null,
+  "useSchemaAttributes": false,
+  "attributes": [
+    {
+      "name": "ident",
+      "attribute": "ident",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "name",
+      "attribute": "name",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "ExhibitsCost",
+      "attribute": "ExhibitsCost",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "TalksCost",
+      "attribute": "TalksCost",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Budget",
+      "attribute": "Budget",
+      "description": null,
+      "isKey": false
+    },
+    {
+      "name": "Approved",
+      "attribute": "Approved",
+      "description": null,
+      "isKey": false
+    }
+  ]
+}

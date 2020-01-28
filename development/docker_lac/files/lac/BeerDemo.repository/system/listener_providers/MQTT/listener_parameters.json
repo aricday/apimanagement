@@ -1,0 +1,28 @@
+[
+  {
+    "name": "quality_of_service",
+    "description": "0, 1 or 2",
+    "kind": null,
+    "datatype": "number",
+    "isRequired": false,
+    "isMultipleOk": false,
+    "group": null,
+    "javaType": null,
+    "isSecret": false,
+    "defaultValue": "2",
+    "isDeprecated": false
+  },
+  {
+    "name": "topic_name",
+    "description": "The name of a topic",
+    "kind": null,
+    "datatype": "string",
+    "isRequired": true,
+    "isMultipleOk": false,
+    "group": null,
+    "javaType": null,
+    "isSecret": false,
+    "defaultValue": null,
+    "isDeprecated": false
+  }
+]
