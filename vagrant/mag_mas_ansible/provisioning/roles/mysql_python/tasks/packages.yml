@@ -9,8 +9,8 @@
     - ansible_distribution == 'Amazon'
 
 - name: install MySQL Server, Client, and libraries
-  yum: name={{ item }} enablerepo=mysql57-community state=installed
-  with_items: "{{ packages }}"
+  yum: name={{ packages }} enablerepo=mysql57-community state=installed
+  # with_items: "{{ packages }}"
   when: ansible_os_family == 'RedHat'
 
 #- name: Install Amazon specific packages

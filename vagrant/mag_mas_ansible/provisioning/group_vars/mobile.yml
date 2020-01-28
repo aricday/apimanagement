@@ -5,7 +5,7 @@ mobile_license:
   owner: "layer7"
   group: "root"
   file:
-    src: "/Users/AricDay/API/apim_vagrant_ansible_files/SSG_MAG_9.xml"
+    src: "/Users/aricday/API/ansible_artifacts/SSG_MAG_9.xml"
     dest: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/SSG_MAG_9.xml"
 mag_sk:
   owner: "layer7"
