@@ -2,11 +2,11 @@ DOCKER CA API Gateway project
 ================================
 
 
-## docker-compose.yml
-This file will allow a single SSG instance create using:
+## docker-compose-10.yml
+This file will allow a single SSG v10 instance create using:
 ```
-$ docker-compose -f docker-compose.yml up -d
-$ docker-compose -f docker-compose.yml logs -f
+$ docker-compose -f docker-compose-10.yml up -d
+$ docker-compose -f docker-compose-10.yml logs -f
 ```
 
 
@@ -23,7 +23,7 @@ $ docker ps --format "table {{.Names}} \t{{.Image}} \t{{.Status}} \t{{.Ports}}"
 
 ### To stop the container and remove the volume:
 ```
-$ docker-compose -f docker-compose.yml down --volumes
+$ docker-compose -f docker-compose-10.yml down --volumes
 ```
 
 ---

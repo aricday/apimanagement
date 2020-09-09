@@ -1,0 +1,52 @@
+#
+#  Copyright (c) 2016 CA. All rights reserved.
+#
+#  This software may be modified and distributed under the terms
+#  of the MIT license. See the LICENSE file for details.
+#
+version: '2'
+services:
+  ssg:
+    image: caapim/gateway:10.0.00
+    mem_limit: 4g
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9443:9443"
+    hostname: "mas"
+    volumes:
+     - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+     # - ./config/gwlicense/CA_GW_10.xml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+     # - ./files/gw/bundles/proxy_folder.bundle:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/bundle/proxy_folder.bundle
+    environment:
+      SSG_CLUSTER_HOST: "mas"
+      SSG_CLUSTER_PASSWORD: "7layer"
+      SSG_DATABASE_JDBC_URL: "jdbc:mysql://mysqldb:3306/ssg"
+      SSG_DATABASE_USER: "gateway"
+      SSG_DATABASE_PASSWORD: "7layer"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "CAdemo123"
+      ACCEPT_LICENSE: "true"
+      SSG_JVM_HEAP: "4g"
+      EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.env.license.enable=true -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
+      SSG_LICENSE: "LICENSE_HERE"
+
+  mysqldb:
+    image: mysql:8.0
+    environment:
+      - SERVICE_IGNORE=yes
+      - MYSQL_ROOT_PASSWORD=7layer
+      - MYSQL_USER=gateway
+      - MYSQL_PASSWORD=7layer
+      - MYSQL_DATABASE=ssg
+    command:
+      - "--character-set-server=utf8mb3"
+      - "--innodb_log_buffer_size=32M"
+      - "--innodb_log_file_size=80M"
+      - "--max_allowed_packet=20M"
+      - "--log-bin-trust-function-creators=1"
+      - "--default-authentication-plugin=mysql_native_password"
+    volumes:
+      # - ./mysql:/var/lib/mysql
+      - /var/lib/mysql
+      - ./files/mysql/scripts/startup/:/docker-entrypoint-initdb.d/
