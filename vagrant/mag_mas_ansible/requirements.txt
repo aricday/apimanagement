@@ -1,4 +1,4 @@
-ansible==2.6.18
+ansible==2.10.0
 cffi==1.7.0
 cryptography==2.5
 ecdsa==0.13.3
